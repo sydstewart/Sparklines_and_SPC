@@ -1,0 +1,123 @@
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: ''}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: ColumnPanel
+    properties: {role: card, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"UCJUHS":10,"HZXBFH":60,"ALKNCJ":10,"WABVDB":30,"RWMIKO":10,"KBTPEK":10,"ZATTXQ":20,"AEIOYS":12,"SRSSDT":3,"SJJNSQ":40}',
+      spacing_below: small, background: ''}
+    name: card_2
+    layout_properties: {grid_position: 'MSXYHJ,UZKADY', full_width_row: true}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: '        Enter Search Criteria', font_size: 12, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: true, underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'ECBDSA,ZATTXQ', full_width_row: true}
+    - type: Label
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+        visible: true, text: Charts Found =, font_size: 12, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_5
+      layout_properties: {grid_position: 'ECBDSA,AEIOYS', full_width_row: true}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 12,
+        font: '', spacing_above: none, type: number, spacing_below: none, italic: true,
+        background: '', bold: false, underline: false}
+      name: text_box_2
+      layout_properties: {grid_position: 'ECBDSA,SRSSDT', full_width_row: true}
+    - type: Label
+      properties: {}
+      name: label_6
+      layout_properties: {grid_position: 'ECBDSA,SJJNSQ', full_width_row: true}
+    - type: Label
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+        visible: true, text: Select Folder, font_size: 12, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_3
+      layout_properties: {grid_position: 'UXFVSP,RWMIKO', full_width_row: true}
+    - type: DropDown
+      properties:
+        role: null
+        align: right
+        tooltip: ''
+        placeholder: ''
+        border: ''
+        enabled: true
+        foreground: ''
+        items: []
+        visible: true
+        font_size: 12
+        font: ''
+        spacing_above: none
+        spacing_below: none
+        italic: false
+        background: ''
+        bold: false
+        underline: false
+        include_placeholder: true
+      name: folder_search_drop_down
+      layout_properties: {grid_position: 'UXFVSP,UCJUHS', full_width_row: true}
+      event_bindings: {change: folder_search_drop_down_change}
+    - type: CheckBox
+      properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: Show Archived, font_size: 10, font: '',
+        spacing_above: small, spacing_below: small, italic: false, background: '',
+        bold: false, checked: false, underline: false}
+      name: archive_chkbox
+      layout_properties: {grid_position: 'UXFVSP,HZXBFH', full_width_row: true}
+    - type: Label
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+        visible: true, text: '  or    Enter Text and hit enter key', font_size: 12,
+        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: label_4
+      layout_properties: {grid_position: 'XSPIRD,KBTPEK', full_width_row: true}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 12,
+        font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: text_box_1
+      layout_properties: {grid_position: 'XSPIRD,ALKNCJ', full_width_row: true}
+      event_bindings: {pressed_enter: text_box_1_pressed_enter}
+    - type: Label
+      properties: {}
+      name: label_2
+      layout_properties: {grid_position: 'XSPIRD,WABVDB', full_width_row: true}
+  - type: DataGrid
+    properties:
+      role: null
+      columns:
+      - {id: OAFHNY, title: '', data_key: id, width: '30'}
+      - {id: ZYSCIZ, title: Chart Title, data_key: column_2}
+      - {id: WKSFSK, title: '', data_key: column_3}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 8
+      visible: true
+      show_page_controls: true
+      spacing_above: none
+      spacing_below: none
+      background: ''
+    name: data_grid_1
+    layout_properties: {grid_position: 'NVLIRZ,RBHBGS', full_width_row: true}
+    components:
+    - type: RepeatingPanel
+      properties: {spacing_above: none, spacing_below: none, item_template: Search_charts.RowTemplate8}
+      name: repeating_panel_1
+      layout_properties: {}
+is_package: true

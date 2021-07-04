@@ -1,4 +1,4 @@
-from ._anvil_designer import Form4Template
+from ._anvil_designer import HomeTemplate
 from anvil import *
 import plotly.graph_objects as go
 import anvil.server
@@ -11,14 +11,28 @@ from anvil.tables import app_tables
 from ..Chart_form import Chart_form
 from ..Form1 import Form1
 from ..support_sparklines import support_sparklines
-from ..Home_page import Home_page
+from ..Search_charts import Search_charts
 from ..Form5 import Form5
+from .. import Globals
 
-class Form4(Form4Template):
-  
+class Home(HomeTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    
+    # login User
+    anvil.users.login_with_form()
+    loggedin_user = anvil.users.get_user()
+    organisation = loggedin_user['Organisation']
+    Globals.loggedin_user = loggedin_user
+    Globals.organisation = organisation
+    
+    # load search charts form initially
+    self.content_panel.clear()
+    self.content_panel.add_component(Search_charts(), full_width_row=True)
+    
+       
+    # #hyperlinks
     if get_url_hash() == 'Chart_form':
     
         self.content_panel.clear()
@@ -30,16 +44,16 @@ class Form4(Form4Template):
         self.content_panel.clear()
         self.content_panel.add_component(support_sparklines(), full_width_row=True)
          
-    # Any code you write here will run when the form opens.
-    
+
+  # Search Menu  
   def link_3_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
-    self.content_panel.add_component(Home_page(), full_width_row=True)
+    self.content_panel.add_component(Search_charts(), full_width_row=True)
     pass
     
     
-    
+  # New Chart form   
   def link_2_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.content_panel.clear()

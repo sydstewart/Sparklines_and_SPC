@@ -20,3 +20,12 @@ def display_charts( folder, user, archive ):
     
     return folder_share_rows ,chart_rows
 
+@anvil.server.callable
+def display_charts_from_textbox(text , user, archive ):
+    user_type = user['user_type']
+
+    text ='%' + text +'%'
+     
+    chart_rows = app_tables.charts.search(q.any_of(title=q.ilike(text)))
+
+    return user_type,chart_rows

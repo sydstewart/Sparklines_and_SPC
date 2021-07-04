@@ -59,57 +59,216 @@ services:
 - source: /runtime/services/google.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: Form4}
+startup: {type: form, module: Home}
 package_name: EmailQuickstart
 allow_embedding: false
 name: Clone of Clone of Email Quickstart
 runtime_options: {version: 2, server_version: python3-full, client_version: '3'}
 metadata: {}
+native_deps: {head_html: ''}
 db_schema:
-- name: folder_shares
-  id: 99803
-  python_name: folder_shares
+- name: Users
+  id: 139152
+  python_name: users
   columns:
-    9D1f1n9GRnU=:
+    hBYePexLQGA=:
+      name: email
+      type: string
+      admin_ui: {order: 0, width: 228.01136400000001}
+    fu4EpZSSE94=:
+      name: signed_up
+      type: datetime
+      admin_ui: {order: 2, width: 200}
+    zRwvai6WsMs=:
+      name: Invited_date_time
+      type: datetime
+      admin_ui: {order: 1.5, width: 200}
+    rnd9jOnYQ2k=:
+      name: user_type
+      type: string
+      admin_ui: {order: 1.25, width: 200}
+    B0qBWl2_SWE=:
+      name: password_hash
+      type: string
+      admin_ui: {order: 4, width: 200}
+    EdC6zGRjKgw=:
+      name: last_login
+      type: datetime
+      admin_ui: {order: 3, width: 200}
+    OuuvnQDq458=:
+      name: n_password_failures
+      type: number
+      admin_ui: {order: 8, width: 200}
+    +pMX0kk0ZLA=:
       name: Organisation
       type: liveObject
       backend: anvil.tables.Row
+      admin_ui: {order: 1.125, width: 200}
+      table_id: 139157
+    GZa5CQqtj6A=:
+      name: confirmed_email
+      type: bool
       admin_ui: {order: 5, width: 200}
-      table_id: 109764
-    9S5i03tyJng=:
-      name: chartids
+    Q03yT4MHDYo=:
+      name: email_confirmation_key
+      type: string
+      admin_ui: {order: 6, width: 200}
+    5cQl83X753c=:
+      name: user_name
+      type: string
+      admin_ui: {order: 0.5, width: 200}
+    GafX2tPMCzw=:
+      name: enabled
+      type: bool
+      admin_ui: {order: 1, width: 100}
+  access: {python_name: users, app_id: Z5VRNA37LKMLZOC5, server: full, client: full,
+    table_mapping_name: null, table_mapping_id: null, table_id: 139152}
+- name: attachments
+  id: 139159
+  python_name: attachments
+  columns:
+    4m3sXqCnCN4=:
+      name: attachment
+      type: media
+      admin_ui: {order: 1, width: 200}
+    dLXHbOTRZaI=:
+      name: message
+      type: string
+      admin_ui: {order: 0, width: 200}
+  access: {python_name: attachments, app_id: Z5VRNA37LKMLZOC5, server: full, client: full,
+    table_mapping_name: null, table_mapping_id: null, table_id: 139159}
+- name: Organisation
+  id: 139157
+  python_name: organisation
+  columns:
+    1BMoGZhmZaU=:
+      name: id
+      type: number
+      admin_ui: {order: 0, width: 200}
+    8hCtPgBCyB8=:
+      name: LicenceType
+      type: liveObject
+      backend: anvil.tables.Row
+      admin_ui: {order: 3, width: 200}
+      table_id: 109765
+    KojqnZzG37c=:
+      name: Main_email
+      type: liveObject
+      backend: anvil.tables.Row
+      admin_ui: {order: 0.5, width: 200}
+      table_id: 139152
+    Nn6BgPDS1yQ=:
+      name: BootNumDefault
+      type: number
+      admin_ui: {order: 5, width: 200}
+    PleQNn7fpd8=:
+      name: User
       type: liveObjectArray
       backend: anvil.tables.Row
+      admin_ui: {order: 3, width: 200}
+      table_id: 139152
+    bulKnC1rAT8=:
+      name: OrganisationName
+      type: string
+      admin_ui: {order: 1, width: 200}
+    fSYo4taRY+A=:
+      name: backgrBootnum
+      type: number
       admin_ui: {order: 6, width: 200}
-      table_id: 90179
-    Wvq3sgSZ2ZY=:
-      name: Folder
+  access: {python_name: organisation, app_id: Z5VRNA37LKMLZOC5, server: full, client: full,
+    table_mapping_name: null, table_mapping_id: null, table_id: 139157}
+- name: received_messages
+  id: 139158
+  python_name: received_messages
+  columns:
+    5iTN58ib9Uc=:
+      name: text
+      type: string
+      admin_ui: {order: 3, width: 200}
+    8TCGZzh+eJs=:
+      name: html
+      type: string
+      admin_ui: {order: 4, width: 200}
+    d4VfR64xaXA=:
+      name: from_addr
+      type: string
+      admin_ui: {order: 1, width: 200}
+    h12WqCvxqtw=:
+      name: to
+      type: string
+      admin_ui: {order: 2, width: 200}
+    nrgvZz2exrI=:
+      name: attachment
+      type: media
+      admin_ui: {order: 4, width: 200}
+    xHSUn2y14kA=:
+      name: received_time
+      type: datetime
+      admin_ui: {order: 5, width: 200}
+  access: {python_name: received_messages, app_id: Z5VRNA37LKMLZOC5, server: full,
+    client: full, table_mapping_name: null, table_mapping_id: null, table_id: 139158}
+- name: my_files
+  id: 139153
+  python_name: my_files
+  columns:
+    9GybHY_5uMw=:
+      name: last_uploaded
+      type: datetime
+      admin_ui: {order: 2, width: 200}
+    dev8yiD7NuQ=:
+      name: name
+      type: string
+      admin_ui: {order: 1, width: 200}
+    jTubdgzBXtY=:
+      name: Organisation
+      type: liveObject
+      backend: anvil.tables.Row
+      admin_ui: {order: 3, width: 200}
+      table_id: 139157
+    v8kw1DsYd7Y=:
+      name: column_list
+      type: simpleObject
+      admin_ui: {order: 4, width: 200}
+    x8xEs3K6dBg=:
+      name: media_obj
+      type: media
+      admin_ui: {order: 0, width: 200}
+  access: {python_name: my_files, app_id: Z5VRNA37LKMLZOC5, server: full, client: full,
+    table_mapping_name: null, table_mapping_id: null, table_id: 139153}
+- name: Annotations
+  id: 139160
+  python_name: annotations
+  columns:
+    1t0jIGGP6Ng=:
+      name: Creating_User
+      type: liveObject
+      backend: anvil.tables.Row
+      admin_ui: {order: 0.5, width: 200}
+      table_id: 139152
+    9_8HwggYoao=:
+      name: Organisation
       type: liveObject
       backend: anvil.tables.Row
       admin_ui: {order: 0, width: 200}
-      table_id: 93563
-    _EAvoOTHPEE=:
-      name: FolderUser
+      table_id: 139157
+    X711yf2pw+M=:
+      name: Annotated_Date_time
+      type: datetime
+      admin_ui: {order: 1, width: 200}
+    XIdE0Yqb0OI=:
+      name: Chart
       type: liveObject
       backend: anvil.tables.Row
-      admin_ui: {order: 1, width: 245}
-      table_id: 87733
-    h2wD2HzCnKw=:
-      name: id
-      type: number
-      admin_ui: {order: -1, width: 200}
-    n8dAFcTY0H4=:
-      name: updated_last
-      type: datetime
-      admin_ui: {order: 3, width: 200}
-    x1fhewuN5pc=:
-      name: AccessLevel
+      admin_ui: {order: 0.25, width: 200}
+      table_id: 139154
+    l1_uzaxV3MI=:
+      name: Annotation
       type: string
       admin_ui: {order: 2, width: 200}
-  access: {python_name: folder_shares, app_id: PC5UML37372CYYV5, server: full, client: full,
-    table_mapping_name: null, table_mapping_id: null, table_id: 99803}
+  access: {python_name: annotations, app_id: Z5VRNA37LKMLZOC5, server: full, client: none,
+    table_mapping_name: null, table_mapping_id: null, table_id: 139160}
 - name: charts
-  id: 90179
+  id: 139154
   python_name: charts
   columns:
     8umScrezZdU=:
@@ -161,15 +320,11 @@ db_schema:
       type: liveObject
       backend: anvil.tables.Row
       admin_ui: {order: 29, width: 200}
-      table_id: 109764
+      table_id: 139157
     OLvEA3AS0Xk=:
       name: DateDayFirst
       type: bool
       admin_ui: {order: 38, width: 200}
-    FZyRHthDPtw=:
-      name: json
-      type: string
-      admin_ui: {order: 32, width: 200}
     +mAw1Hrii0Q=:
       name: last_conf_limit
       type: string
@@ -179,7 +334,7 @@ db_schema:
       type: liveObject
       backend: anvil.tables.Row
       admin_ui: {order: 19, width: 200}
-      table_id: 93563
+      table_id: 139155
     eSv3aAFABP4=:
       name: no_of_steps
       type: number
@@ -217,7 +372,7 @@ db_schema:
       type: liveObject
       backend: anvil.tables.Row
       admin_ui: {order: 2.5, width: 200}
-      table_id: 89867
+      table_id: 139153
     EBlZ3qA1nTQ=:
       name: chart_id_1
       type: number
@@ -243,215 +398,57 @@ db_schema:
       type: liveObject
       backend: anvil.tables.Row
       admin_ui: {order: 29, width: 200}
-      table_id: 87733
+      table_id: 139152
     5OxKIagqk1U=:
       name: title
       type: string
       admin_ui: {order: 0, width: 200}
-  access: {python_name: charts, app_id: PC5UML37372CYYV5, server: full, client: full,
-    table_mapping_name: null, table_mapping_id: null, table_id: 90179}
-- name: Organisation
-  id: 109764
-  python_name: organisation
+  access: {python_name: charts, app_id: Z5VRNA37LKMLZOC5, server: full, client: full,
+    table_mapping_name: null, table_mapping_id: null, table_id: 139154}
+- name: folder_shares
+  id: 139156
+  python_name: folder_shares
   columns:
-    1BMoGZhmZaU=:
-      name: id
-      type: number
-      admin_ui: {order: 0, width: 200}
-    8hCtPgBCyB8=:
-      name: LicenceType
+    9D1f1n9GRnU=:
+      name: Organisation
       type: liveObject
       backend: anvil.tables.Row
-      admin_ui: {order: 3, width: 200}
-      table_id: 109765
-    KojqnZzG37c=:
-      name: Main_email
-      type: liveObject
-      backend: anvil.tables.Row
-      admin_ui: {order: 0.5, width: 200}
-      table_id: 87733
-    Nn6BgPDS1yQ=:
-      name: BootNumDefault
-      type: number
       admin_ui: {order: 5, width: 200}
-    PleQNn7fpd8=:
-      name: User
+      table_id: 139157
+    9S5i03tyJng=:
+      name: chartids
       type: liveObjectArray
       backend: anvil.tables.Row
-      admin_ui: {order: 3, width: 200}
-      table_id: 87733
-    bulKnC1rAT8=:
-      name: OrganisationName
-      type: string
-      admin_ui: {order: 1, width: 200}
-    fSYo4taRY+A=:
-      name: backgrBootnum
-      type: number
       admin_ui: {order: 6, width: 200}
-  access: {python_name: organisation, app_id: PC5UML37372CYYV5, server: full, client: full,
-    table_mapping_name: null, table_mapping_id: null, table_id: 109764}
-- name: received_messages
-  id: 124827
-  python_name: received_messages
-  columns:
-    5iTN58ib9Uc=:
-      name: text
-      type: string
-      admin_ui: {order: 3, width: 200}
-    8TCGZzh+eJs=:
-      name: html
-      type: string
-      admin_ui: {order: 4, width: 200}
-    d4VfR64xaXA=:
-      name: from_addr
-      type: string
-      admin_ui: {order: 1, width: 200}
-    h12WqCvxqtw=:
-      name: to
-      type: string
-      admin_ui: {order: 2, width: 200}
-    nrgvZz2exrI=:
-      name: attachment
-      type: media
-      admin_ui: {order: 4, width: 200}
-    xHSUn2y14kA=:
-      name: received_time
-      type: datetime
-      admin_ui: {order: 5, width: 200}
-  access: {python_name: received_messages, app_id: PC5UML37372CYYV5, server: full,
-    client: full, table_mapping_name: null, table_mapping_id: null, table_id: 124827}
-- name: Annotations
-  id: 138058
-  python_name: annotations
-  columns:
-    1t0jIGGP6Ng=:
-      name: Creating_User
-      type: liveObject
-      backend: anvil.tables.Row
-      admin_ui: {order: 0.5, width: 200}
-      table_id: 87733
-    9_8HwggYoao=:
-      name: Organisation
+      table_id: 139154
+    Wvq3sgSZ2ZY=:
+      name: Folder
       type: liveObject
       backend: anvil.tables.Row
       admin_ui: {order: 0, width: 200}
-      table_id: 109764
-    X711yf2pw+M=:
-      name: Annotated_Date_time
-      type: datetime
-      admin_ui: {order: 1, width: 200}
-    XIdE0Yqb0OI=:
-      name: Chart
+      table_id: 139155
+    _EAvoOTHPEE=:
+      name: FolderUser
       type: liveObject
       backend: anvil.tables.Row
-      admin_ui: {order: 0.25, width: 200}
-      table_id: 90179
-    l1_uzaxV3MI=:
-      name: Annotation
-      type: string
-      admin_ui: {order: 2, width: 200}
-  access: {python_name: annotations, app_id: PC5UML37372CYYV5, server: full, client: none,
-    table_mapping_name: null, table_mapping_id: null, table_id: 138058}
-- name: attachments
-  id: 124880
-  python_name: attachments
-  columns:
-    4m3sXqCnCN4=:
-      name: attachment
-      type: media
-      admin_ui: {order: 1, width: 200}
-    dLXHbOTRZaI=:
-      name: message
-      type: string
-      admin_ui: {order: 0, width: 200}
-  access: {python_name: attachments, app_id: PC5UML37372CYYV5, server: full, client: full,
-    table_mapping_name: null, table_mapping_id: null, table_id: 124880}
-- name: Users
-  id: 87733
-  python_name: users
-  columns:
-    hBYePexLQGA=:
-      name: email
-      type: string
-      admin_ui: {order: 0, width: 228.01136400000001}
-    fu4EpZSSE94=:
-      name: signed_up
-      type: datetime
-      admin_ui: {order: 2, width: 200}
-    zRwvai6WsMs=:
-      name: Invited_date_time
-      type: datetime
-      admin_ui: {order: 1.5, width: 200}
-    rnd9jOnYQ2k=:
-      name: user_type
-      type: string
-      admin_ui: {order: 1.25, width: 200}
-    B0qBWl2_SWE=:
-      name: password_hash
-      type: string
-      admin_ui: {order: 4, width: 200}
-    EdC6zGRjKgw=:
-      name: last_login
-      type: datetime
-      admin_ui: {order: 3, width: 200}
-    OuuvnQDq458=:
-      name: n_password_failures
+      admin_ui: {order: 1, width: 245}
+      table_id: 139152
+    h2wD2HzCnKw=:
+      name: id
       type: number
-      admin_ui: {order: 8, width: 200}
-    +pMX0kk0ZLA=:
-      name: Organisation
-      type: liveObject
-      backend: anvil.tables.Row
-      admin_ui: {order: 1.125, width: 200}
-      table_id: 109764
-    GZa5CQqtj6A=:
-      name: confirmed_email
-      type: bool
-      admin_ui: {order: 5, width: 200}
-    Q03yT4MHDYo=:
-      name: email_confirmation_key
-      type: string
-      admin_ui: {order: 6, width: 200}
-    5cQl83X753c=:
-      name: user_name
-      type: string
-      admin_ui: {order: 0.5, width: 200}
-    GafX2tPMCzw=:
-      name: enabled
-      type: bool
-      admin_ui: {order: 1, width: 100}
-  access: {python_name: users, app_id: PC5UML37372CYYV5, server: full, client: full,
-    table_mapping_name: null, table_mapping_id: null, table_id: 87733}
-- name: my_files
-  id: 89867
-  python_name: my_files
-  columns:
-    9GybHY_5uMw=:
-      name: last_uploaded
+      admin_ui: {order: -1, width: 200}
+    n8dAFcTY0H4=:
+      name: updated_last
       type: datetime
-      admin_ui: {order: 2, width: 200}
-    dev8yiD7NuQ=:
-      name: name
-      type: string
-      admin_ui: {order: 1, width: 200}
-    jTubdgzBXtY=:
-      name: Organisation
-      type: liveObject
-      backend: anvil.tables.Row
       admin_ui: {order: 3, width: 200}
-      table_id: 109764
-    v8kw1DsYd7Y=:
-      name: column_list
-      type: simpleObject
-      admin_ui: {order: 4, width: 200}
-    x8xEs3K6dBg=:
-      name: media_obj
-      type: media
-      admin_ui: {order: 0, width: 200}
-  access: {python_name: my_files, app_id: PC5UML37372CYYV5, server: full, client: full,
-    table_mapping_name: null, table_mapping_id: null, table_id: 89867}
+    x1fhewuN5pc=:
+      name: AccessLevel
+      type: string
+      admin_ui: {order: 2, width: 200}
+  access: {python_name: folder_shares, app_id: Z5VRNA37LKMLZOC5, server: full, client: full,
+    table_mapping_name: null, table_mapping_id: null, table_id: 139156}
 - name: folders
-  id: 93563
+  id: 139155
   python_name: folders
   columns:
     OiMj9+TQG4k=:
@@ -459,7 +456,7 @@ db_schema:
       type: liveObject
       backend: anvil.tables.Row
       admin_ui: {order: 2, width: 200}
-      table_id: 87733
+      table_id: 139152
     ZH9CD9xh1Ok=:
       name: folder_name
       type: string
@@ -469,20 +466,20 @@ db_schema:
       type: liveObject
       backend: anvil.tables.Row
       admin_ui: {order: 3, width: 200}
-      table_id: 109764
+      table_id: 139157
     myaLx6orjxY=:
       name: chartids
       type: liveObjectArray
       backend: anvil.tables.Row
       admin_ui: {order: 0, width: 200}
-      table_id: 90179
-  access: {python_name: folders, app_id: PC5UML37372CYYV5, server: full, client: full,
-    table_mapping_name: null, table_mapping_id: null, table_id: 93563}
+      table_id: 139154
+  access: {python_name: folders, app_id: Z5VRNA37LKMLZOC5, server: full, client: full,
+    table_mapping_name: null, table_mapping_id: null, table_id: 139155}
 secrets:
   customer_thermometer_api+key:
-    value: {? '' : 70hAcVZgaKg+ocGtVKDEUikdG2pNzrMa1wUNw8aNwTNCWgO7FaMOflQNWLR+ZXrQXgPO6fpXOTklDX80TkY9gvJC/FWYwvjq2EpLEpdAjFflRa4RccOS3NiWy4ABZs0OwOsGzU5EDrQOd32kIFBqMAOjGqLKSa9/DM76ao+fgA==}
+    value: {? '' : LISOk9shoTasRh1ucXAppNwNtUNstzlXutwRqvoscqwW85+4/j5goxfupeLA05B4o9qHmTETlZcIrCvEgBBvdluNGudkp4J1JwVr41CjO7MJ+3lZIIpvT5xj+noDYLCsS1iqTvHGFgjof17+mFSwAOtV3Zr2XaD6k8yRMjlSTw==}
     type: secret
   4s-mysql:
-    value: {? '' : UtJFIpwsg341EVPSmd5Ky8oG/33qIz6Q7sgizQNipwm5cez4//DRvLXYCObbSmtBxVB3oirQ8SmaVUKbkAlABxZ8PvIr5gC48W/dBOkSV03wBNIDHII9sMmM7mYehwYYdKvjZvU+wzvHsg==}
+    value: {? '' : r9g2O5cPD8srMGjN1pelHvSWKY56E33oltvomoG2+B91KNJtlM47diV7WYNxwaiZQXOwOeWmtMn+9tAtLupZQDRW9k99zsSc+32VBSMIctcsGjI9pwa4NsnvxGOkaYESLkEMtg/LhZwSRA==}
     type: secret
 renamed: true

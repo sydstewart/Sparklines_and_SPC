@@ -10,10 +10,14 @@ components:
   - {property: text, code: 'self.item[''id'']'}
 - type: Label
   properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: '', font_size: 12, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+    text: '', font_size: 12, font: '', spacing_above: none, icon_align: left, spacing_below: none,
     italic: false, background: '', bold: true, underline: false, icon: ''}
   name: label_2
   layout_properties: {column: ZYSCIZ}
   data_bindings:
   - {property: text, code: 'self.item[''title'']'}
+- type: Plot
+  properties: {height: 37}
+  name: plot_1
+  layout_properties: {column: WKSFSK}
 is_package: true
