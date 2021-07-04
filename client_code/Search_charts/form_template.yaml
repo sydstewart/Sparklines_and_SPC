@@ -102,7 +102,8 @@ components:
       columns:
       - {id: OAFHNY, title: '', data_key: id, width: '30'}
       - {id: ZYSCIZ, title: Chart Title, data_key: column_2}
-      - {id: WKSFSK, title: '', data_key: column_3}
+      - {id: ROQKYD, title: '', data_key: '', width: '30'}
+      - {id: WKSFSK, title: '', data_key: column_3, width: ''}
       auto_header: true
       tooltip: ''
       border: ''
