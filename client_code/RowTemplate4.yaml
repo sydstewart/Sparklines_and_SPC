@@ -1,0 +1,16 @@
+components:
+- type: Label
+  properties: {}
+  name: label_1
+  layout_properties: {column: ENADMO}
+  data_bindings:
+  - {property: text, code: 'self.item[''name'']'}
+- type: Label
+  properties: {}
+  name: label_2
+  layout_properties: {column: QAFYXZ}
+  data_bindings:
+  - {property: text, code: 'self.item[''last_uploaded'']'}
+container:
+  type: DataRowPanel
+  data_bindings: []

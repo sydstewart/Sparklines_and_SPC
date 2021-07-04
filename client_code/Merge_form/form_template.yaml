@@ -1,0 +1,47 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: Folder, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_3
+  layout_properties: {grid_position: 'OUPJPE,FABHDR'}
+- type: DropDown
+  properties: {}
+  name: folder_dropdown
+  layout_properties: {grid_position: 'OUPJPE,FHPWKK'}
+  event_bindings: {change: folder_dropdown_change}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: CSV FILE 1, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'PDUTQO,FTHGLW'}
+- type: DropDown
+  properties: {}
+  name: CSV_FILE_1_drop_down_1
+  layout_properties: {grid_position: 'PDUTQO,RHRRCQ'}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: CSV FILE 2, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_2
+  layout_properties: {grid_position: 'MBMDVI,FHXUOZ'}
+- type: DropDown
+  properties: {}
+  name: CSV_FILE_2_drop_down_2
+  layout_properties: {grid_position: 'MBMDVI,TKBWWD'}
+- type: Button
+  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Merge, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: button_1
+  layout_properties: {grid_position: 'SNCGBC,QLVDHE'}
+  event_bindings: {click: button_1_click}
+is_package: true

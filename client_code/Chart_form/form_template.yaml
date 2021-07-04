@@ -1,0 +1,360 @@
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: ''}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Add Chart, font_size: 15, font: '', spacing_above: none,
+      icon_align: left, spacing_below: none, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_8
+    layout_properties: {slot: default, grid_position: 'MAEHJG,FEOQSX'}
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{"PMGPMC":10,"HZNFNL":20,"IPHQKZ":10,"CYZLCI":20,"HMTTVP":10,"QWKODW":20,"PVNWRT":10,"DATIKR":20,"FPPLMO":10,"AKNFMN":20,"OYTTDI":10,"VVCQIF":20,"HLESJV":10,"XVJUVN":50}'}
+    name: card_2
+    layout_properties: {grid_position: 'UUJHNQ,LVHSCL'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Chart Title, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_7_copy
+      layout_properties:
+        col_widths: {}
+        grid_position: GKSQCM,HLESJV
+    - type: TextBox
+      properties: {}
+      name: text_box_1
+      layout_properties:
+        col_widths: {}
+        grid_position: GKSQCM,XVJUVN
+      data_bindings:
+      - {property: text, code: 'self.item[''title'']', writeback: true}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Select Folder, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: folder_dropdown_title
+      layout_properties: {grid_position: 'PZEDYH,HMTTVP'}
+    - type: DropDown
+      properties: {}
+      name: drop_down_1
+      layout_properties: {grid_position: 'PZEDYH,QWKODW'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Select File Name, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'PZEDYH,PVNWRT'}
+    - type: DropDown
+      properties: {}
+      name: drop_down_2
+      layout_properties: {grid_position: 'PZEDYH,DATIKR'}
+      event_bindings: {change: drop_down_2_change}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: DATE Column, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'PBSRTE,PMGPMC'}
+    - type: DropDown
+      properties: {}
+      name: drop_down_3
+      layout_properties: {grid_position: 'PBSRTE,HZNFNL'}
+      event_bindings: {change: drop_down_3_change}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: MEASURE, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_3
+      layout_properties: {grid_position: 'PBSRTE,IPHQKZ'}
+    - type: DropDown
+      properties: {}
+      name: drop_down_4
+      layout_properties: {grid_position: 'PBSRTE,CYZLCI'}
+      event_bindings: {change: drop_down_4_change}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Start Date, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_15
+      layout_properties: {grid_position: 'DVUPLQ,FPPLMO'}
+    - type: DatePicker
+      properties: {role: null, align: left, max_date: '', pick_time: true, tooltip: '',
+        placeholder: '', border: '', enabled: true, foreground: '', visible: true,
+        font_size: null, font: '', spacing_above: small, spacing_below: small, italic: false,
+        date: '', min_date: '', background: '', bold: false, underline: false, format: ''}
+      name: start_date_picker
+      layout_properties: {grid_position: 'DVUPLQ,AKNFMN'}
+      data_bindings:
+      - {property: date, code: 'self.item[''astart_date'']', writeback: true}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: End Date, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_16
+      layout_properties: {grid_position: 'DVUPLQ,OYTTDI'}
+    - type: DatePicker
+      properties: {role: null, align: left, max_date: '', pick_time: true, tooltip: '',
+        placeholder: '', border: '', enabled: true, foreground: '', visible: true,
+        font_size: null, font: '', spacing_above: small, spacing_below: small, italic: false,
+        date: '', min_date: '', background: '', bold: false, underline: false, format: ''}
+      name: end_date_picker
+      layout_properties: {grid_position: 'DVUPLQ,VVCQIF'}
+      data_bindings:
+      - {property: date, code: 'self.item[''aend_date'']', writeback: true}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Date Adjustments, font_size: 12, font: '', spacing_above: none,
+      icon_align: left, spacing_below: none, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_5
+    layout_properties: {grid_position: 'SAXLJC,TWUCME'}
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{"AKWATO":5,"INOJPF":15,"CZPSFY":10,"VBMWRY":10,"LSZRLP":10,"XJYKGJ":10}'}
+    name: card_1
+    layout_properties: {grid_position: 'ZFNMGS,YGBZVC'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Date Month First, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_6
+      layout_properties: {grid_position: 'UORFXE,DXWQXJ'}
+    - type: CheckBox
+      properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: ' ', font_size: null, font: '', spacing_above: small,
+        spacing_below: small, italic: false, background: '', bold: false, checked: false,
+        underline: false}
+      name: check_box_1
+      layout_properties: {grid_position: 'UORFXE,RYDHXT'}
+      data_bindings:
+      - {property: checked, code: 'self.item[''DateDayFirst'']', writeback: true}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Fill Missing Dates, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_10
+      layout_properties: {grid_position: 'UORFXE,PXYYGE'}
+    - type: CheckBox
+      properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
+        spacing_below: small, italic: false, background: '', bold: false, checked: false,
+        underline: false}
+      name: missing_dates
+      layout_properties: {grid_position: 'UORFXE,VDLDUJ'}
+      data_bindings:
+      - {property: checked, code: 'self.item[''fill_missing_dates'']', writeback: true}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: 'Interval
+
+          ', font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+        italic: false, background: '', bold: false, underline: false, icon: ''}
+      name: label_13
+      layout_properties: {grid_position: 'NNPNQC,AKWATO'}
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: Day
+        border: ''
+        enabled: true
+        foreground: ''
+        items: [None, Day, Week, Month]
+        visible: true
+        font_size: null
+        font: ''
+        spacing_above: small
+        spacing_below: small
+        italic: false
+        background: ''
+        bold: false
+        underline: false
+        include_placeholder: true
+      name: date_interval_drop_down
+      layout_properties: {grid_position: 'NNPNQC,INOJPF'}
+      data_bindings:
+      - {property: selected_value, code: 'self.item[''obs_interval'']', writeback: true}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Don't Overwrite Start Date, font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: label_23
+      layout_properties: {grid_position: 'NNPNQC,CZPSFY'}
+    - type: CheckBox
+      properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: ' ', font_size: null, font: '', spacing_above: small,
+        spacing_below: small, italic: false, background: '', bold: false, checked: false,
+        underline: false}
+      name: check_box_3
+      layout_properties: {grid_position: 'NNPNQC,VBMWRY'}
+      data_bindings:
+      - {property: checked, code: 'self.item[''End_date_Overwrite'']', writeback: true}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Don't Overwrite End Date, font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: label_24
+      layout_properties: {grid_position: 'NNPNQC,LSZRLP'}
+    - type: CheckBox
+      properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: ' ', font_size: null, font: '', spacing_above: small,
+        spacing_below: small, italic: false, background: '', bold: false, checked: false,
+        underline: false}
+      name: check_box_2
+      layout_properties: {grid_position: 'NNPNQC,XJYKGJ'}
+      data_bindings:
+      - {property: checked, code: 'self.item[''Start_date_Overwrite'']', writeback: true}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Step chart and Trend Settings, font_size: 12, font: '',
+      spacing_above: none, icon_align: left, spacing_below: none, italic: false, background: '',
+      bold: true, underline: false, icon: ''}
+    name: label_7
+    layout_properties: {grid_position: 'IYBKGB,ANDTUY'}
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{}'}
+    name: card_3
+    layout_properties: {grid_position: 'WEEMXE,ENXAXG'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Confidence Level, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_19
+      layout_properties: {grid_position: 'NJCWQW,XBNUFT'}
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: '95'
+        border: ''
+        enabled: true
+        foreground: ''
+        items: ['90', '95', '99']
+        visible: true
+        font_size: null
+        font: ''
+        spacing_above: small
+        spacing_below: small
+        italic: false
+        background: ''
+        bold: false
+        underline: false
+        include_placeholder: true
+      name: conf_level_dropdown
+      layout_properties: {grid_position: 'NJCWQW,XHDNLY'}
+      data_bindings:
+      - {property: selected_value, code: 'self.item[''conf_limit_text'']', writeback: true}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Moving Average, font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_20
+      layout_properties: {grid_position: 'NJCWQW,KGNJCX'}
+    - type: TextBox
+      properties: {role: null, align: center, hide_text: false, tooltip: '', placeholder: ' ',
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+        font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false}
+      name: mov_avg
+      layout_properties: {grid_position: 'NJCWQW,RXYHFM'}
+      data_bindings:
+      - {property: text, code: 'self.item[''mov_avg'']', writeback: true}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: No. of Decimal Places for displayed values, font_size: null,
+        font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: label_3_copy
+      layout_properties: {grid_position: 'MAUCFM,UCGWAV'}
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: '0'
+        border: ''
+        enabled: true
+        foreground: ''
+        items: ['0', '1', '2', '3']
+        visible: true
+        font_size: null
+        font: ''
+        spacing_above: small
+        spacing_below: small
+        italic: false
+        background: ''
+        bold: false
+        underline: false
+        include_placeholder: true
+      name: formalCol_dropdown
+      layout_properties: {grid_position: 'MAUCFM,JXWMCI'}
+      data_bindings:
+      - {property: selected_value, code: 'self.item[''formatCol'']', writeback: true}
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: Annotations, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_4
+    layout_properties: {grid_position: 'BGJSOZ,EYIMEL'}
+  - type: DataGrid
+    properties:
+      role: null
+      columns:
+      - {id: LPMKPD, title: Annotated Date_time, data_key: Annotated_Date_time}
+      - {id: SKVONL, title: Annotation, data_key: Annotation}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 20
+      visible: true
+      show_page_controls: true
+      spacing_above: small
+      spacing_below: small
+      background: ''
+    name: data_grid_1
+    layout_properties: {grid_position: 'HYUITP,NHPCYW'}
+    components:
+    - type: RepeatingPanel
+      properties: {spacing_above: none, spacing_below: none, item_template: Chart_form.RowTemplate7}
+      name: repeating_panel_1
+      layout_properties: {}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components:
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: 'theme:White', visible: true, text: main screen, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: true, underline: false, icon: ''}
+    name: button_1
+    layout_properties: {}
+    event_bindings: {click: button_1_click}
+is_package: true

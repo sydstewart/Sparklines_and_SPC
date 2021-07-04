@@ -1,0 +1,531 @@
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+  data_bindings:
+  - {property: tag, code: 'self.item[''name'']'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{"QQVXUX":10,"XHBHCO":40,"MZMNSG":10,"JVDZVH":30}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Image
+    properties: {}
+    name: image_3
+    layout_properties: {grid_position: 'OCRVXO,NRZJEL'}
+  - type: Plot
+    properties: {spacing_above: small, spacing_below: small, height: 659.2000122070312,
+      visible: true, tooltip: '', interactive: true}
+    name: plot_2
+    layout_properties: {grid_position: 'GWPDOR,JVDZVH', full_width_row: true}
+  - type: Image
+    properties: {height: 714.2000274658203}
+    name: image_2
+    layout_properties: {grid_position: 'FWRZVC,QUKAYJ', full_width_row: true}
+  - type: Plot
+    properties: {}
+    name: plot_3
+    layout_properties: {grid_position: 'YNZNWL,TRUZUQ', full_width_row: true}
+  - type: Plot
+    properties: {}
+    name: plot_4
+    layout_properties: {grid_position: 'LXQYUW,JIBNBE', full_width_row: true}
+  - type: Plot
+    properties: {}
+    name: plot_5
+    layout_properties: {grid_position: 'OPQRFK,GHBFCK', full_width_row: true}
+  - type: Plot
+    properties: {}
+    name: plot_6
+    layout_properties: {grid_position: 'XRYLCX,RTMAHG', full_width_row: true}
+  - type: DataGrid
+    properties:
+      role: null
+      columns:
+      - {id: JOVIGQ, title: id, data_key: column_1}
+      - {id: MMZJWQ, title: Chart Last Updated, data_key: column_2}
+      - {id: QQIGBG, title: title, data_key: column_3}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 20
+      visible: true
+      show_page_controls: true
+      spacing_above: small
+      spacing_below: small
+      background: ''
+    name: data_grid_4
+    layout_properties: {grid_position: 'JIYSLP,ZJEHQZ', full_width_row: true}
+    components:
+    - type: RepeatingPanel
+      properties: {spacing_above: none, spacing_below: none, item_template: RowTemplate5}
+      name: repeating_panel_4
+      layout_properties: {}
+  - type: DataGrid
+    properties:
+      role: null
+      columns:
+      - {id: ENADMO, title: File, data_key: column_1}
+      - {id: QAFYXZ, title: Date, data_key: column_2}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 20
+      visible: true
+      show_page_controls: true
+      spacing_above: small
+      spacing_below: small
+      background: ''
+    name: data_grid_1
+    layout_properties: {grid_position: 'EDAYEZ,NKTRXP', full_width_row: true}
+    components:
+    - type: RepeatingPanel
+      properties: {spacing_above: none, spacing_below: none, item_template: RowTemplate1}
+      name: repeating_panel_1
+      layout_properties: {}
+    data_bindings:
+    - {property: tag, code: 'self.item[''last_uploaded'']'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: TeamWORK Projects Open, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_12
+    layout_properties: {grid_position: 'RMKOBD,SRYDPZ', full_width_row: true}
+    event_bindings: {click: button_12_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Merge CSV FILES, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_13
+    layout_properties: {grid_position: 'OWZRFQ,PRBUIF', full_width_row: true}
+    event_bindings: {click: button_13_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Turning pts, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_15
+    layout_properties: {grid_position: 'TXJHYV,IZYXDR', full_width_row: true}
+    event_bindings: {click: button_15_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Show data from NPS, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_17
+    layout_properties: {grid_position: 'BALQTB,RWPBVX', full_width_row: true}
+    event_bindings: {click: button_17_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: RDP example, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_16
+    layout_properties: {grid_position: 'UXBJEM,SHIVKG', full_width_row: true}
+    event_bindings: {click: button_16_click}
+  - type: Image
+    properties: {role: null, vertical_align: center, height: '200', tooltip: '', border: '',
+      foreground: '', visible: true, display_mode: fill_width, spacing_above: small,
+      source: '', spacing_below: small, background: '', horizontal_align: center}
+    name: image_1
+    layout_properties: {grid_position: 'HQOZYC,BMXDVQ', full_width_row: true}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Chart Performance Test, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_18
+    layout_properties: {grid_position: 'BSPNZD,XOGRYT', full_width_row: true}
+    event_bindings: {click: button_18_click}
+  - type: DataGrid
+    properties:
+      role: null
+      columns:
+      - {id: SYMYMS, title: Id, data_key: id}
+      - {id: EAEBEG, title: Updated Last, data_key: updated_last}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 20
+      visible: true
+      show_page_controls: true
+      spacing_above: small
+      spacing_below: small
+      background: ''
+    name: data_grid_3
+    layout_properties: {grid_position: 'AGZTCM,NZBBNI', full_width_row: true}
+    components:
+    - type: RepeatingPanel
+      properties: {spacing_above: none, spacing_below: none, item_template: RowTemplate3}
+      name: repeating_panel_3
+      layout_properties: {}
+  - type: Plot
+    properties: {}
+    name: plot_1
+    layout_properties: {grid_position: 'HRBDBG,EVYXAU', full_width_row: true}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Show Folder Shares and Folder Dropdown,
+      font_size: null, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
+    name: button_14
+    layout_properties: {grid_position: 'PLYBAC,AVUPFO', full_width_row: true}
+    event_bindings: {click: button_14_click}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Folder Dropdown, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'PLBZFH,JBFLQV', full_width_row: true}
+  - type: DropDown
+    properties: {}
+    name: drop_down_1
+    layout_properties: {grid_position: 'PLBZFH,UNJITN', full_width_row: true}
+    event_bindings: {change: drop_down_1_change}
+  - type: DataGrid
+    properties:
+      role: null
+      columns:
+      - {id: NZOTRA, title: Id, data_key: id}
+      - {id: JGNCXT, title: Title, data_key: title}
+      - {id: RSQSLS, title: NameCol, data_key: nameCol}
+      - {id: ZUAFYB, title: File Name, data_key: file_name}
+      - {id: ILVBEL, title: DateCol, data_key: dateCol}
+      - {id: NOTUZK, title: LastUpdate, data_key: lastUpdate}
+      - {id: ZLZNLF, title: Folder Name, data_key: folder_name}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 20
+      visible: true
+      show_page_controls: true
+      spacing_above: small
+      spacing_below: small
+      background: ''
+    name: data_grid_2
+    layout_properties: {grid_position: 'OJYFXR,ZIRJSL', full_width_row: true}
+    components:
+    - type: RepeatingPanel
+      properties: {spacing_above: none, spacing_below: none, item_template: RowTemplate4}
+      name: repeating_panel_2
+      layout_properties: {}
+  - type: ColumnPanel
+    properties: {role: card, col_widths: '{}'}
+    name: card_1
+    layout_properties: {grid_position: 'UQSSQX,YFHYEE', full_width_row: true}
+    components: []
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: DateTIMES, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: button_9
+    layout_properties: {grid_position: 'UEURMD,HYNZHZ', full_width_row: true}
+    event_bindings: {click: button_9_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Create TEST CSV, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_2
+    layout_properties: {grid_position: 'RECFYX,BDTQCN', full_width_row: true}
+    event_bindings: {click: button_2_click}
+  - type: Button
+    properties: {text: button_3}
+    name: button_3
+    layout_properties: {grid_position: 'VZSCBS,XRDPHO', full_width_row: true}
+    event_bindings: {click: button_3_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Hash, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: button_5
+    layout_properties: {grid_position: 'YIVHYO,UODUBX', full_width_row: true}
+    event_bindings: {click: button_5_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Display Data, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_4
+    layout_properties: {grid_position: 'EGBPGH,RIDKQW', full_width_row: true}
+    event_bindings: {click: button_4_click}
+  - type: Label
+    properties: {}
+    name: label_2
+    layout_properties: {grid_position: 'YQJFCS,QQVXUX', full_width_row: true}
+  - type: Plot
+    properties: {}
+    name: table
+    layout_properties: {grid_position: 'YQJFCS,XHBHCO', full_width_row: true}
+  - type: Label
+    properties: {}
+    name: label_1
+    layout_properties: {grid_position: 'YQJFCS,MZMNSG', full_width_row: true}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components:
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: 'theme:White', visible: true, text: Searches, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: 'fa:search'}
+    name: button_20
+    layout_properties: {}
+    event_bindings: {click: button_20_click}
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: column_panel_1
+  layout_properties: {slot: left-nav}
+  components:
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Improvements Stacked Plot, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_26
+    layout_properties: {grid_position: 'GDYDGF,ZJDSXR', full_width_row: true, slot: left-nav}
+    event_bindings: {click: button_26_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Chart_Form, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_41
+    layout_properties: {grid_position: 'RRDWGZ,UKUXRP'}
+    event_bindings: {click: button_41_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Sales Sparklines, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_32
+    layout_properties: {grid_position: 'NOGIXC,SAWSRN'}
+    event_bindings: {click: button_32_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: RCA Stacked Plot, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_27
+    layout_properties: {grid_position: 'UUYHOB,NSCLVG', full_width_row: true}
+    event_bindings: {click: button_27_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Support Sparklines, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_35
+    layout_properties: {grid_position: 'TUOVOV,PROGWV'}
+    event_bindings: {click: button_35_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Improvement sparklines, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_29
+    layout_properties: {grid_position: 'PFRJZC,PYQNQF', full_width_row: true}
+    event_bindings: {click: button_29_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Plotly x and MR control Chart, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: plotly_x_chart_button
+    layout_properties: {grid_position: 'TMEDUM,WJCXIV'}
+    event_bindings: {click: plotly_x_chart_button_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Support email, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_34
+    layout_properties: {grid_position: 'YWCHQO,XDNIQC'}
+    event_bindings: {click: button_34_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: EMail Support Sparklines, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_36
+    layout_properties: {grid_position: 'PHPJKX,XHCWIO'}
+    event_bindings: {click: button_36_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: 'Chart PLot ', font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: chart_plot_button
+    layout_properties: {grid_position: 'BOUCSW,FMXNAB'}
+    event_bindings: {click: chart_plot_button_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: 'GB/USD  ', font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_21
+    layout_properties: {grid_position: 'LHHDKS,YFGZKS'}
+    event_bindings: {click: button_21_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: GB/CAD, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: button_39
+    layout_properties: {grid_position: 'WXWRKU,TGXXYD'}
+    event_bindings: {click: button_39_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: GB/EUR, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: button_38
+    layout_properties: {grid_position: 'NMVZPR,BQBORM'}
+    event_bindings: {click: button_38_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: GB/US Background, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_40
+    layout_properties: {grid_position: 'JXAMDZ,KCGGGN'}
+    event_bindings: {click: button_40_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Email Sales Sparklines, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_33
+    layout_properties: {grid_position: 'VUJOIV,MQFUZN'}
+    event_bindings: {click: button_33_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Update NPS Thermometer DATA, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'YJHEMP,BDLNDV'}
+    event_bindings: {click: button_1_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Update Number of NPS Responses, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_19
+    layout_properties: {grid_position: 'WIOVLJ,MPRRXK'}
+    event_bindings: {click: button_19_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Update DAS 28 Web Page Stats, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_6
+    layout_properties: {grid_position: 'FEMONW,YQDKSN'}
+    event_bindings: {click: button_6_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Update RH Web Page Stats, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_8
+    layout_properties: {grid_position: 'EKDNPY,NZGRQE'}
+    event_bindings: {click: button_8_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Update AC Web pages Stats, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_7
+    layout_properties: {grid_position: 'CTUMSQ,KCQBNF'}
+    event_bindings: {click: button_7_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Background API, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_25
+    layout_properties: {grid_position: 'UOWCJO,RPZDXC'}
+    event_bindings: {click: button_25_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Connect to MySQL, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_37
+    layout_properties: {grid_position: 'YVZOGL,MUOMCF'}
+    event_bindings: {click: button_37_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: X and MR Control Chart MatplotLib, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_24
+    layout_properties: {grid_position: 'LDAZXX,SWXRIF', full_width_row: true}
+    event_bindings: {click: button_24_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Add Orgs to Charts, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_22
+    layout_properties: {grid_position: 'QYZNVK,PZUJUP'}
+    event_bindings: {click: button_22_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Add Charts to Folder-Shares, font_size: null,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_23
+    layout_properties: {grid_position: 'NAXOOQ,WYSALF', full_width_row: true}
+    event_bindings: {click: button_23_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Stacked Chart Form, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_28
+    layout_properties: {grid_position: 'DQMFRP,NAUHFM', full_width_row: true}
+    event_bindings: {click: button_28_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: send emAIL, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_31
+    layout_properties: {grid_position: 'GCQKMO,AVOQMM'}
+    event_bindings: {click: button_31_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Show CSV's, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_10
+    layout_properties: {grid_position: 'QQALUL,SRYZNJ', full_width_row: true}
+    event_bindings: {click: button_10_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: CLOSE CSVs, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_11
+    layout_properties: {grid_position: 'QBEHSH,KCDFUS', full_width_row: true}
+    event_bindings: {click: button_11_click}
+- type: Button
+  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Sparklines Using Facets, font_size: null,
+    font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false, icon: ''}
+  name: button_30
+  layout_properties: {grid_position: 'PGPIGU,NIJZZT UVWYWY,MLKOIK', full_width_row: true,
+    slot: title}
+  event_bindings: {click: button_30_click}

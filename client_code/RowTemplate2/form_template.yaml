@@ -1,0 +1,21 @@
+container: {type: DataRowPanel}
+components:
+- type: Label
+  properties: {}
+  name: label_3
+  layout_properties: {column: YNBQHS}
+  data_bindings:
+  - {property: text, code: 'self.item[''Folder''][''folder_name'']'}
+- type: Label
+  properties: {}
+  name: label_1
+  layout_properties: {column: LZPLKL}
+  data_bindings:
+  - {property: text, code: 'self.item[''Organisation''][''OrganisationName'']'}
+- type: Label
+  properties: {}
+  name: label_2
+  layout_properties: {column: SBSUFS}
+  data_bindings:
+  - {property: text, code: 'self.item[''FolderUser''][''email'']'}
+is_package: true

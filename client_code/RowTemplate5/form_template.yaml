@@ -1,0 +1,21 @@
+container: {type: DataRowPanel}
+components:
+- type: Label
+  properties: {}
+  name: label_1
+  layout_properties: {column: JOVIGQ}
+  data_bindings:
+  - {property: text, code: 'self.item[''id'']'}
+- type: Label
+  properties: {}
+  name: label_2
+  layout_properties: {column: MMZJWQ}
+  data_bindings:
+  - {property: text, code: 'self.item[''Chart_last_saved'']'}
+- type: Label
+  properties: {}
+  name: label_3
+  layout_properties: {column: QQIGBG}
+  data_bindings:
+  - {property: text, code: 'self.item[''title'']'}
+is_package: true
