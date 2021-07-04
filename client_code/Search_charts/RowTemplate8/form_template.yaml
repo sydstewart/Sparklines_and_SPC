@@ -20,4 +20,12 @@ components:
   properties: {height: 37}
   name: plot_1
   layout_properties: {column: WKSFSK}
+- type: Button
+  properties: {role: null, align: left, tooltip: '', border: '', enabled: true, foreground: '',
+    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: 'fa:pencil-square-o'}
+  name: button_1
+  layout_properties: {column: ROQKYD}
+  event_bindings: {click: button_1_click}
 is_package: true
