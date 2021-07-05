@@ -1,5 +1,6 @@
 from ._anvil_designer import RowTemplate8Template
 from anvil import *
+import plotly.graph_objects as go
 import anvil.server
 import anvil.google.auth, anvil.google.drive
 from anvil.google.drive import app_files
@@ -58,4 +59,28 @@ class RowTemplate8(RowTemplate8Template):
 #         alert("Record Updated")
     self.refresh_data_bindings()
     pass
+  
+  # Select Charts
+  def drop_down_1_change(self, **event_args):
+    """This method is called when an item is selected"""
+    from ...Chart_Types import charts , trends , step_changes, tables
+    if self.drop_down_1.selected_value == "Chart":
+          charts(self)       
+    if self.drop_down_1.selected_value == "Trend":
+          trends(self)
+    if self.drop_down_1.selected_value == "Step change":
+          startstep = datetime.now()
+          step_changes(self)
+#           print("Step Change total Time: " + str(datetime.now() - startstep) + '\n')
+    if self.drop_down_1.selected_value == "Show Data":
+          self.plot_1.visible = True 
+          chart_copy = dict(list(self.item))
+          chartid = chart_copy['id']
+          filename = chart_copy['file_name']['name']
+          print('filename=',filename)
+          data = anvil.server.call('tables',chartid, filename)
+   
+          self.plot_1.data = data
+    pass
+
 

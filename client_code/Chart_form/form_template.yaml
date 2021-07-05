@@ -16,7 +16,7 @@ components:
     name: label_8
     layout_properties: {slot: default, grid_position: 'MAEHJG,FEOQSX'}
   - type: ColumnPanel
-    properties: {role: card, col_widths: '{"PMGPMC":12,"IPHQKZ":19,"HMTTVP":10,"QWKODW":20,"PVNWRT":10,"DATIKR":20,"FPPLMO":10,"AKNFMN":20,"OYTTDI":10,"VVCQIF":20,"HLESJV":10,"XVJUVN":50,"BNGNGV":18,"DAVVIO":5}'}
+    properties: {role: card, col_widths: '{"PMGPMC":13,"HMTTVP":10,"QWKODW":20,"PVNWRT":10,"DATIKR":20,"FPPLMO":10,"AKNFMN":20,"OYTTDI":10,"VVCQIF":20,"HLESJV":10,"XVJUVN":50,"BNGNGV":18,"DAVVIO":5,"NPDFGV":20,"LAHHMR":40,"UKQJVG":12,"LXXXZU":12}'}
     name: card_2
     layout_properties: {grid_position: 'UUJHNQ,LVHSCL'}
     components:
@@ -64,12 +64,20 @@ components:
       event_bindings: {change: drop_down_2_change}
       data_bindings:
       - {property: selected_value, code: 'self.item[''file_name'']', writeback: true}
-    - type: DropDown
-      properties: {}
-      name: drop_down_3
-      layout_properties: {grid_position: 'BZXOXU,UAJILL'}
-      data_bindings:
-      - {property: selected_value, code: 'self.item[''dateCol'']', writeback: true}
+    - type: Label
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+        visible: true, text: Columns in CSV File, font_size: 10, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_9
+      layout_properties: {grid_position: 'IRYIWY,NPDFGV'}
+    - type: TextArea
+      properties: {role: null, align: left, height: 20, tooltip: '', placeholder: '',
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 10,
+        auto_expand: false, font: '', spacing_above: small, spacing_below: small,
+        italic: false, background: '', bold: false, underline: false}
+      name: text_area_1
+      layout_properties: {grid_position: 'IRYIWY,LAHHMR'}
     - type: Label
       properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
         visible: true, text: DATE Column, font_size: null, font: '', spacing_above: small,
@@ -77,11 +85,12 @@ components:
         underline: false, icon: ''}
       name: label_2
       layout_properties: {grid_position: 'PBSRTE,PMGPMC'}
-    - type: DropDown
+    - type: TextBox
       properties: {}
-      name: drop_down_4
-      layout_properties: {grid_position: 'PBSRTE,UMDSBP'}
-      data_bindings: []
+      name: text_box_2
+      layout_properties: {grid_position: 'PBSRTE,UKQJVG'}
+      data_bindings:
+      - {property: text, code: 'self.item[''dateCol'']', writeback: true}
     - type: TextBox
       properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
         border: '', enabled: true, foreground: '#f21818', visible: true, text: '*',
@@ -95,7 +104,7 @@ components:
         icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
         underline: false, icon: ''}
       name: label_3
-      layout_properties: {grid_position: 'PBSRTE,IPHQKZ'}
+      layout_properties: {grid_position: 'PBSRTE,LXXXZU'}
     - type: TextBox
       properties: {}
       name: text_box_3

@@ -16,9 +16,10 @@ class Chart_form(Chart_formTemplate):
     self.label_4.visible = False
     self.data_grid_1.visible = False
     self.text_box_4.visible = False
-    
-    
-    
+    if self.drop_down_2.selected_value != None:
+        columns = anvil.server.call('chart_columns',self.drop_down_2.selected_value)
+        self.text_area_1.text = columns
+        
     organisation = app_tables.organisation.get(id = 1)
     
     # get folders
@@ -44,8 +45,8 @@ class Chart_form(Chart_formTemplate):
     fileName = self.drop_down_2.selected_value
 #     fileName = fileName['name']
     columns = anvil.server.call('chart_columns',fileName)
-    self.drop_down_4.items = columns
-    self.drop_down_3.items = ['YM', 'DefectCount', 'ImprovementCount','syd']
+    self.text_area_1.text = columns
+    
     pass
 
   def drop_down_4_change(self, **event_args):

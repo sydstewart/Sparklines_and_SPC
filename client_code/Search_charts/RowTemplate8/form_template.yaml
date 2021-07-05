@@ -16,10 +16,6 @@ components:
   layout_properties: {column: ZYSCIZ}
   data_bindings:
   - {property: text, code: 'self.item[''title'']'}
-- type: Plot
-  properties: {height: 37}
-  name: plot_1
-  layout_properties: {column: WKSFSK}
 - type: Button
   properties: {role: null, align: left, tooltip: '', border: '', enabled: true, foreground: '',
     visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
@@ -28,4 +24,27 @@ components:
   name: button_1
   layout_properties: {column: ROQKYD}
   event_bindings: {click: button_1_click}
+- type: DropDown
+  properties:
+    role: null
+    align: full
+    tooltip: ''
+    placeholder: ''
+    border: ''
+    enabled: true
+    foreground: ''
+    items: [Hide, Trend, Chart, Step change, Show Data]
+    visible: true
+    font_size: null
+    font: ''
+    spacing_above: small
+    spacing_below: small
+    italic: false
+    background: ''
+    bold: false
+    underline: false
+    include_placeholder: false
+  name: drop_down_1
+  layout_properties: {column: WKSFSK}
+  event_bindings: {change: drop_down_1_change}
 is_package: true

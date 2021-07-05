@@ -101,9 +101,10 @@ components:
       role: null
       columns:
       - {id: OAFHNY, title: '', data_key: id, width: '30'}
-      - {id: ZYSCIZ, title: Chart Title, data_key: column_2}
+      - {id: ZYSCIZ, title: Chart Title, data_key: column_2, width: 217, expand: false}
       - {id: ROQKYD, title: '', data_key: '', width: '30'}
-      - {id: WKSFSK, title: '', data_key: column_3, width: ''}
+      - {id: WKSFSK, title: Select Chart Type, data_key: column_3, width: 121, expand: false}
+      - {id: LPUTSP, title: '', data_key: column_1}
       auto_header: true
       tooltip: ''
       border: ''
@@ -121,4 +122,8 @@ components:
       properties: {spacing_above: none, spacing_below: none, item_template: Search_charts.RowTemplate8}
       name: repeating_panel_1
       layout_properties: {}
+- type: Plot
+  properties: {}
+  name: plot_1
+  layout_properties: {slot: default}
 is_package: true

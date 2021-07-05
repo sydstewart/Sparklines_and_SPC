@@ -30,8 +30,13 @@ def get_default_bootnums():
    backBootnum =t['backgrBootnum']
    return bootnum,backBootnum
   
-@anvil.server.callable  
-def save_test(newtest):
-     print(newtest)
-     app_tables.test.add_row(**newtest)
+      
+@anvil.server.callable
+def update_chart(chart, chart_dict):
+  # check that the article given is really a row in the ‘articles’ table
+  if app_tables.charts.has_row(chart):
+   chart_dict['updated_last'] = datetime.now()
+   chart.update(**chart_dict)
+  else:
+    raise Exception("Chart does not exist")
   
