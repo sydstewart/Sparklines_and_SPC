@@ -26,3 +26,10 @@ def chart_columns(fileName):
     for i in columns:
         print(i)
     return columns
+  
+@anvil.server.callable
+def search_columns(list, platform):
+    for i in range(len(list)):
+        if list[i] == platform:
+            return True
+    return False
