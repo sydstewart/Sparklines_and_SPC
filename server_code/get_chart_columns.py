@@ -23,6 +23,7 @@ def chart_columns(fileName):
     dfcsv=pd.read_csv(io.BytesIO(m.get_bytes())) # ,parse_dates=[dateCol] , dayfirst= True, infer_datetime_format=True)
 #     dfcsv[dateCol] = pd.to_datetime(dfcsv[dateCol])
     columns = list(dfcsv.columns) 
+    print(columns)
     for i in columns:
         print(i)
     return columns

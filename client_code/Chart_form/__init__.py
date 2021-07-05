@@ -26,7 +26,7 @@ class Chart_form(Chart_formTemplate):
     (cat['folder_name'], cat) for cat in app_tables.folders.search(tables.order_by('folder_name', ascending=True), Organisation = organisation)
      ]
     self.drop_down_1.items = folders
-    
+    print(folders)
     # get filenames
     filenames = [(cat['name'], cat) for cat in app_tables.my_files.search(tables.order_by('name', ascending=True), Organisation = organisation)]
     self.drop_down_2.items= filenames
@@ -44,8 +44,8 @@ class Chart_form(Chart_formTemplate):
     fileName = self.drop_down_2.selected_value
 #     fileName = fileName['name']
     columns = anvil.server.call('chart_columns',fileName)
-    self.drop_down_3.items = columns
-#     self.drop_down_4.items = columns
+    self.drop_down_4.items = columns
+    self.drop_down_3.items = ['YM', 'DefectCount', 'ImprovementCount','syd']
     pass
 
   def drop_down_4_change(self, **event_args):

@@ -13,6 +13,7 @@ from ..Form1 import Form1
 from ..support_sparklines import support_sparklines
 from ..Search_charts import Search_charts
 from ..Form5 import Form5
+from ..Test import Test
 from .. import Globals
 
 class Home(HomeTemplate):
@@ -85,5 +86,12 @@ class Home(HomeTemplate):
     self.content_panel.add_component(Form5(),full_width_row=True)
     pass
    
+
+  def link_5_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.content_panel.clear()
+    self.content_panel.add_component(Test(),full_width_row=True)
+    pass
+
 
 

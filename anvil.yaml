@@ -177,6 +177,16 @@ db_schema:
       admin_ui: {order: 6, width: 200}
   access: {python_name: organisation, app_id: Z5VRNA37LKMLZOC5, server: full, client: full,
     table_mapping_name: null, table_mapping_id: null, table_id: 139157}
+- name: Test
+  id: 139374
+  python_name: test
+  columns:
+    uUZ8hc_CItg=:
+      name: Testname
+      type: string
+      admin_ui: {order: 0, width: 200}
+  access: {python_name: test, app_id: Z5VRNA37LKMLZOC5, server: full, client: full,
+    table_mapping_name: null, table_mapping_id: null, table_id: 139374}
 - name: received_messages
   id: 139158
   python_name: received_messages

@@ -16,7 +16,7 @@ components:
     name: label_8
     layout_properties: {slot: default, grid_position: 'MAEHJG,FEOQSX'}
   - type: ColumnPanel
-    properties: {role: card, col_widths: '{"PMGPMC":12,"IPHQKZ":19,"HMTTVP":10,"QWKODW":20,"PVNWRT":10,"DATIKR":20,"FPPLMO":10,"AKNFMN":20,"OYTTDI":10,"VVCQIF":20,"HLESJV":10,"XVJUVN":50,"QPXUQV":18,"BNGNGV":18,"DAVVIO":5}'}
+    properties: {role: card, col_widths: '{"PMGPMC":12,"IPHQKZ":19,"HMTTVP":10,"QWKODW":20,"PVNWRT":10,"DATIKR":20,"FPPLMO":10,"AKNFMN":20,"OYTTDI":10,"VVCQIF":20,"HLESJV":10,"XVJUVN":50,"BNGNGV":18,"DAVVIO":5}'}
     name: card_2
     layout_properties: {grid_position: 'UUJHNQ,LVHSCL'}
     components:
@@ -77,12 +77,11 @@ components:
         underline: false, icon: ''}
       name: label_2
       layout_properties: {grid_position: 'PBSRTE,PMGPMC'}
-    - type: TextBox
+    - type: DropDown
       properties: {}
-      name: text_box_2
-      layout_properties: {grid_position: 'PBSRTE,QPXUQV'}
+      name: drop_down_4
+      layout_properties: {grid_position: 'PBSRTE,UMDSBP'}
       data_bindings: []
-      event_bindings: {lost_focus: text_box_2_lost_focus}
     - type: TextBox
       properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
         border: '', enabled: true, foreground: '#f21818', visible: true, text: '*',

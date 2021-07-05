@@ -21,7 +21,7 @@ class RowTemplate8(RowTemplate8Template):
     """This method is called when the button is clicked"""
     chart_copy = dict(list(self.item))
     print(chart_copy)
-   
+    
   
 #     valid = False
      

@@ -29,3 +29,9 @@ def get_default_bootnums():
    bootnum = t['BootNumDefault']
    backBootnum =t['backgrBootnum']
    return bootnum,backBootnum
+  
+@anvil.server.callable  
+def save_test(newtest):
+     print(newtest)
+     app_tables.test.add_row(**newtest)
+  
