@@ -20,7 +20,7 @@ class RowTemplate8(RowTemplate8Template):
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     chart_copy = dict(list(self.item))
-     
+    print(chart_copy)
    
   
 #     valid = False

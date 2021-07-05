@@ -48,6 +48,8 @@ components:
       properties: {}
       name: drop_down_1
       layout_properties: {grid_position: 'PZEDYH,QWKODW'}
+      data_bindings:
+      - {property: selected_value, code: 'self.item[''folder_name'']', writeback: true}
     - type: Label
       properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
         visible: true, text: Select File Name, font_size: null, font: '', spacing_above: small,
@@ -60,6 +62,8 @@ components:
       name: drop_down_2
       layout_properties: {grid_position: 'PZEDYH,DATIKR'}
       event_bindings: {change: drop_down_2_change}
+      data_bindings:
+      - {property: selected_value, code: 'self.item[''fileName'']', writeback: true}
     - type: Label
       properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
         visible: true, text: DATE Column, font_size: null, font: '', spacing_above: small,
@@ -72,6 +76,8 @@ components:
       name: drop_down_3
       layout_properties: {grid_position: 'PBSRTE,HZNFNL'}
       event_bindings: {change: drop_down_3_change}
+      data_bindings:
+      - {property: selected_value, code: 'self.item[''dateCol'']', writeback: true}
     - type: Label
       properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
         visible: true, text: MEASURE, font_size: null, font: '', spacing_above: small,
@@ -84,6 +90,8 @@ components:
       name: drop_down_4
       layout_properties: {grid_position: 'PBSRTE,CYZLCI'}
       event_bindings: {change: drop_down_4_change}
+      data_bindings:
+      - {property: selected_value, code: 'self.item[''nameCol'']', writeback: true}
     - type: Label
       properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
         visible: true, text: Start Date, font_size: null, font: '', spacing_above: small,

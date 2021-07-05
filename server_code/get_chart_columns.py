@@ -14,7 +14,7 @@ import io
 def chart_columns(fileName):
   
     m=app_tables.my_files.get(name = fileName['name'])['media_obj'] 
-    t= app_tables.charts.get(file_name=fileName)
+#     t= app_tables.charts.get(file_name=fileName)
 #     chartid = t['id']
 #     dayfirst = t['DateDayFirst']
   #         print('DayFirst', dayfirst)

@@ -28,6 +28,8 @@ class Search_charts(Search_chartsTemplate):
   def folder_search_drop_down_change(self, **event_args):
     """This method is called when an item is selected"""
     self.text_box_1.text = ''
+     
+    
     
     # setup globals
     global folderselected , displayEdit

@@ -15,6 +15,10 @@ class Chart_form(Chart_formTemplate):
     self.init_components(**properties)
     self.label_4.visible = False
     self.data_grid_1.visible = False
+    
+    
+    
+    
     organisation = app_tables.organisation.get(id = 1)
     
     # get folders
@@ -24,6 +28,7 @@ class Chart_form(Chart_formTemplate):
     self.drop_down_1.items = folders
     
     # get filenames
+#     filenames = [(cat['file_name']['name'], cat) for cat in app_tables.charts.search(tables.order_by('file_name', ascending=True), Organisation = organisation)]
     filenames = [(cat['name'], cat) for cat in app_tables.my_files.search(tables.order_by('name', ascending=True), Organisation = organisation)]
     self.drop_down_2.items= filenames
     # Any code you write here will run when the form opens.
