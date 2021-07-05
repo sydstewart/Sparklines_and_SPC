@@ -58,6 +58,19 @@ class Home(HomeTemplate):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
     self.content_panel.add_component(Chart_form(), full_width_row=True)
+    new_chart = {}
+    # Open an alert displaying the 'Chart_form' Form
+    save_clicked = alert(
+      content=Chart_form(item=new_chart),
+      title="Add Chart",
+      large=True,
+      buttons=[("Save", True), ("Cancel", False)]
+    )
+
+    # If the alert returned 'True', the save button was clicked.
+    if save_clicked:
+      anvil.server.call('add_chart', new_chart)
+
     pass
   
   def link_1_click(self, **event_args):

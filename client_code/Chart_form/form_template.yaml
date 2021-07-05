@@ -16,7 +16,7 @@ components:
     name: label_8
     layout_properties: {slot: default, grid_position: 'MAEHJG,FEOQSX'}
   - type: ColumnPanel
-    properties: {role: card, col_widths: '{"PMGPMC":10,"HZNFNL":20,"IPHQKZ":10,"CYZLCI":20,"HMTTVP":10,"QWKODW":20,"PVNWRT":10,"DATIKR":20,"FPPLMO":10,"AKNFMN":20,"OYTTDI":10,"VVCQIF":20,"HLESJV":10,"XVJUVN":50}'}
+    properties: {role: card, col_widths: '{"PMGPMC":12,"IPHQKZ":12,"HMTTVP":10,"QWKODW":20,"PVNWRT":10,"DATIKR":20,"FPPLMO":10,"AKNFMN":20,"OYTTDI":10,"VVCQIF":20,"HLESJV":10,"XVJUVN":50,"QPXUQV":18,"BNGNGV":18}'}
     name: card_2
     layout_properties: {grid_position: 'UUJHNQ,LVHSCL'}
     components:
@@ -63,7 +63,7 @@ components:
       layout_properties: {grid_position: 'PZEDYH,DATIKR'}
       event_bindings: {change: drop_down_2_change}
       data_bindings:
-      - {property: selected_value, code: 'self.item[''fileName'']', writeback: true}
+      - {property: selected_value, code: 'self.item[''file_name'']', writeback: true}
     - type: Label
       properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
         visible: true, text: DATE Column, font_size: null, font: '', spacing_above: small,
@@ -71,13 +71,12 @@ components:
         underline: false, icon: ''}
       name: label_2
       layout_properties: {grid_position: 'PBSRTE,PMGPMC'}
-    - type: DropDown
+    - type: TextBox
       properties: {}
-      name: drop_down_3
-      layout_properties: {grid_position: 'PBSRTE,HZNFNL'}
-      event_bindings: {change: drop_down_3_change}
+      name: text_box_2
+      layout_properties: {grid_position: 'PBSRTE,QPXUQV'}
       data_bindings:
-      - {property: selected_value, code: 'self.item[''dateCol'']', writeback: true}
+      - {property: text, code: 'self.item[''dateCol'']', writeback: true}
     - type: Label
       properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
         visible: true, text: MEASURE, font_size: null, font: '', spacing_above: small,
@@ -85,13 +84,12 @@ components:
         underline: false, icon: ''}
       name: label_3
       layout_properties: {grid_position: 'PBSRTE,IPHQKZ'}
-    - type: DropDown
+    - type: TextBox
       properties: {}
-      name: drop_down_4
-      layout_properties: {grid_position: 'PBSRTE,CYZLCI'}
-      event_bindings: {change: drop_down_4_change}
+      name: text_box_3
+      layout_properties: {grid_position: 'PBSRTE,BNGNGV'}
       data_bindings:
-      - {property: selected_value, code: 'self.item[''nameCol'']', writeback: true}
+      - {property: text, code: 'self.item[''nameCol'']', writeback: true}
     - type: Label
       properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
         visible: true, text: Start Date, font_size: null, font: '', spacing_above: small,
