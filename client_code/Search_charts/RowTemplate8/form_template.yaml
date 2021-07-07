@@ -27,7 +27,7 @@ components:
 - type: DropDown
   properties:
     role: null
-    align: full
+    align: right
     tooltip: ''
     placeholder: ''
     border: ''
@@ -35,16 +35,20 @@ components:
     foreground: ''
     items: [Hide, Trend, Chart, Step change, Show Data]
     visible: true
-    font_size: null
+    font_size: 12
     font: ''
     spacing_above: small
     spacing_below: small
     italic: false
     background: ''
-    bold: false
+    bold: true
     underline: false
     include_placeholder: false
   name: drop_down_1
   layout_properties: {column: WKSFSK}
   event_bindings: {change: drop_down_1_change}
+- type: Plot
+  properties: {}
+  name: plot_1
+  layout_properties: {column: null}
 is_package: true

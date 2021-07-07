@@ -8,9 +8,9 @@ from anvil.tables import app_tables
 import anvil.server
 import plotly.graph_objects as go
 
-from . import ols_data
-
-  #ALL POINTS 
+# from . import ols_data
+from .control_charts import ols_data
+#ALL POINTS 
 @anvil.server.callable  
 def get_pdcalls(chartid,start_date, end_date):
     import pandas as pd

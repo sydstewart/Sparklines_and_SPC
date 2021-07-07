@@ -58,7 +58,7 @@ class Home(HomeTemplate):
   def link_2_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.content_panel.clear()
-    self.content_panel.add_component(Chart_form(), full_width_row=True)
+#     self.content_panel.add_component(Chart_form(), full_width_row=True)
     new_chart = {}
     # Open an alert displaying the 'Chart_form' Form
     save_clicked = alert(

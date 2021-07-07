@@ -107,7 +107,7 @@ def ols_data(chartid):
     nameCol = t['nameCol']
     dateCol = t['dateCol']
     title =  t['title']
-    
+    noteCol =t['noteCol']
 
     id=t['id']
     start_date =t['astart_date']
@@ -201,7 +201,7 @@ def ols_data(chartid):
 #         print("Returning dfcsv")
         print("Data Load Time: " + str(datetime.now() - then) + '\n')
 
-        return dfcsv, nameCol, dateCol, title, conf_limit, format_col
+        return dfcsv, nameCol, dateCol, title, conf_limit, format_col, noteCol
   
 
 @anvil.server.callable  
