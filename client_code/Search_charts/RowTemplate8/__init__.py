@@ -9,7 +9,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from ...Chart_form import Chart_form 
-
+from datetime import datetime
 
 class RowTemplate8(RowTemplate8Template):
   def __init__(self, **properties):

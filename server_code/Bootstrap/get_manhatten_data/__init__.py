@@ -7,7 +7,8 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 import numpy as np
-from ..Creating_Chart_Types.Getting_Data_for_Charts import ols_data
+
+
  
 @anvil.server.callable  
 def get_pdcalls_manhatten(chartid):
