@@ -346,10 +346,6 @@ db_schema:
       backend: anvil.tables.Row
       admin_ui: {order: 19, width: 200}
       table_id: 139155
-    uatJQ7XyodM=:
-      name: json
-      type: media
-      admin_ui: {order: 31, width: 200}
     eSv3aAFABP4=:
       name: no_of_steps
       type: number
@@ -382,6 +378,10 @@ db_schema:
       name: backBootnum
       type: number
       admin_ui: {order: 28, width: 200}
+    LM5pmsD7cKQ=:
+      name: json
+      type: string
+      admin_ui: {order: 31, width: 200}
     sZRufixPqik=:
       name: file_name
       type: liveObject

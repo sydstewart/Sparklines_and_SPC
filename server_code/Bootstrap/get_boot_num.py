@@ -26,4 +26,3 @@ def get_boot_num(chartid):
      bootnum = t['bootnum'] 
      backbootnum =  t['backBootnum'] 
      return  bootnum, backbootnum
-

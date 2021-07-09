@@ -8,7 +8,7 @@ from anvil.tables import app_tables
 import anvil.server
 import numpy as np
 
-from ...Creating_Chart_types.Getting_Data_for_Charts import ols_data
+from ..Creating_Chart_types.Getting_Data_for_Charts import ols_data
  
 
 

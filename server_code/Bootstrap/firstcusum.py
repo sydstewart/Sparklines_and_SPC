@@ -20,7 +20,7 @@ from datetime import datetime
 #   print("Hello, " + name + "!")
 #   return 42
 #
-
+@anvil.server.callable
 def firstcusum(df, pointname, pointdate, cusum_control, x):
     import pandas as pd
 #     print('Syd99', pointname, pointdate, cusum_control, x)
@@ -135,5 +135,4 @@ def firstcusum(df, pointname, pointdate, cusum_control, x):
 #         print('Turnptmin when maxcusum < 0 and mincusum > 0 =', turnpt)
 #     print('turnpt=',turnpt)
     return sdiff, dx, pointmean, turnpt, z, y
-
 

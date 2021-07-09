@@ -140,3 +140,4 @@ def cusbootstrap(dx, pointmean, pointname, sdiff, bootnum, total_rows, cusum_con
 #     print ("Time to completion in Cusbootstrap",(time.time() - start_time))
     return conflevel, cusum_control, x, fog, countr
   
+

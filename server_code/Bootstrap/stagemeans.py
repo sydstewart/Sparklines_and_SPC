@@ -166,3 +166,4 @@ def stagemeans (cusum_control, dx, df, pointname, pointdate, decplaces):
 #         print (manhatten)
 
         return cusum_control , manhatten
+
