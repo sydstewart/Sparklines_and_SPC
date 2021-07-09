@@ -290,6 +290,10 @@ db_schema:
       name: fill_missing_dates
       type: bool
       admin_ui: {order: 25, width: 200}
+    S2z_t4FuSpw=:
+      name: Chart_last_saved
+      type: datetime
+      admin_ui: {order: 31, width: 200}
     1uqnotayi_4=:
       name: astart_date
       type: datetime
@@ -298,10 +302,6 @@ db_schema:
       name: End_date_Overwrite
       type: bool
       admin_ui: {order: 25, width: 200}
-    o0kh0rOpDdA=:
-      name: Chart_last_saved
-      type: datetime
-      admin_ui: {order: 33, width: 200}
     dg9o+N2IumQ=:
       name: mindate
       type: datetime
@@ -346,6 +346,10 @@ db_schema:
       backend: anvil.tables.Row
       admin_ui: {order: 19, width: 200}
       table_id: 139155
+    uatJQ7XyodM=:
+      name: json
+      type: media
+      admin_ui: {order: 31, width: 200}
     eSv3aAFABP4=:
       name: no_of_steps
       type: number
