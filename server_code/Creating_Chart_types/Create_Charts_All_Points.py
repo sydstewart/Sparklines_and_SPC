@@ -7,7 +7,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 import plotly.graph_objects as go
-
+from ..Creating_Chart_types.Getting_Data_for_Charts import ols_data
 # from ..Getting_Data_for_Charts import ols_data
 
 
@@ -17,7 +17,7 @@ def get_pdcalls(chartid,start_date, end_date):
     import pandas as pd
     import anvil.server
     from tables import app_tables
-    from ServerPackage2.get_dataframe import get_dataframe
+    
     dfcsv, nameCol, dateCol, title, conf_limit, formatCol , noteCol = ols_data(chartid)
     
     scatter = [go.Scatter(x=dfcsv[dateCol],

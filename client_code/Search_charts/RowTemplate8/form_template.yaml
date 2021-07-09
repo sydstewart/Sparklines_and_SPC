@@ -48,7 +48,7 @@ components:
   layout_properties: {column: WKSFSK}
   event_bindings: {change: drop_down_1_change}
 - type: Plot
-  properties: {}
+  properties: {height: 593}
   name: plot_1
   layout_properties: {column: null}
 is_package: true

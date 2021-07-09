@@ -8,7 +8,6 @@ from anvil.tables import app_tables
 from datetime import datetime
 import plotly.graph_objects as go
 
-
 # This is a module.
 # You can define variables and functions here, and use them from any form. For example, in a top-level form:
 #
