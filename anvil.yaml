@@ -42,7 +42,7 @@ scheduled_tasks:
     at: {hour: 7, minute: 16}
   job_id: CUTBITDZ
 dependencies:
-- app_id: ELGVWPHUGRK3HN4B
+- app_id: PC5UML37372CYYV5
   version: {dev: false}
 services:
 - source: /runtime/services/anvil/email.yml
