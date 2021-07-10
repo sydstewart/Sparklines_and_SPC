@@ -21,22 +21,17 @@ def showdata(chartid,  filename):
      dfcsv=pd.read_csv(io.BytesIO(m.get_bytes()),parse_dates= [dateCol] , dayfirst=dayfirst, infer_datetime_format=True)
      dfcsv[dateCol] =  pd.to_datetime(dfcsv[dateCol]).dt.strftime('%Y/%m/%d')
      dfcsv[nameCol] = dfcsv[nameCol] .map(lambda x: '{0:,.2f}'.format(x))
-#      cols = [dateCol,nameCol]
-#      dfcsv = dfcsv[dfcsv.columns[cols]]
-#      dfcsv[nameCol] = dfcsv[nameCol].round(2)
-#      dfcsv[dateCol]   = pd.to_datetime(dfcsv[dateCol])
-     # Format with commas and round off to two decimal places in pandas
-#      pd.options.display.float_format = "{:,.2f}".format
+
      dfcsv = dfcsv.sort_values(by=dfcsv.columns[0], ascending=False)
-#      columnlist = [dateCol,nameCol]
+
      data=[go.Table(
           header=dict(values= [dateCol,nameCol], # values=list(df.columns)
                       line_color='darkslategray',
                       fill_color='lightskyblue',
-                      align='center'),
+                      align='right'),
           cells=dict(values=[(dfcsv[dateCol]),dfcsv[nameCol]], # 2nd column
                     line_color='darkslategray',
                     fill_color='lightcyan',
-                    align='center'))
+                    align='right'))
       ]
      return data
