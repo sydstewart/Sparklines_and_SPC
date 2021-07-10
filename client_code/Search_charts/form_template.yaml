@@ -30,10 +30,10 @@ components:
       name: label_5
       layout_properties: {grid_position: 'ECBDSA,AEIOYS', full_width_row: true}
     - type: TextBox
-      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      properties: {role: null, align: right, hide_text: false, tooltip: '', placeholder: '',
         border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 12,
         font: '', spacing_above: none, type: number, spacing_below: none, italic: true,
-        background: '', bold: false, underline: false}
+        background: '', bold: true, underline: false}
       name: text_box_2
       layout_properties: {grid_position: 'ECBDSA,SRSSDT', full_width_row: true}
     - type: Label
@@ -102,9 +102,13 @@ components:
       columns:
       - {id: OAFHNY, title: '', data_key: id, width: '30'}
       - {id: ZYSCIZ, title: Chart Title, data_key: column_2, width: 217, expand: false}
+      - {id: WKSFSK, title: Select Chart Type, data_key: column_3, width: '160', expand: false}
       - {id: ROQKYD, title: '', data_key: '', width: '30'}
-      - {id: WKSFSK, title: Select Chart Type, data_key: column_3, width: 121, expand: false}
-      - {id: LPUTSP, title: '', data_key: column_1}
+      - {id: LPUTSP, title: Conf Level, data_key: column_1, width: '80'}
+      - {id: OABOIH, title: Mov Avg., data_key: column_4, width: '90'}
+      - {id: NKYJWU, title: Start Date, data_key: column_5, width: '180'}
+      - {id: VFVWEK, title: End Date, data_key: column_6, width: '180'}
+      - {id: HECZRL, title: Column 7, data_key: column_7}
       auto_header: true
       tooltip: ''
       border: ''

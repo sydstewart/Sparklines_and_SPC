@@ -51,4 +51,56 @@ components:
   properties: {height: 593}
   name: plot_1
   layout_properties: {column: null}
+- type: DropDown
+  properties:
+    role: null
+    align: right
+    tooltip: ''
+    placeholder: ''
+    border: ''
+    enabled: true
+    foreground: ''
+    items: ['90', '95', '99']
+    visible: true
+    font_size: 12
+    font: ''
+    spacing_above: small
+    spacing_below: small
+    italic: false
+    background: ''
+    bold: true
+    underline: false
+    include_placeholder: false
+  name: drop_down_2
+  layout_properties: {column: LPUTSP}
+  event_bindings: {change: drop_down_2_change}
+  data_bindings:
+  - {property: selected_value, code: 'self.item[''conf_limit_text'']', writeback: true}
+- type: TextBox
+  properties: {role: null, align: center, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 12,
+    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+    background: '', bold: true, underline: false}
+  name: text_box_1
+  layout_properties: {column: OABOIH}
+  data_bindings:
+  - {property: text, code: 'self.item[''mov_avg'']', writeback: true}
+- type: DatePicker
+  properties: {role: null, align: left, max_date: '', pick_time: true, tooltip: '',
+    placeholder: '', border: '', enabled: true, foreground: '', visible: true, font_size: 12,
+    font: '', spacing_above: small, spacing_below: small, italic: false, date: '',
+    min_date: '', background: '', bold: true, underline: false, format: ''}
+  name: date_picker_1
+  layout_properties: {column: NKYJWU}
+  data_bindings:
+  - {property: date, code: 'self.item[''astart_date'']', writeback: true}
+- type: DatePicker
+  properties: {role: null, align: left, max_date: '', pick_time: true, tooltip: '',
+    placeholder: '', border: '', enabled: true, foreground: '', visible: true, font_size: 12,
+    font: '', spacing_above: small, spacing_below: small, italic: false, date: '',
+    min_date: '', background: '', bold: true, underline: false, format: ''}
+  name: date_picker_2
+  layout_properties: {column: VFVWEK}
+  data_bindings:
+  - {property: date, code: 'self.item[''aend_date'']', writeback: true}
 is_package: true

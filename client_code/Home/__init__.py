@@ -74,24 +74,7 @@ class Home(HomeTemplate):
 
     pass
   
-  def link_1_click(self, **event_args):
-    """This method is called when the link is clicked"""
-    self.content_panel.clear()
-    self.content_panel.add_component(support_sparklines(),full_width_row=True)
-    pass
 
-  def link_4_click(self, **event_args):
-    """This method is called when the link is clicked"""
-    self.content_panel.clear()
-    self.content_panel.add_component(Form5(),full_width_row=True)
-    pass
-   
-
-  def link_5_click(self, **event_args):
-    """This method is called when the link is clicked"""
-    self.content_panel.clear()
-    self.content_panel.add_component(Test(),full_width_row=True)
-    pass
 
 
 

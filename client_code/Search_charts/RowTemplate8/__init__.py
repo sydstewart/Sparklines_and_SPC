@@ -60,7 +60,7 @@ class RowTemplate8(RowTemplate8Template):
     self.refresh_data_bindings()
     pass
   
-  # Select Charts
+# Select Charts
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
     from ...Chart_Types import charts , trends , step_changes, tables
@@ -83,5 +83,17 @@ class RowTemplate8(RowTemplate8Template):
     if self.drop_down_1.selected_value == "Hide":           
              self.plot_1.visible = False     
     pass
+  
+# conf Level dropdown
+  def drop_down_2_change(self, **event_args):
+    """This method is called when an item is selected"""
+    from ...Chart_Types import charts , trends , step_changes, tables
+
+    stepchangeStart = datetime.now()
+    step_changes(self)
+  
+    pass
+    
+
 
 
