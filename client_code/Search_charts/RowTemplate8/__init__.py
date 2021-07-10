@@ -78,7 +78,7 @@ class RowTemplate8(RowTemplate8Template):
           chartid = chart_copy['id']
           filename = chart_copy['file_name']['name']
           print('filename=',filename)
-          data = anvil.server.call('tables',chartid, filename) 
+          data = anvil.server.call('showdata',chartid, filename) 
           self.plot_1.data = data
     if self.drop_down_1.selected_value == "Hide":           
              self.plot_1.visible = False     
