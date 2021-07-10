@@ -41,9 +41,7 @@ scheduled_tasks:
     every: day
     at: {hour: 7, minute: 16}
   job_id: CUTBITDZ
-dependencies:
-- app_id: PC5UML37372CYYV5
-  version: {dev: true}
+dependencies: []
 services:
 - source: /runtime/services/anvil/email.yml
   client_config: {}
