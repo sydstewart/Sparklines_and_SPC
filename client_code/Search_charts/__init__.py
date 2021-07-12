@@ -34,8 +34,10 @@ class Search_charts(Search_chartsTemplate):
     # setup globals
     global folderselected , displayEdit
     folder =self.folder_search_drop_down.selected_value
-    Globals.folderselected = folder['Folder']
-    
+    if folder is not None:
+        Globals.folderselected = folder['Folder']
+    else:
+        alert(' Enter a Folder!')
     
     # get charts for folder 
     UserdisplayEdit, chart_rows = anvil.server.call('display_charts', Globals.folderselected, Globals.loggedin_user, archive = self.archive_chkbox.checked)
@@ -76,22 +78,24 @@ class Search_charts(Search_chartsTemplate):
 #     then_start =  datetime.now()
     global folderselected , displayEdit
     folder =self.folder_search_drop_down.selected_value
-    Globals.folderselected = folder['Folder']
-    
-#     then =  datetime.now()
-    loggedin_user = anvil.users.get_user()
-#     print("Client get user Time: " + str(datetime.now() - then) + '\n')
-    
-    # Note: needs 'UserdisplayEdit' to control edit buttons on charts displayed
-#     then =  datetime.now()
-    UserdisplayEdit, chart_rows = anvil.server.call('display_charts', Globals.folderselected, loggedin_user, archive = self.archive_chkbox.checked)
-#     print("Client combined useraccess and chartrows Time: " + str(datetime.now() - then) + '\n')
-    
-    Globals.displayEdit =UserdisplayEdit
-#     print ('Folder selected=',folder['Folder']['folder_name'])
-#     then =  datetime.now()
-#     UserdisplayEdit = anvil.server.call('check_acccess_level', Globals.folderselected, loggedin_user)
-#     print("Client check_access_level call Time: " + str(datetime.now() - then) + '\n')
+    if folder is not None:
+        Globals.folderselected = folder['Folder']
+   
+      
+    #     then =  datetime.now()
+        loggedin_user = anvil.users.get_user()
+    #     print("Client get user Time: " + str(datetime.now() - then) + '\n')
+        
+        # Note: needs 'UserdisplayEdit' to control edit buttons on charts displayed
+    #     then =  datetime.now()
+        UserdisplayEdit, chart_rows = anvil.server.call('display_charts', Globals.folderselected, loggedin_user, archive = self.archive_chkbox.checked)
+    #     print("Client combined useraccess and chartrows Time: " + str(datetime.now() - then) + '\n')
+        
+        Globals.displayEdit =UserdisplayEdit
+    #     print ('Folder selected=',folder['Folder']['folder_name'])
+    #     then =  datetime.now()
+    #     UserdisplayEdit = anvil.server.call('check_acccess_level', Globals.folderselected, loggedin_user)
+    #     print("Client check_access_level call Time: " + str(datetime.now() - then) + '\n')
     
 
     
@@ -101,10 +105,12 @@ class Search_charts(Search_chartsTemplate):
 
 #     chart_rows= app_tables.charts.search(folder_name = folder, archive = archive  )
 #     then =  datetime.now()
-    hits = len(chart_rows)
-    self.text_box_2.text = hits
-#     print('Hits=', hits)
-    self.repeating_panel_1.items=chart_rows
+        hits = len(chart_rows)
+        self.text_box_2.text = hits
+  #     print('Hits=', hits)
+        self.repeating_panel_1.items=chart_rows
+    else:
+        alert('Enter a Folder!')
     pass
    
 
