@@ -17,10 +17,10 @@ components:
   data_bindings:
   - {property: text, code: 'self.item[''title'']'}
 - type: Button
-  properties: {role: null, align: left, tooltip: '', border: '', enabled: true, foreground: '',
-    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: 'fa:pencil-square-o'}
+  properties: {role: null, align: left, tooltip: Edit this Chart's settings, border: '',
+    enabled: true, foreground: '', visible: true, text: '', font_size: null, font: '',
+    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false, icon: 'fa:pencil-square-o'}
   name: button_1
   layout_properties: {column: ROQKYD}
   event_bindings: {click: button_1_click}
@@ -28,7 +28,7 @@ components:
   properties:
     role: null
     align: right
-    tooltip: ''
+    tooltip: Select the chart to display
     placeholder: ''
     border: ''
     enabled: true
@@ -104,10 +104,10 @@ components:
   data_bindings:
   - {property: date, code: 'self.item[''aend_date'']', writeback: true}
 - type: Button
-  properties: {role: null, align: left, tooltip: '', border: '', enabled: true, foreground: '',
-    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
-    spacing_below: small, italic: false, background: '', bold: false, underline: false,
-    icon: 'fa:ambulance'}
+  properties: {role: null, align: left, tooltip: Update the step chart in background,
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+    font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false, icon: 'fa:ambulance'}
   name: button_2
   layout_properties: {column: TRWEJJ}
   event_bindings: {click: button_2_click}

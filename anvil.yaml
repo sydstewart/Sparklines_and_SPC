@@ -41,6 +41,12 @@ scheduled_tasks:
     every: day
     at: {hour: 7, minute: 16}
   job_id: CUTBITDZ
+- task_name: last_date_update_background
+  time_spec:
+    n: 5
+    every: minute
+    at: {}
+  job_id: XAOJIKRO
 dependencies: []
 services:
 - source: /runtime/services/anvil/email.yml

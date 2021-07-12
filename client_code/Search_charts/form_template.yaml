@@ -123,7 +123,9 @@ components:
     layout_properties: {grid_position: 'NVLIRZ,RBHBGS', full_width_row: true}
     components:
     - type: RepeatingPanel
-      properties: {spacing_above: none, spacing_below: none, item_template: Search_charts.RowTemplate8}
+      properties: {role: null, tooltip: Update this step chart in background, border: '',
+        foreground: '', items: null, visible: true, spacing_above: none, spacing_below: none,
+        item_template: Search_charts.RowTemplate8, background: ''}
       name: repeating_panel_1
       layout_properties: {}
 - type: Plot
