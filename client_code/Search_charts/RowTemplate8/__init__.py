@@ -103,6 +103,12 @@ class RowTemplate8(RowTemplate8Template):
     pass
    
 
+  def check_box_1_change(self, **event_args):
+    """This method is called when this checkbox is checked or unchecked"""
+    self.refresh_data_bindings()
+    pass
+
+
 
 
 

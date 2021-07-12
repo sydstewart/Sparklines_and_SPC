@@ -118,5 +118,7 @@ components:
     underline: false}
   name: check_box_1
   layout_properties: {column: LDVLUY}
-  data_bindings: []
+  data_bindings:
+  - {property: checked, code: 'self.item[''archive'']', writeback: true}
+  event_bindings: {change: check_box_1_change}
 is_package: true

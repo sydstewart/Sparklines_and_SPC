@@ -68,3 +68,43 @@ class Search_charts(Search_chartsTemplate):
     self.folder_search_drop_down.visible = True
 
   pass
+
+  def archive_chkbox_change(self, **event_args):
+    """This method is called when this checkbox is checked or unchecked"""
+    self.text_box_1.text = ''
+    self.text_box_2.text = 0
+#     then_start =  datetime.now()
+    global folderselected , displayEdit
+    folder =self.folder_search_drop_down.selected_value
+    Globals.folderselected = folder['Folder']
+    
+#     then =  datetime.now()
+    loggedin_user = anvil.users.get_user()
+#     print("Client get user Time: " + str(datetime.now() - then) + '\n')
+    
+    # Note: needs 'UserdisplayEdit' to control edit buttons on charts displayed
+#     then =  datetime.now()
+    UserdisplayEdit, chart_rows = anvil.server.call('display_charts', Globals.folderselected, loggedin_user, archive = self.archive_chkbox.checked)
+#     print("Client combined useraccess and chartrows Time: " + str(datetime.now() - then) + '\n')
+    
+    Globals.displayEdit =UserdisplayEdit
+#     print ('Folder selected=',folder['Folder']['folder_name'])
+#     then =  datetime.now()
+#     UserdisplayEdit = anvil.server.call('check_acccess_level', Globals.folderselected, loggedin_user)
+#     print("Client check_access_level call Time: " + str(datetime.now() - then) + '\n')
+    
+
+    
+#     then =  datetime.now() 
+#     chart_rows= anvil.server.call('get_data_by_folder', folder, archive = self.archive_chkbox.checked)
+#     print("Client get_data_by_folder Time: " + str(datetime.now() - then) + '\n')
+
+#     chart_rows= app_tables.charts.search(folder_name = folder, archive = archive  )
+#     then =  datetime.now()
+    hits = len(chart_rows)
+    self.text_box_2.text = hits
+#     print('Hits=', hits)
+    self.repeating_panel_1.items=chart_rows
+    pass
+   
+
