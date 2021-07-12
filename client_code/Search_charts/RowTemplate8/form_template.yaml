@@ -111,4 +111,12 @@ components:
   name: button_2
   layout_properties: {column: TRWEJJ}
   event_bindings: {click: button_2_click}
+- type: CheckBox
+  properties: {role: null, align: left, tooltip: Archive Chart, border: '', enabled: true,
+    foreground: '', visible: true, text: Archive, font_size: 12, font: '', spacing_above: small,
+    spacing_below: small, italic: false, background: '', bold: false, checked: false,
+    underline: false}
+  name: check_box_1
+  layout_properties: {column: LDVLUY}
+  data_bindings: []
 is_package: true
