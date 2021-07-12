@@ -108,7 +108,6 @@ components:
       - {id: OABOIH, title: Mov Avg., data_key: column_4, width: '90'}
       - {id: NKYJWU, title: Start Date, data_key: column_5, width: '180'}
       - {id: VFVWEK, title: End Date, data_key: column_6, width: '180'}
-      - {id: HECZRL, title: Column 7, data_key: column_7}
       - {id: TRWEJJ, title: '', data_key: column_8, width: '50'}
       auto_header: true
       tooltip: ''

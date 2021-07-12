@@ -29,7 +29,7 @@ def batch_step_charts():
     from ..Chart_Maintenance.Loading_Saving_Charts_JSON import save_as_json
     charts  = anvil.server.call('list_charts_not_archived') # when filename exist
     for row in charts:
-                print (row['id'])
+                print ('Chartid=',row['id'])
                 chartid = row['id']
  
                 conf_limit_text, last_conf_limit = anvil.server.call('get_conf_limits', chartid)
