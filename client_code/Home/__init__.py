@@ -73,6 +73,18 @@ class Home(HomeTemplate):
       anvil.server.call('add_chart', new_chart)
 
     pass
+
+  def link_1_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    anvil.server.call('last_date_update_background')
+    pass
+
+  def link_4_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    anvil.server.call('get_chart_background')
+    pass
+
+
   
 
 

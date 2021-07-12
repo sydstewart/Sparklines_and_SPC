@@ -95,5 +95,14 @@ class RowTemplate8(RowTemplate8Template):
     pass
     
 
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    chart_copy = dict(list(self.item))
+    chartid = chart_copy['id']
+    anvil.server.call('get_chart_background_individual', chartid)
+    pass
+   
+
+
 
 
