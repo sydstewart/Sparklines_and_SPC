@@ -105,6 +105,22 @@ components:
       - {property: selected_value, code: 'self.item[''file_name'']', writeback: true}
     - type: Label
       properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+        visible: true, text: File last Updated, font_size: 10, font: '', spacing_above: none,
+        icon_align: left, spacing_below: none, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_11
+      layout_properties: {grid_position: 'KKRVPL,QSQWCC'}
+    - type: TextArea
+      properties: {role: null, align: left, height: 19, tooltip: '', placeholder: '',
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 10,
+        auto_expand: false, font: '', spacing_above: small, spacing_below: small,
+        italic: false, background: '', bold: false, underline: false}
+      name: text_area_2
+      layout_properties: {grid_position: 'KKRVPL,KRENQC'}
+      data_bindings:
+      - {property: text, code: 'self.item[''file_name''][''last_uploaded'']', writeback: true}
+    - type: Label
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
         visible: true, text: Columns in CSV File, font_size: 10, font: '', spacing_above: small,
         icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
         underline: false, icon: ''}
