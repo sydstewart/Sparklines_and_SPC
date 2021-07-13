@@ -15,6 +15,8 @@ from ..Search_charts import Search_charts
 from ..Form5 import Form5
 from ..Test import Test
 from .. import Globals
+from datetime import datetime
+ 
 
 class Home(HomeTemplate):
   def __init__(self, **properties):
@@ -32,6 +34,8 @@ class Home(HomeTemplate):
     self.content_panel.clear()
     self.content_panel.add_component(Search_charts(), full_width_row=True)
     
+    client = tz.tzlocal()
+    Globals.offset = datetime.now(client).utcoffset().seconds 
        
     # #hyperlinks
     if get_url_hash() == 'Chart_form':
@@ -83,6 +87,15 @@ class Home(HomeTemplate):
     """This method is called when the link is clicked"""
     anvil.server.call('get_chart_background')
     pass
+
+  def link_5_click(self, **event_args):
+    """This method is called when the link is clicked"""
+       
+    from . import Globals
+    EXCHR ="GBPUSD=X"
+    anvil.server.call('get_usgb', Globals.offset, EXCHR)
+    pass
+
 
 
   
