@@ -32,3 +32,17 @@ class Stacked_Sales_Charts(Stacked_Sales_ChartsTemplate):
     create_step_chart(self,chart_copy, chart_position)
     # Any code you write here will run when the form opens.
     
+    chartid = 71
+    chart_copy = app_tables.charts.get(id = chartid) 
+    print(chart_copy['id'])
+    chart_position = 4
+    create_step_chart(self,chart_copy, chart_position)
+    # Any code you write here will run when the form opens.
+    
+    chartid = 61
+    chart_copy = app_tables.charts.get(id = chartid) 
+    print(chart_copy['id'])
+    chart_position = 5
+    create_step_chart(self,chart_copy, chart_position)
+    # Any code you write here will run when the form opens.
+    

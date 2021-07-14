@@ -17,6 +17,7 @@ from ..Test import Test
 from .. import Globals
 from datetime import datetime
 from ..Stacked_Sales_Charts import Stacked_Sales_Charts
+from ..Main_Account_users import Main_Account_users
 
 class Home(HomeTemplate):
   def __init__(self, **properties):
@@ -51,19 +52,29 @@ class Home(HomeTemplate):
     elif get_url_hash() == 'Stacked_Sales_charts':
         self.content_panel.clear()
         self.content_panel.add_component(Stacked_Sales_charts(), full_width_row=True)
-         
+  
+  def reset_links(self, **event_args):
+    self.link_3.role = ''
+    self.link_2.role = ''      
 
   # Search Menu  
   def link_3_click(self, **event_args):
     """This method is called when the link is clicked"""
+    self.reset_links()
+    self.link_3.role = 'selected'
+
     self.content_panel.clear()
     self.content_panel.add_component(Search_charts(), full_width_row=True)
+    self.reset_links()
     pass
     
     
   # New Chart form   
   def link_2_click(self, **event_args):
     """This method is called when the link is clicked"""
+    self.reset_links()
+    self.link_2.role = 'selected'
+
     self.content_panel.clear()
 #     self.content_panel.add_component(Chart_form(), full_width_row=True)
     new_chart = {}
@@ -78,11 +89,13 @@ class Home(HomeTemplate):
     # If the alert returned 'True', the save button was clicked.
     if save_clicked:
       anvil.server.call('add_chart', new_chart)
-
+    self.reset_links()
     pass
 
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
+    self.reset_links()
+    self.link_1.role = 'selected'
     anvil.server.call('last_date_update_background')
     pass
 
@@ -93,18 +106,22 @@ class Home(HomeTemplate):
 
   def link_5_click(self, **event_args):
     """This method is called when the link is clicked"""
-       
-    from . import Globals
-    EXCHR ="GBPUSD=X"
-    anvil.server.call('get_usgb', Globals.offset, EXCHR)
+    self.reset_links()
+    self.link_5.role = 'selected'
+    self.content_panel.clear()
+    self.content_panel.add_component(Main_Account_users(), full_width_row=True)
+    self.reset_links()   
+
     pass
 
   # stacked Sales Charts
   def link_6_click(self, **event_args):
     """This method is called when the link is clicked"""
+    self.reset_links()
+    self.link_6.role = 'selected'
     self.content_panel.clear()
     self.content_panel.add_component(Stacked_Sales_Charts(), full_width_row=True)
-   
+    self.reset_links()
     pass
 
 

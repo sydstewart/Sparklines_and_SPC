@@ -1,0 +1,73 @@
+container: {type: ColumnPanel}
+components:
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: User Email, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_1
+  layout_properties:
+    col_widths: {}
+    grid_position: LQGJXG,QOFVYY
+- type: TextBox
+  properties: {}
+  name: text_box_1
+  layout_properties:
+    col_widths: {}
+    grid_position: PBGBVI,DYTBMY
+  data_bindings:
+  - {property: text, code: 'self.item[''email'']', writeback: true}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: User Full Name, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_2
+  layout_properties:
+    col_widths: {}
+    grid_position: LQRDKY,WLXMHZ EKKQTP,ESGHMA
+- type: TextBox
+  properties: {}
+  name: text_box_2
+  layout_properties:
+    col_widths: {}
+    grid_position: LQRDKY,WLXMHZ VNUNCX,ROHXQN
+  data_bindings:
+  - {property: text, code: 'self.item[''user_name'']', writeback: true}
+- type: Label
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: Access Type, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_3
+  layout_properties:
+    col_widths: {}
+    grid_position: LQRDKY,WLXMHZ SFVGAR,RLWFFS
+- type: DropDown
+  properties:
+    role: null
+    align: full
+    tooltip: ''
+    placeholder: ''
+    border: ''
+    enabled: true
+    foreground: ''
+    items: [admin, Viewer]
+    visible: true
+    font_size: null
+    font: ''
+    spacing_above: small
+    spacing_below: small
+    italic: false
+    background: ''
+    bold: false
+    underline: false
+    include_placeholder: true
+  name: drop_down_1
+  layout_properties:
+    col_widths: {}
+    grid_position: LQRDKY,WLXMHZ PJTXXQ,MBSNWG
+  data_bindings:
+  - {property: selected_value, code: 'self.item[''user_type'']', writeback: true}
+  event_bindings: {change: drop_down_1_change}
+is_package: true

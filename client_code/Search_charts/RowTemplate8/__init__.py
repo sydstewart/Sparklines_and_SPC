@@ -89,9 +89,9 @@ class RowTemplate8(RowTemplate8Template):
   def drop_down_2_change(self, **event_args):
     """This method is called when an item is selected"""
     from ...Chart_Types import charts , trends , step_changes, tables
-
+    chart_position = 1
     stepchangeStart = datetime.now()
-    step_changes(self)
+    step_changes(self,chart_position)
   
     pass
     

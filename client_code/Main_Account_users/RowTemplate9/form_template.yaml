@@ -1,0 +1,31 @@
+container:
+  type: DataRowPanel
+  data_bindings:
+  - {property: tag, code: 'self.item[''enabled'']'}
+components:
+- type: Label
+  properties: {}
+  name: label_1
+  layout_properties: {column: IOPSJA}
+  data_bindings:
+  - {property: text, code: 'self.item[''email'']'}
+- type: Label
+  properties: {}
+  name: label_2
+  layout_properties: {column: UADCPM}
+  data_bindings:
+  - {property: text, code: 'self.item[''user_name'']'}
+- type: Label
+  properties: {}
+  name: label_3
+  layout_properties: {column: KRDFSK}
+  data_bindings:
+  - {property: text, code: 'self.item[''user_type'']'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
+    spacing_below: small, italic: false, background: '', bold: false, checked: false,
+    underline: false}
+  name: check_box_1
+  layout_properties: {column: YIQXFA}
+is_package: true

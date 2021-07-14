@@ -32,11 +32,11 @@ def charts(self, **event_args):
           chart_copy = dict(list(self.item))
           print(chart_copy['id'])
           chartid = chart_copy['id']
-
+          
           create_chart(self,chart_copy)
 
         
-def create_chart(self, chart_copy, chart_position):
+def create_chart(self, chart_copy):
     
           start_date = chart_copy['astart_date']
           print(start_date)
@@ -298,8 +298,53 @@ def create_step_chart(self, chart_copy, chart_position):
                       
       
                   self.plot_3.data = manconf 
-                        
-                  pass          
+        
+            if chart_position == 4:
+                  self.plot_4.visible = True 
+      
+                  self.plot_4.layout.yaxis =  dict(title=chart_title,
+                                                      titlefont=dict(color="#1f77b4"),
+                                                      tickfont=dict(color="#1f77b4"), 
+                                                      )
+                  self.plot_4.layout.xaxis = dict(tickangle=45)    
+                  
+                  self.plot_4.layout.title =  chart_title + " " + "with Conf. Limit =" + " " + str(conf_limit_text) +"%" + " created at " + datetime.now().strftime('%d %B %Y %H:%M')    + " (Note: " + str(no_of_steps) + " steps shown of a  Max. of 15 steps examined)" 
+            #           (Change Conf. Limit = {str(conf_limit)}%) Creation Date: {datetime.now().strftime('%d %B %Y %H:%M')}")
+                
+                  self.plot_4.layout.yaxis2 = dict(title="Cusum",
+                                                  titlefont=dict(color='green'),
+                                                  tickfont=dict(color='green'),
+                                                  overlaying="y",
+                                                  side='right'
+                                                  )
+                      
+      
+                  self.plot_4.data = manconf 
+                                                
+                  pass
+            if chart_position == 5:
+                  self.plot_5.visible = True 
+      
+                  self.plot_5.layout.yaxis =  dict(title=chart_title,
+                                                      titlefont=dict(color="#1f77b5"),
+                                                      tickfont=dict(color="#1f77b4"), 
+                                                      )
+                  self.plot_5.layout.xaxis = dict(tickangle=45)    
+                  
+                  self.plot_5.layout.title =  chart_title + " " + "with Conf. Limit =" + " " + str(conf_limit_text) +"%" + " created at " + datetime.now().strftime('%d %B %Y %H:%M')    + " (Note: " + str(no_of_steps) + " steps shown of a  Max. of 15 steps examined)" 
+            #           (Change Conf. Limit = {str(conf_limit)}%) Creation Date: {datetime.now().strftime('%d %B %Y %H:%M')}")
+                
+                  self.plot_5.layout.yaxis2 = dict(title="Cusum",
+                                                  titlefont=dict(color='green'),
+                                                  tickfont=dict(color='green'),
+                                                  overlaying="y",
+                                                  side='right'
+                                                  )
+                      
+      
+                  self.plot_5.data = manconf 
+                                                
+                  pass 
 
 def trends(self, **event_args):
   """This method is called when the button is clicked"""

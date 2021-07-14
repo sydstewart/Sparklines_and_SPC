@@ -1,0 +1,49 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: Button
+  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Users, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: button_2
+  layout_properties:
+    col_widths: {}
+    grid_position: QSLQBL,DYCTAJ
+- type: Button
+  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Add User, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: add_user_button
+  layout_properties:
+    col_widths: {}
+    grid_position: VRSQDU,TWOSJQ
+  event_bindings: {click: add_user_button_click}
+- type: DataGrid
+  properties:
+    role: null
+    columns:
+    - {id: IOPSJA, title: Email, data_key: email}
+    - {id: UADCPM, title: User Name, data_key: user_name}
+    - {id: KRDFSK, title: User Type, data_key: user_type}
+    - {id: YIQXFA, title: Enabled, data_key: enabled}
+    auto_header: true
+    tooltip: ''
+    border: ''
+    foreground: ''
+    rows_per_page: 20
+    visible: true
+    show_page_controls: true
+    spacing_above: small
+    spacing_below: small
+    background: ''
+  name: data_grid_2
+  layout_properties: {grid_position: 'TENFFY,TLHYYA'}
+  components:
+  - type: RepeatingPanel
+    properties: {spacing_above: none, spacing_below: none, item_template: Main_Account_users.RowTemplate9}
+    name: users_associated
+    layout_properties: {}
+is_package: true
