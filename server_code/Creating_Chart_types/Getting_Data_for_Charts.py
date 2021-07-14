@@ -100,7 +100,7 @@ def ols_data(chartid):
         start_date = start_date.strftime("%Y-%m-%d")
 #         print(start_date)
 #         start_date = datetime.strptime(start_date, '%Y-%m-%d')
-        end_date = end_date.strftime("%Y-%m-%d ")
+        end_date = end_date.strftime("%Y-%m-%d")
 #         print(end_date)
 #         end_date = datetime.strptime(end_date, '%Y-%m-%d')
       #Filter data on dates
