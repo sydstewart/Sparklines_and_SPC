@@ -36,9 +36,10 @@ def charts(self, **event_args):
           create_chart(self,chart_copy)
 
         
-def create_chart(self, chart_copy):
+def create_chart(self, chart_copy, chart_position):
     
           start_date = chart_copy['astart_date']
+          print(start_date)
           end_date = chart_copy['aend_date']
         #                   start_date = self.start_date_picker.date
         #                   end_date = self.end_date_picker.date
@@ -79,10 +80,10 @@ def create_chart(self, chart_copy):
           
           
           self.plot_1.data = scatter
-          print('Generated chart afresh=',scatter)
-          chart_copy = dict(list(self.item))
-          print(chart_copy['id'])
-          chartid = chart_copy['id']
+#           print('Generated chart afresh=',scatter)
+#           chart_copy = dict(list(self.item))
+#           print(chart_copy['id'])
+#           chartid = chart_copy['id']
         # saves json and updates the chart last updated field
 #           anvil.server.call('save_as_json', chartid, self.plot_1.data)
 
@@ -114,7 +115,7 @@ def step_change_bulk_update_in_background():
                 print('Chart regenerated in background=', chartid)
                 
                 
-def step_changes(self, **event_args):
+def step_changes(self, chart_position, **event_args):
       import json
       import plotly as py
       
@@ -131,7 +132,7 @@ def step_changes(self, **event_args):
           chart_copy = dict(list(self.item))
           print(chart_copy['id'])
           chartid = chart_copy['id']
-          create_step_chart(self, chart_copy)
+          create_step_chart(self, chart_copy , chart_position)
              # update last conf limit 
         
           start_step_changes = datetime.now()
@@ -182,7 +183,7 @@ def step_changes(self, **event_args):
                       
           return self.plot_1.data          
 
-def create_step_chart(self, chart_copy):
+def create_step_chart(self, chart_copy, chart_position):
             
             chartid = chart_copy['id']
             print('Chart id=', )
@@ -230,30 +231,76 @@ def create_step_chart(self, chart_copy):
                         print('No of Steps=', no_of_steps)
 
                         anvil.server.call('save_as_json', chartid, manconf, no_of_steps)
-            
-            self.plot_1.visible = True 
-
-            self.plot_1.layout.yaxis =  dict(title=chart_title,
-                                                titlefont=dict(color="#1f77b4"),
-                                                tickfont=dict(color="#1f77b4"), 
-                                                )
-            self.plot_1.layout.xaxis = dict(tickangle=45)    
-            
-            self.plot_1.layout.title =  chart_title + " " + "with Conf. Limit =" + " " + str(conf_limit_text) +"%" + " created at " + datetime.now().strftime('%d %B %Y %H:%M')    + " (Note: " + str(no_of_steps) + " steps shown of a  Max. of 15 steps examined)" 
-      #           (Change Conf. Limit = {str(conf_limit)}%) Creation Date: {datetime.now().strftime('%d %B %Y %H:%M')}")
-          
-            self.plot_1.layout.yaxis2 = dict(title="Cusum",
-                                            titlefont=dict(color='green'),
-                                            tickfont=dict(color='green'),
-                                            overlaying="y",
-                                            side='right'
-                                            )
-                
-
-            self.plot_1.data = manconf 
+            if chart_position == 1:
+                  self.plot_1.visible = True 
+      
+                  self.plot_1.layout.yaxis =  dict(title=chart_title,
+                                                      titlefont=dict(color="#1f77b4"),
+                                                      tickfont=dict(color="#1f77b4"), 
+                                                      )
+                  self.plot_1.layout.xaxis = dict(tickangle=45)    
                   
-            pass
-          
+                  self.plot_1.layout.title =  chart_title + " " + "with Conf. Limit =" + " " + str(conf_limit_text) +"%" + " created at " + datetime.now().strftime('%d %B %Y %H:%M')    + " (Note: " + str(no_of_steps) + " steps shown of a  Max. of 15 steps examined)" 
+            #           (Change Conf. Limit = {str(conf_limit)}%) Creation Date: {datetime.now().strftime('%d %B %Y %H:%M')}")
+                
+                  self.plot_1.layout.yaxis2 = dict(title="Cusum",
+                                                  titlefont=dict(color='green'),
+                                                  tickfont=dict(color='green'),
+                                                  overlaying="y",
+                                                  side='right'
+                                                  )
+                      
+      
+                  self.plot_1.data = manconf 
+                        
+                  pass
+            if chart_position == 2:
+                  self.plot_2.visible = True 
+      
+                  self.plot_2.layout.yaxis =  dict(title=chart_title,
+                                                      titlefont=dict(color="#1f77b4"),
+                                                      tickfont=dict(color="#1f77b4"), 
+                                                      )
+                  self.plot_2.layout.xaxis = dict(tickangle=45)    
+                  
+                  self.plot_2.layout.title =  chart_title + " " + "with Conf. Limit =" + " " + str(conf_limit_text) +"%" + " created at " + datetime.now().strftime('%d %B %Y %H:%M')    + " (Note: " + str(no_of_steps) + " steps shown of a  Max. of 15 steps examined)" 
+            #           (Change Conf. Limit = {str(conf_limit)}%) Creation Date: {datetime.now().strftime('%d %B %Y %H:%M')}")
+                
+                  self.plot_2.layout.yaxis2 = dict(title="Cusum",
+                                                  titlefont=dict(color='green'),
+                                                  tickfont=dict(color='green'),
+                                                  overlaying="y",
+                                                  side='right'
+                                                  )
+                      
+      
+                  self.plot_2.data = manconf 
+                        
+                  pass 
+            if chart_position == 3:
+                  self.plot_3.visible = True 
+      
+                  self.plot_3.layout.yaxis =  dict(title=chart_title,
+                                                      titlefont=dict(color="#1f77b4"),
+                                                      tickfont=dict(color="#1f77b4"), 
+                                                      )
+                  self.plot_3.layout.xaxis = dict(tickangle=45)    
+                  
+                  self.plot_3.layout.title =  chart_title + " " + "with Conf. Limit =" + " " + str(conf_limit_text) +"%" + " created at " + datetime.now().strftime('%d %B %Y %H:%M')    + " (Note: " + str(no_of_steps) + " steps shown of a  Max. of 15 steps examined)" 
+            #           (Change Conf. Limit = {str(conf_limit)}%) Creation Date: {datetime.now().strftime('%d %B %Y %H:%M')}")
+                
+                  self.plot_3.layout.yaxis2 = dict(title="Cusum",
+                                                  titlefont=dict(color='green'),
+                                                  tickfont=dict(color='green'),
+                                                  overlaying="y",
+                                                  side='right'
+                                                  )
+                      
+      
+                  self.plot_3.data = manconf 
+                        
+                  pass          
+
 def trends(self, **event_args):
   """This method is called when the button is clicked"""
   chart_copy = dict(list(self.item))

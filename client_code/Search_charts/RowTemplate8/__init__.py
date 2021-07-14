@@ -70,7 +70,8 @@ class RowTemplate8(RowTemplate8Template):
           trends(self)
     if self.drop_down_1.selected_value == "Step change":
           startstep = datetime.now()
-          step_changes(self)
+          chart_position = 1
+          step_changes(self,chart_position)
 #           print("Step Change total Time: " + str(datetime.now() - startstep) + '\n')
     if self.drop_down_1.selected_value == "Show Data":
           self.plot_1.visible = True 

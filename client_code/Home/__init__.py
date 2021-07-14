@@ -16,7 +16,7 @@ from ..Form5 import Form5
 from ..Test import Test
 from .. import Globals
 from datetime import datetime
- 
+from ..Stacked_Sales_Charts import Stacked_Sales_Charts
 
 class Home(HomeTemplate):
   def __init__(self, **properties):
@@ -48,6 +48,9 @@ class Home(HomeTemplate):
     elif get_url_hash() == 'support_sparklines':
         self.content_panel.clear()
         self.content_panel.add_component(support_sparklines(), full_width_row=True)
+    elif get_url_hash() == 'Stacked_Sales_charts':
+        self.content_panel.clear()
+        self.content_panel.add_component(Stacked_Sales_charts(), full_width_row=True)
          
 
   # Search Menu  
@@ -96,9 +99,12 @@ class Home(HomeTemplate):
     anvil.server.call('get_usgb', Globals.offset, EXCHR)
     pass
 
+  # stacked Sales Charts
   def link_6_click(self, **event_args):
     """This method is called when the link is clicked"""
-    open_form('Form4')
+    self.content_panel.clear()
+    self.content_panel.add_component(Stacked_Sales_Charts(), full_width_row=True)
+   
     pass
 
 
