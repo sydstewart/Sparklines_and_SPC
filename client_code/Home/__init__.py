@@ -96,6 +96,12 @@ class Home(HomeTemplate):
     anvil.server.call('get_usgb', Globals.offset, EXCHR)
     pass
 
+  def link_6_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('Form4')
+    pass
+
+
 
 
   
