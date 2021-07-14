@@ -36,7 +36,26 @@ def send_pdf_email_support():
 
   
   )
+@anvil.server.callable
+def send_pdf_email_sales_step_changes():
+  """Launch a single crawler background task."""
+  task = anvil.server.launch_background_task('send_pdf_email_sales_step_changes_background')
 
+  if task.is_completed():
+     
+     return task
+  
+@anvil.server.background_task
+def send_pdf_email_sales_step_changes_background():
+  from anvil.pdf import PDFRenderer
+  pdf = PDFRenderer(page_size='A4', landscape = True).render_form('Stacked_Sales_Charts')
+  anvil.email.send(
+    from_name="Syd Stewart", 
+    to="sydney.w.stewart@gmail.com", 
+    subject="Stacked Sales Charts",
+    text="Your auto-generated Sales Step Charts is attached to this email as a PDF.",
+    attachments =anvil.pdf.render_form('Stacked_Sales_Charts')
+  )
   
 @anvil.server.callable
 def send_pdf_email_support_sparks():

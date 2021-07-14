@@ -124,6 +124,12 @@ class Home(HomeTemplate):
     self.reset_links()
     pass
 
+  def link_7_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    anvil.server.call('send_pdf_email_sales_step_changes')
+    pass
+
+
 
 
 
