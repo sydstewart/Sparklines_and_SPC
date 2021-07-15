@@ -17,7 +17,7 @@ from .control_charts import ols_data
 def create_sparkline(chartid, rowno , color):
     
    
-    dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = ols_data(chartid)
+    dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1,noteCol = ols_data(chartid)
 
     # create a dataframe for all_dates with Nan entries between the start date and today
     today = date.today()

@@ -214,7 +214,7 @@ def get_pdcalls_range(chartid):
     from plotly.subplots import make_subplots
 
 
-    dfcsv, nameCol, dateCol, title, conf_limit, formatCol = ols_data(chartid)
+    dfcsv, nameCol, dateCol, title, conf_limit, formatCol, noteCol = ols_data(chartid)
 #     print('dfcsv count=', len(dfcsv))
 #     start_date = '30/08/2020'
 #     end_date = '30/03/2021'

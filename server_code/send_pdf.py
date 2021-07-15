@@ -47,7 +47,6 @@ def send_pdf_email_sales_step_changes():
   
 @anvil.server.background_task
 def send_pdf_email_sales_step_changes_background():
-  from anvil.pdf import PDFRenderer
   pdf = PDFRenderer(page_size='A4', landscape = True).render_form('Stacked_Sales_Charts')
   anvil.email.send(
     from_name="Syd Stewart", 

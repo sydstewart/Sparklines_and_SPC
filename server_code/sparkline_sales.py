@@ -20,7 +20,7 @@ def get_sparklines_sales():
     
     #quotes
     chartid1 = 88
-    dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = ols_data(chartid1)
+    dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1, noteCol1 = ols_data(chartid1)
     
     # create a dataframe for all_dates with Nan entries between the start date and today
     today = date.today()
@@ -43,7 +43,7 @@ def get_sparklines_sales():
     chartid2 = 50
     
     
-    dfcsv2, nameCol2, dateCol2, title2, conf_limit2, formatCol2 = ols_data(chartid2)
+    dfcsv2, nameCol2, dateCol2, title2, conf_limit2, formatCol2, noteCol2  = ols_data(chartid2)
     
     all_dates = pd.DataFrame({"YM":pd.date_range(start=dfcsv2['YM'].min(),end=d1,freq="MS")})
     dfcsv2['YM'] = dfcsv2[dateCol2]

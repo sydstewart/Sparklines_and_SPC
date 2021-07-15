@@ -51,7 +51,7 @@ dependencies: []
 services:
 - source: /runtime/services/anvil/email.yml
   client_config: {}
-  server_config: {}
+  server_config: {test_mode: true}
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}

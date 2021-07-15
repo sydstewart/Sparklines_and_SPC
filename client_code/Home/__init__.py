@@ -129,6 +129,24 @@ class Home(HomeTemplate):
     anvil.server.call('send_pdf_email_sales_step_changes')
     pass
 
+  def link_8_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.reset_links()
+    self.link_8.role = 'selected'
+    self.content_panel.clear()
+    self.content_panel.add_component(support_sparklines(), full_width_row=True)
+    self.reset_links()
+
+    pass
+
+  def link_9_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    anvil.server.call('send_pdf_email_sales')
+    pass
+     
+
+
+
 
 
 
