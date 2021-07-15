@@ -106,6 +106,32 @@ def manhatten(df, name_col, date_col, title, turn_length, boot_num, conf_limit, 
     df['cusum']=df['meandiff'].cumsum()
     df=df.round(3)
 
+    #store df into a csv
+    filename = '/tmp/'+ str(chartid) +'.csv'
+    
+    df_as_csv = df.to_csv(index=False)
+
+    csv_bytes = bytes(df_as_csv, 'utf-8') # fix
+
+    csv_media = anvil.BlobMedia('text/plain', csv_bytes, name=filename)
+    
+        
+    file_row = app_tables.charts.get(id = chartid)
+    if file_row != None:
+      file_row['manhatten_csv'] = csv_media
+#       file_row["last_uploaded"] = datetime.now()
+      alert('Manhatten File updated')
+    else:
+      alert('File does not exist - adding new file')
+      app_tables.charts.add_row(manhatten_csv=csv_media, media_obj=file) #last_uploaded = datetime.now())
+      
+      file_row = app_tables.charts.get(id = chartid)
+      if file_row['manhatten_csv'] != None:
+          alert('File added')
+      else:
+          alert('File not added successfully')
+    
+    
         
     manconf = [   go.Scatter(x=df[date_col],
                            y= df[name_col],
