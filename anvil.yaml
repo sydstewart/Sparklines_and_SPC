@@ -206,6 +206,10 @@ db_schema:
       name: End_date_Overwrite
       type: bool
       admin_ui: {order: 25, width: 200}
+    z3sM+nugqZE=:
+      name: manhatten_csv
+      type: media
+      admin_ui: {order: 32, width: 200}
     o0kh0rOpDdA=:
       name: Chart_last_saved
       type: datetime
@@ -308,6 +312,10 @@ db_schema:
       name: noteCol
       type: string
       admin_ui: {order: 7, width: 200}
+    aqCMAb83+P0=:
+      name: manpointlist
+      type: simpleObject
+      admin_ui: {order: 33, width: 200}
     guIRoB4o4nE=:
       name: obs_interval
       type: string

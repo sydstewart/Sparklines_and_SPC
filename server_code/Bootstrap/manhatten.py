@@ -94,7 +94,7 @@ def manhatten(df, name_col, date_col, title, turn_length, boot_num, conf_limit, 
   
     manpointlist = list(manhatten[date_col])
     manstagemeanlist = list(manhatten['StageMean'])
-    no_of_steps = len(cusum_control1)
+    no_of_steps = len(cusum_control1) 
     manconnfleveltextlist = list(manhatten['confleveltext'])
 #     print('dcx=',dcx)
 #     print('manpointlist=',manpointlist)
@@ -119,19 +119,15 @@ def manhatten(df, name_col, date_col, title, turn_length, boot_num, conf_limit, 
     file_row = app_tables.charts.get(id = chartid)
     if file_row != None:
       file_row['manhatten_csv'] = csv_media
-#       file_row["last_uploaded"] = datetime.now()
+      #       file_row["last_uploaded"] = datetime.now()
       alert('Manhatten File updated')
     else:
       alert('File does not exist - adding new file')
       app_tables.charts.add_row(manhatten_csv=csv_media, media_obj=file) #last_uploaded = datetime.now())
       
       file_row = app_tables.charts.get(id = chartid)
-      if file_row['manhatten_csv'] != None:
-          alert('File added')
-      else:
-          alert('File not added successfully')
-    
-    
+ 
+
         
     manconf = [   go.Scatter(x=df[date_col],
                            y= df[name_col],
