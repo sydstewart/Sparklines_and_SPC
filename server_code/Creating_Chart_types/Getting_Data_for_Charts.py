@@ -59,7 +59,7 @@ def ols_data(chartid):
            if freq == 'Month':
                 freq= 'MS'
                 all_dates = pd.DataFrame({dateCol:pd.date_range(start=dfcsv[dateCol].min(),
-                                                    end=dfcsv[dateCol].max(),
+                                                    end=datetime.now(),  #dfcsv[dateCol].max(),
                                                     freq=freq)})
 #               elif freq == 'Week':
 #                 freq= 'W'
