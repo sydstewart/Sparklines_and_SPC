@@ -402,6 +402,16 @@ class Form1(Form1Template):
     open_form('Chart_form')
     pass
 
+  def button_42_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    file_contents = "Hello, world".encode()      # String as bytes
+
+    my_media = anvil.BlobMedia(content_type="text/plain", content=file_contents, name="hello.txt")
+
+    anvil.google.drive.app_files.my_file.set_media(my_media)
+    pass
+
+
 
 
 
