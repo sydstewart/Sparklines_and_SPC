@@ -65,7 +65,7 @@ services:
 - source: /runtime/services/google.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: Form1}
+startup: {type: form, module: Home}
 package_name: EmailQuickstart
 allow_embedding: false
 name: SPC Charts v2
