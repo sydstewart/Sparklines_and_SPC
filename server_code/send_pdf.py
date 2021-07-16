@@ -45,7 +45,7 @@ def send_pdf_email_sales_step_changes():
      
      return task
   
-@anvil.server.background_task
+@anvil.server.callable
 def send_pdf_email_sales_step_changes_background():
   pdf = PDFRenderer(page_size='A4', landscape = True).render_form('Stacked_Sales_Charts')
   anvil.email.send(
