@@ -38,12 +38,12 @@ def send_pdf_email_support():
   )
 @anvil.server.callable
 def send_pdf_email_sales_step_changes():
-  """Launch a single crawler background task."""
+#   """Launch a single crawler background task."""
   task = anvil.server.launch_background_task('send_pdf_email_sales_step_changes_background')
+   
 
-  if task.is_completed():
-     
-     return task
+
+  return task
   
 @anvil.server.callable
 def send_pdf_email_sales_step_changes_background():
