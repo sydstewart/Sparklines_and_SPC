@@ -18,8 +18,9 @@ from anvil import BlobMedia
 @anvil.server.callable
 def get_sparklines_sales():
     
-    #quotes
+    #quotes row 1
     chartid1 = 88
+    row1 =1
     dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1, noteCol1 = ols_data(chartid1)
     
     # create a dataframe for all_dates with Nan entries between the start date and today
@@ -37,11 +38,11 @@ def get_sparklines_sales():
 #     dfcsv1['nameColavg1'] = dfcsv1['nameColcusum1'].rolling(window=21).mean() 
 #     dfcsv1['nameColcusum1'] = dfcsv1['nameColcusum1'].cumsum()
    # calculate mean
-    dfcsv1['Mean']= dfcsv1[nameCol1].mean()
-    
-    # New and Exosting Sales
+    dfcsv1['Mean']= dfcsv1['nameColcusum1'].mean()
+  
+  # New and Exosting Sales row2
     chartid2 = 50
-    
+    row2 = 2
     
     dfcsv2, nameCol2, dateCol2, title2, conf_limit2, formatCol2, noteCol2  = ols_data(chartid2)
     
@@ -54,31 +55,28 @@ def get_sparklines_sales():
     dfcsv2['nameColcusum2'] = dfcsv2[nameCol2]
     
     # calculate mean
-    dfcsv2['Mean']= dfcsv2[nameCol2].mean()
+    dfcsv2['Mean']= dfcsv2['nameColcusum2'].mean()
     
-#     dfcsv2['nameColcusum2'] = dfcsv2['nameColcusum2'].cumsum()
+   #Total Maint row 3 
+    chartid3 = 96
+    row3 = 3
     
-#     chartid3 = 74
-#     dfcsv3, nameCol3, dateCol3, title3, conf_limit3, formatCol3 = ols_data(chartid3)
-#     dfcsv3['YM'] = dfcsv3[dateCol3]
-#     dfcsv3["YM"] = pd.to_datetime(dfcsv3["YM"])
+    dfcsv3, nameCol3, dateCol3, title3, conf_limit3, formatCol3, noteCol3  = ols_data(chartid3)
     
-#     dfcsv3 = pd.merge(all_dates, dfcsv3, how="left", on='YM').fillna(0)
-   
-#     dfcsv3['nameColcusum3'] = dfcsv3[nameCol3] 
-# #     dfcsv3['nameColcusum3'] = dfcsv3['nameColcusum3'].cumsum()
+    all_dates = pd.DataFrame({"YM":pd.date_range(start=dfcsv3['YM'].min(),end=d1,freq="MS")})
+    dfcsv3['YM'] = dfcsv3[dateCol3]
+    dfcsv3["YM"] = pd.to_datetime(dfcsv3["YM"])
     
-#     chartid4 = 75
-#     dfcsv4, nameCol4, dateCol4, title4, conf_limit4, formatCol4 = ols_data(chartid4)
-#     dfcsv4['YM'] = dfcsv4[dateCol4]
-#     dfcsv4["YM"] = pd.to_datetime(dfcsv4["YM"])
+    dfcsv3 = pd.merge(all_dates, dfcsv3, how="left", on='YM').fillna(0)
     
-#     dfcsv4 = pd.merge(all_dates, dfcsv4, how="left", on='YM').fillna(0)
-   
-#     dfcsv4['nameColcusum4'] = dfcsv4[nameCol4] 
-# #     dfcsv4['nameColcusum4'] = dfcsv4['nameColcusum4'].cumsum()
- 
+    dfcsv3['nameColcusum3'] = dfcsv3[nameCol3]
+    
+    # calculate mean
+    dfcsv3['Mean']= dfcsv3['nameColcusum3'].mean()
+
     fig = make_subplots(rows=3, cols=1 , row_heights=[0.34, 0.33, 0.33],)# subplot_titles = ("Defect Change Notes","Improvement Change Notes","RCA actions completed"))
+    
+    # quotes
     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
                          y = dfcsv1['Mov_avg8'],
                           mode='lines',
@@ -88,7 +86,7 @@ def get_sparklines_sales():
         width=2,
         ),
         visible=True),
-        row=1, col=1)
+        row=row1, col=1)
     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
                          y = dfcsv1['Mean'] ,
                           mode='lines',
@@ -99,11 +97,11 @@ def get_sparklines_sales():
          dash='dash'                   
         ),
         visible=True),
-        row=1, col=1)
+        row=row1, col=1)
     
     
     
-    
+    #New and Existing Sales row 2
     
     fig.add_trace(go.Scatter(x=dfcsv2[dateCol2],
                          y = dfcsv2['Mov_avg8'],
@@ -114,8 +112,8 @@ def get_sparklines_sales():
         width=2,
         ),
         visible=True),
-        row=2, col=1) 
-    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+        row=row2, col=1) 
+    fig.add_trace(go.Scatter(x=dfcsv2[dateCol2],
                          y = dfcsv2['Mean'] ,
                           mode='lines',
                           name='Sales New and Existing average',
@@ -125,17 +123,31 @@ def get_sparklines_sales():
          dash='dash'                   
         ),
         visible=True),
-        row=2, col=1)
-#     fig.add_trace(go.Scatter(x=dfcsv3[dateCol3],
-#                          y = dfcsv3[nameCol3],
-#                           mode='lines',
-#                           name='RCA Actions completed',
-#                           line=dict(
-#         color=('orange'),
-#         width=2,
-#         ),
-#         visible=True),
-#         row=3, col=1) 
+        row=row2, col=1)
+    
+    #Total Maint row 3
+    fig.add_trace(go.Scatter(x=dfcsv3[dateCol3],
+                         y = dfcsv3['Mov_avg8'],
+                          mode='lines',
+                          name='Total Maintenance',
+                          line=dict(
+        color=('brown'),
+        width=2,
+        ),
+        visible=True),
+        row=row3, col=1) 
+    fig.add_trace(go.Scatter(x=dfcsv3[dateCol3],
+                         y = dfcsv3['Mean'] ,
+                          mode='lines',
+                          name='Total Maintenance average',
+                          line=dict(
+        color=('brown'),
+        width=1,
+         dash='dash'                   
+        ),
+        visible=True),
+        row=row3, col=1)
+
     
 #       #height
     fig.update_layout(height=200, width=200, title_text= " Sales Sparklines")
