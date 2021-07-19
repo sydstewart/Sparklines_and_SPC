@@ -80,7 +80,7 @@ def get_sparklines_sales():
  
     fig = make_subplots(rows=3, cols=1 , row_heights=[0.34, 0.33, 0.33],)# subplot_titles = ("Defect Change Notes","Improvement Change Notes","RCA actions completed"))
     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                         y = dfcsv1[nameCol1],
+                         y = dfcsv1['Mov_avg8'],
                           mode='lines',
                           name='Quotes New and Existing per month',
                           line=dict(
@@ -106,7 +106,7 @@ def get_sparklines_sales():
     
     
     fig.add_trace(go.Scatter(x=dfcsv2[dateCol2],
-                         y = dfcsv2[nameCol2],
+                         y = dfcsv2['Mov_avg8'],
                           mode='lines',
                           name='Sales New and Existing per month"',
                           line=dict(

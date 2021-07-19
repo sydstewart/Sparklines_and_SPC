@@ -18,6 +18,7 @@ from .. import Globals
 from datetime import datetime
 from ..Stacked_Sales_Charts import Stacked_Sales_Charts
 from ..Main_Account_users import Main_Account_users
+from ..sales_sparklines import sales_sparklines
 
 class Home(HomeTemplate):
   def __init__(self, **properties):
@@ -144,6 +145,16 @@ class Home(HomeTemplate):
     anvil.server.call('send_pdf_email_sales')
     pass
      
+
+  def link_10_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.reset_links()
+    self.link_10.role = 'selected'
+    self.content_panel.clear()
+    self.content_panel.add_component(sales_sparklines(), full_width_row=True)
+    self.reset_links()
+    pass
+
 
 
 
