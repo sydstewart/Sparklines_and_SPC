@@ -47,7 +47,7 @@ def get_sparklines_support():
     mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1  = create_sparkline(chartid, rowno , color)
     name_of_chart = title1
     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1[nameCol1],
+                        y = dfcsv1['Mov_avg8'],
                           mode='lines',
                           name=name_of_chart,
                           line=dict(
@@ -79,7 +79,7 @@ def get_sparklines_support():
     mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color )
     name_of_chart = title1
     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                         y = dfcsv1[nameCol1],
+                         y = dfcsv1['Mov_avg8'],
                           mode='lines',
                           name=name_of_chart,
                           line=dict(
@@ -111,7 +111,7 @@ def get_sparklines_support():
     mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color )
     name_of_chart = title1
     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                         y = dfcsv1[nameCol1],
+                         y = dfcsv1['Mov_avg8'],
                           mode='lines',
                           name=name_of_chart,
                           line=dict(
@@ -143,7 +143,7 @@ def get_sparklines_support():
     mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
     name_of_chart = title1
     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1[nameCol1],
+                        y = dfcsv1['Mov_avg8'],
                           mode='lines',
                           name=name_of_chart,
                           line=dict(
@@ -172,7 +172,7 @@ def get_sparklines_support():
     mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
     name_of_chart = title1
     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1[nameCol1],
+                        y = dfcsv1['Mov_avg8'],
                           mode='lines',
                           name=name_of_chart,
                           line=dict(
@@ -205,7 +205,7 @@ def get_sparklines_support():
     mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
     name_of_chart = title1
     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1[nameCol1],
+                        y = dfcsv1['Mov_avg8'],
                           mode='lines',
                           name=name_of_chart,
                           line=dict(
@@ -235,7 +235,7 @@ def get_sparklines_support():
     mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
     name_of_chart = title1
     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1[nameCol1],
+                        y = dfcsv1['Mov_avg8'],
                           mode='lines',
                           name=name_of_chart,
                           line=dict(
@@ -265,7 +265,7 @@ def get_sparklines_support():
     mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
     name_of_chart = title1
     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1[nameCol1],
+                        y = dfcsv1['Mov_avg8'],
                           mode='lines',
                           name=name_of_chart,
                           line=dict(
@@ -295,7 +295,7 @@ def get_sparklines_support():
     mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
     name_of_chart = title1
     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1[nameCol1],
+                        y = dfcsv1['Mov_avg8'],
                           mode='lines',
                           name=name_of_chart,
                           line=dict(
