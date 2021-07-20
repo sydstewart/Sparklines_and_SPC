@@ -29,3 +29,13 @@ def display_charts_from_textbox(text , user, archive ):
     chart_rows = app_tables.charts.search(q.any_of(title=q.ilike(text)))
 
     return user_type,chart_rows
+                                          
+                                          
+@anvil.server.callable
+def display_charts_from_chartid(text , user, archive ):
+    user_type = user['user_type']
+
+    text =int(text) 
+    chart_rows = app_tables.charts.search(q.any_of(id = (text)))
+
+    return user_type,chart_rows

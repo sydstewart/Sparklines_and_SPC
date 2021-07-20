@@ -28,7 +28,7 @@ class Search_charts(Search_chartsTemplate):
   def folder_search_drop_down_change(self, **event_args):
     """This method is called when an item is selected"""
     self.text_box_1.text = ''
-     
+    self.text_box_3.text = ''
     
     
     # setup globals
@@ -53,7 +53,7 @@ class Search_charts(Search_chartsTemplate):
     """This method is called when the user presses Enter in this text box"""
          
     self.folder_search_drop_down.visible = False 
-
+    self.text_box_3.text = ''
     if self.text_box_1.text == '':
          self.folder_search_drop_down.visible = True 
         
@@ -113,4 +113,28 @@ class Search_charts(Search_chartsTemplate):
         alert('Enter a Folder!')
     pass
    
+#chartid entered
+  def text_box_3_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    self.folder_search_drop_down.visible = False 
+
+    if self.text_box_1.text == '':
+         self.folder_search_drop_down.visible = True 
+        
+    # Note: needs 'UserdisplayEdit' to control edit buttons on charts displayed
+    UserdisplayEdit, chart_rows = anvil.server.call('display_charts_from_chartid', self.text_box_3.text, Globals.loggedin_user, archive = self.archive_chkbox.checked)
+
+    Globals.displayEdit =UserdisplayEdit
+
+    self.repeating_panel_1.items=chart_rows
+    
+    hits = len(chart_rows)
+    self.text_box_2.text = hits
+    
+    self.folder_search_drop_down.visible = True
+
+  pass
+
+  
+
 

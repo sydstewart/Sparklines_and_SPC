@@ -39,7 +39,7 @@ class sales_sparklines(sales_sparklinesTemplate):
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call('send_pdf_email')
+    anvil.server.call('send_pdf_email_sales')
     pass
 
 
