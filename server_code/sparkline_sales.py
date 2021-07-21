@@ -134,13 +134,64 @@ def get_sparklines_sales():
    # calculate mean
     dfcsv5['Mean']= dfcsv5['nameColcusum5'].mean()
     
-#============================================================================    
+    
+#=====================================================================   #AC New and Existing
+     
+        
+    chartid6 = 52
+    row6 =6
+    dfcsv6, nameCol6, dateCol6, title6, conf_limit6, formatCol6, noteCol6 = ols_data(chartid6)
+    
+    # create a dataframe for all_dates with Nan entries between the start date and today
+    today = date.today()
+#     d6 = today.strftime("%Y-%m-01")
 
+    dfcsv6['YM'] = dfcsv6[dateCol6]
+    dfcsv6["YM"] = pd.to_datetime(dfcsv6["YM"]) 
+    
+    all_dates = pd.DataFrame({"YM":pd.date_range(start=dfcsv6['YM'].min(),end=end_date_of_last_month,freq="MS")})
+    
+    dfcsv6 = pd.merge(all_dates, dfcsv6, how="left", on='YM').fillna(0)
+    
+    # Calculate cusums   
+    dfcsv6['nameColcusum6'] = dfcsv6[nameCol6] 
+#     dfcsv1['nameColavg1'] = dfcsv1['nameColcusum1'].rolling(window=21).mean() 
+#     dfcsv1['nameColcusum1'] = dfcsv1['nameColcusum1'].cumsum()
+   # calculate mean
+    dfcsv6['Mean']= dfcsv6['nameColcusum6'].mean()
+    
+   
+    
+#=====================================================================   #SM New and Existing
+     
+        
+    chartid7 = 53
+    row7 =7
+    dfcsv7, nameCol7, dateCol7, title7, conf_limit7, formatCol7, noteCol7 = ols_data(chartid7)
+    
+    # create a dataframe for all_dates with Nan entries between the start date and today
+    today = date.today()
+#     d7 = today.strftime("%Y-%m-01")
+
+    dfcsv7['YM'] = dfcsv7[dateCol7]
+    dfcsv7["YM"] = pd.to_datetime(dfcsv7["YM"]) 
+    
+    all_dates = pd.DataFrame({"YM":pd.date_range(start=dfcsv7['YM'].min(),end=end_date_of_last_month,freq="MS")})
+    
+    dfcsv7 = pd.merge(all_dates, dfcsv7, how="left", on='YM').fillna(0)
+    
+    # Calculate cusums   
+    dfcsv7['nameColcusum7'] = dfcsv7[nameCol7] 
+#     dfcsv1['nameColavg1'] = dfcsv1['nameColcusum1'].rolling(window=21).mean() 
+#     dfcsv1['nameColcusum1'] = dfcsv1['nameColcusum1'].cumsum()
+   # calculate mean
+    dfcsv7['Mean']= dfcsv7['nameColcusum7'].mean()
     
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
 
-    fig = make_subplots(rows=5, cols=1 , row_heights=[0.2, 0.2, 0.2, 0.2, 0.2], subplot_titles = ("Quotes","New and Existing Sales","Total Maintenance", "AC Maintenenace","SM Maintenance"))
-    
+    fig = make_subplots(rows=7, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],   subplot_titles = ("Quotes","New and Existing Sales","Total Maintenance", "AC Maintenenace","SM Maintenance", "AC New and Existing", "SM New and Existing"))
+    # row_heights=[0.16, 0.16, 0.16, 0.16, 0.16, 0.16],
+    # vertical_spacing= 0.16, 
 #======================================================= quotes row 1
     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
                          y = dfcsv1['Mov_avg8'],
@@ -263,8 +314,62 @@ def get_sparklines_sales():
         ),
         visible=True),
         row=row5, col=1)
+    
+#===================================================================== M AC New and Existing row 6      
+
+    fig.add_trace(go.Scatter(x=dfcsv6[dateCol6],
+                         y = dfcsv6['Mov_avg8'],
+                          mode='lines',
+                          name='AC New and Existing',
+                          line=dict(
+        color=('blue'),
+        width=2,
+        ),
+        visible=True),
+        row=row6, col=1) 
+    fig.add_trace(go.Scatter(x=dfcsv6[dateCol6],
+                         y = dfcsv6['Mean'] ,
+                          mode='lines',
+                          name= 'AC New and Existing average',
+                          line=dict(
+        color=('blue'),
+        width=1,
+         dash='dash'                   
+        ),
+        visible=True),
+        row=row6, col=1)
+
+ #=====================================================================  SM New and Existing row 7     
+
+    fig.add_trace(go.Scatter(x=dfcsv7[dateCol7],
+                         y = dfcsv7['Mov_avg8'],
+                          mode='lines',
+                          name='SM New and Existing',
+                          line=dict(
+        color=('blue'),
+        width=2,
+        ),
+        visible=True),
+        row=row7, col=1) 
+    fig.add_trace(go.Scatter(x=dfcsv7[dateCol7],
+                         y = dfcsv7['Mean'] ,
+                          mode='lines',
+                          name= 'SM New and Existing average',
+                          line=dict(
+        color=('blue'),
+        width=1,
+         dash='dash'                   
+        ),
+        visible=True),
+        row=row7, col=1)   
+    
+    
+    
+    
+    
+    #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #       #height
-    fig.update_layout(height=200, width=200, title_text= " Sales Sparklines based on a 12 month moving average")
+    fig.update_layout(height=1800, width=200, title_text= " Sales Sparklines based on a 12 month moving average")
     fig.update_xaxes(visible=True, fixedrange=True)
     fig.update_yaxes(visible=False, fixedrange=True)
     fig.update_annotations(font_size=12)
