@@ -87,7 +87,7 @@ def get_sparklines_sales():
     
 #AC Maint
         #AC Maint  row 4
-    chartid4 = 81
+    chartid4 = 71
     row4 =4
     dfcsv4, nameCol4, dateCol4, title4, conf_limit4, formatCol4, noteCol4 = ols_data(chartid4)
     
@@ -260,7 +260,7 @@ def get_sparklines_sales():
     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
                          y = dfcsv1['Mean'] ,
                           mode='lines',
-                          name='Quotes New and Existing average',
+                         name='Quotes New and Existing average',
                           line=dict(
         color=('green'),
         width=1,
@@ -447,7 +447,7 @@ def get_sparklines_sales():
     fig.add_trace(go.Scatter(x=dfcsv9[dateCol9],
                          y = dfcsv9['Mov_avg8'],
                           mode='lines',
-                          name='SM Quotes',
+                         name='SM Quotes',
                           line=dict(
         color=('green'),
         width=2,
@@ -468,9 +468,11 @@ def get_sparklines_sales():
     #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #       #height
     fig.update_layout(height=1800, width=200, title_text= " Sales Sparklines based on a 12 month moving average (Chart id)")
+    fig.update_layout(showlegend=False)
     fig.update_xaxes(visible=True, fixedrange=True)
     fig.update_yaxes(visible=False, fixedrange=True)
     fig.update_annotations(font_size=12)
+   
     # remove facet/subplot labels
 #     fig.update_layout(annotations=[], overwrite=False)
     
