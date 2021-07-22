@@ -187,9 +187,36 @@ def get_sparklines_sales():
    # calculate mean
     dfcsv7['Mean']= dfcsv7['nameColcusum7'].mean()
     
+    
+        
+#=====================================================================   #AC Quotes #8
+     
+        
+    chartid7 = 97
+    row8 =8
+    dfcsv8, nameCol8, dateCol8, title8, conf_limit8, formatCol8, noteCol8 = ols_data(chartid8)
+    
+    # create a dataframe for all_dates with Nan entries between the start date and today
+    today = date.today()
+#     d8 = today.strftime("%Y-%m-01")
+
+    dfcsv8['YM'] = dfcsv8[dateCol8]
+    dfcsv8["YM"] = pd.to_datetime(dfcsv8["YM"]) 
+    
+    all_dates = pd.DataFrame({"YM":pd.date_range(start=dfcsv8['YM'].min(),end=end_date_of_last_month,freq="MS")})
+    
+    dfcsv8 = pd.merge(all_dates, dfcsv8, how="left", on='YM').fillna(0)
+    
+    # Calculate cusums   
+    dfcsv8['nameColcusum8'] = dfcsv8[nameCol8] 
+#     dfcsv1['nameColavg1'] = dfcsv1['nameColcusum1'].rolling(window=21).mean() 
+#     dfcsv1['nameColcusum1'] = dfcsv1['nameColcusum1'].cumsum()
+   # calculate mean
+    dfcsv8['Mean']= dfcsv8['nameColcusum8'].mean()
+    
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
 
-    fig = make_subplots(rows=7, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],   subplot_titles = ("Quotes","New and Existing Sales","Total Maintenance", "AC Maintenenace","SM Maintenance", "AC New and Existing", "SM New and Existing"))
+    fig = make_subplots(rows=8, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1.0.1],   subplot_titles = ("Quotes","New and Existing Sales","Total Maintenance", "AC Maintenenace","SM Maintenance", "AC New and Existing", "SM New and Existing", AC Quotes (91)))
     # row_heights=[0.16, 0.16, 0.16, 0.16, 0.16, 0.16],
     # vertical_spacing= 0.16, 
 #======================================================= quotes row 1
