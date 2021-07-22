@@ -87,7 +87,7 @@ def get_sparklines_sales():
     
 #AC Maint
         #AC Maint  row 4
-    chartid4 = 71
+    chartid4 = 81
     row4 =4
     dfcsv4, nameCol4, dateCol4, title4, conf_limit4, formatCol4, noteCol4 = ols_data(chartid4)
     
@@ -162,7 +162,7 @@ def get_sparklines_sales():
     
    
     
-#=====================================================================   #SM New and Existing
+#=====================================================================   #SM New and Existing #7
      
         
     chartid7 = 53
@@ -216,7 +216,7 @@ def get_sparklines_sales():
     
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
 
-    fig = make_subplots(rows=8, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1.0.1],   subplot_titles = ("Quotes","New and Existing Sales","Total Maintenance", "AC Maintenenace","SM Maintenance", "AC New and Existing", "SM New and Existing", AC Quotes (91)))
+    fig = make_subplots(rows=8, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1,0.1],   subplot_titles = ("Quotes(88)","New and Existing Sales(50)","Total Maintenance(96)", "AC Maintenenace(71)","SM Maintenance(61)", "AC New and Existing(52)", "SM New and Existing(53)", "AC Quotes (91)"))
     # row_heights=[0.16, 0.16, 0.16, 0.16, 0.16, 0.16],
     # vertical_spacing= 0.16, 
 #======================================================= quotes row 1
@@ -390,7 +390,29 @@ def get_sparklines_sales():
         visible=True),
         row=row7, col=1)   
     
-    
+  #=====================================================================  AC Quotes row 8    
+
+    fig.add_trace(go.Scatter(x=dfcsv8[dateCol8],
+                         y = dfcsv8['Mov_avg8'],
+                          mode='lines',
+                          name='SM New and Existing',
+                          line=dict(
+        color=('blue'),
+        width=2,
+        ),
+        visible=True),
+        row=row8, col=1) 
+    fig.add_trace(go.Scatter(x=dfcsv8[dateCol8],
+                         y = dfcsv8['Mean'] ,
+                          mode='lines',
+                          name= 'SM New and Existing average',
+                          line=dict(
+        color=('blue'),
+        width=1,
+         dash='dash'                   
+        ),
+        visible=True),
+        row=row8, col=1)      
     
     
     
