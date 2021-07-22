@@ -192,7 +192,7 @@ def get_sparklines_sales():
 #=====================================================================   #AC Quotes #8
      
         
-    chartid7 = 97
+    chartid8 = 97
     row8 =8
     dfcsv8, nameCol8, dateCol8, title8, conf_limit8, formatCol8, noteCol8 = ols_data(chartid8)
     
@@ -214,9 +214,36 @@ def get_sparklines_sales():
    # calculate mean
     dfcsv8['Mean']= dfcsv8['nameColcusum8'].mean()
     
+    
+            
+#=====================================================================   #SM Quotes #9
+     
+        
+    chartid9 = 98
+    row9 =9
+    dfcsv9, nameCol9, dateCol9, title9, conf_limit9, formatCol9, noteCol9 = ols_data(chartid9)
+    
+    # create a dataframe for all_dates with Nan entries between the start date and today
+    today = date.today()
+#     d9 = today.strftime("%Y-%m-01")
+
+    dfcsv9['YM'] = dfcsv9[dateCol9]
+    dfcsv9["YM"] = pd.to_datetime(dfcsv9["YM"]) 
+    
+    all_dates = pd.DataFrame({"YM":pd.date_range(start=dfcsv9['YM'].min(),end=end_date_of_last_month,freq="MS")})
+    
+    dfcsv9 = pd.merge(all_dates, dfcsv9, how="left", on='YM').fillna(0)
+    
+    # Calculate cusums   
+    dfcsv9['nameColcusum9'] = dfcsv9[nameCol9] 
+#     dfcsv1['nameColavg1'] = dfcsv1['nameColcusum1'].rolling(window=21).mean() 
+#     dfcsv1['nameColcusum1'] = dfcsv1['nameColcusum1'].cumsum()
+   # calculate mean
+    dfcsv9['Mean']= dfcsv9['nameColcusum9'].mean()
+    
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
 
-    fig = make_subplots(rows=8, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1,0.1],   subplot_titles = ("Quotes(88)","New and Existing Sales(50)","Total Maintenance(96)", "AC Maintenenace(71)","SM Maintenance(61)", "AC New and Existing(52)", "SM New and Existing(53)", "AC Quotes (91)"))
+    fig = make_subplots(rows=9, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1,0.1, 0.1],   subplot_titles = ("Quotes(88)","New and Existing Sales(50)","Total Maintenance(96)", "AC Maintenenace(71)","SM Maintenance(61)", "AC New and Existing(52)", "SM New and Existing(53)", "AC Quotes (97)", "SM Quotes (98)"))
     # row_heights=[0.16, 0.16, 0.16, 0.16, 0.16, 0.16],
     # vertical_spacing= 0.16, 
 #======================================================= quotes row 1
@@ -395,9 +422,9 @@ def get_sparklines_sales():
     fig.add_trace(go.Scatter(x=dfcsv8[dateCol8],
                          y = dfcsv8['Mov_avg8'],
                           mode='lines',
-                          name='SM New and Existing',
+                          name='AC Quotes',
                           line=dict(
-        color=('blue'),
+        color=('green'),
         width=2,
         ),
         visible=True),
@@ -405,9 +432,9 @@ def get_sparklines_sales():
     fig.add_trace(go.Scatter(x=dfcsv8[dateCol8],
                          y = dfcsv8['Mean'] ,
                           mode='lines',
-                          name= 'SM New and Existing average',
+                          name= 'AC Quotes average',
                           line=dict(
-        color=('blue'),
+        color=('green'),
         width=1,
          dash='dash'                   
         ),
@@ -415,10 +442,32 @@ def get_sparklines_sales():
         row=row8, col=1)      
     
     
-    
+   #=====================================================================  SM Quotes row 9    
+
+    fig.add_trace(go.Scatter(x=dfcsv9[dateCol9],
+                         y = dfcsv9['Mov_avg8'],
+                          mode='lines',
+                          name='SM Quotes',
+                          line=dict(
+        color=('green'),
+        width=2,
+        ),
+        visible=True),
+        row=row9, col=1) 
+    fig.add_trace(go.Scatter(x=dfcsv9[dateCol9],
+                         y = dfcsv9['Mean'] ,
+                          mode='lines',
+                          name= 'SM Quotes average',
+                          line=dict(
+        color=('green'),
+        width=1,
+         dash='dash'                   
+        ),
+        visible=True),
+        row=row9, col=1)    
     #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #       #height
-    fig.update_layout(height=1800, width=200, title_text= " Sales Sparklines based on a 12 month moving average")
+    fig.update_layout(height=1800, width=200, title_text= " Sales Sparklines based on a 12 month moving average (Chart id)")
     fig.update_xaxes(visible=True, fixedrange=True)
     fig.update_yaxes(visible=False, fixedrange=True)
     fig.update_annotations(font_size=12)
