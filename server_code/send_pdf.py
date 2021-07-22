@@ -17,10 +17,10 @@ from anvil.pdf import PDFRenderer
 @anvil.server.callable
 def send_pdf_email_sales():
   anvil.email.send(
-    from_name="The Zaphod Generator", 
+    from_name="Sales Moving average Sparklines", 
     to="sydney.w.stewart@gmail.com", 
-    subject="An auto-generated Zaphod",
-    text="Your auto-generated Zaphod is attached to this email as a PDF.",
+    subject="Sales Moving average Sparklines",
+    text="Your latest Sales Moving average Sparklinesis attached to this email as a PDF.",
     attachments =anvil.pdf.render_form('sales_sparklines')
   )
 @anvil.server.callable
