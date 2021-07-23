@@ -44,12 +44,35 @@ def get_sparklines_sales():
 #     dfcsv1['nameColcusum1'] = dfcsv1['nameColcusum1'].cumsum()
    # calculate mean
     dfcsv1['Mean']= dfcsv1['nameColcusum1'].mean()
+
+# ===============================================================================     #quotes row 2
+    #quotes row 1
+    chartid1a = 99
+    row1a =2
+    dfcsv1a, nameCol1a, dateCol1a, title1a, conf_limit1a, formatCol1a, noteCol1a = ols_data(chartid1a)
     
+    # create a dataframe for all_dates with Nan entries between the start date and today
+    today = date.today()
+#     d1a = today.strftime("%Y-%m-01")
+
+    dfcsv1a['YM'] = dfcsv1a[dateCol1a]
+    dfcsv1a["YM"] = pd.to_datetime(dfcsv1a["YM"]) 
+    
+    all_dates = pd.DataFrame({"YM":pd.date_range(start=dfcsv1a['YM'].min(),end=end_date_of_last_month,freq="MS")})
+    
+    dfcsv1a = pd.merge(all_dates, dfcsv1a, how="left", on='YM').fillna(0)
+    
+    # Calculate cusums   
+    dfcsv1a['nameColcusum1a'] = dfcsv1a[nameCol1a] 
+#     dfcsv1a['nameColavg1a'] = dfcsv1a['nameColcusum1a'].rolling(window=21a).mean() 
+#     dfcsv1a['nameColcusum1a'] = dfcsv1a['nameColcusum1a'].cumsum()
+   # calculate mean
+    dfcsv1a['Mean']= dfcsv1a['nameColcusum1a'].mean()
 #=====================================================================  New and Exosting Sales row2   
 
   # New and Exosting Sales row2
     chartid2 = 50
-    row2 = 2
+    row2 = 3
     
     dfcsv2, nameCol2, dateCol2, title2, conf_limit2, formatCol2, noteCol2  = ols_data(chartid2)
     
@@ -68,7 +91,7 @@ def get_sparklines_sales():
     
    #Total Maint row 3 
     chartid3 = 96
-    row3 = 3
+    row3 = 4
     
     dfcsv3, nameCol3, dateCol3, title3, conf_limit3, formatCol3, noteCol3  = ols_data(chartid3)
     
@@ -88,7 +111,7 @@ def get_sparklines_sales():
 #AC Maint
         #AC Maint  row 4
     chartid4 = 71
-    row4 =4
+    row4 =5
     dfcsv4, nameCol4, dateCol4, title4, conf_limit4, formatCol4, noteCol4 = ols_data(chartid4)
     
     # create a dataframe for all_dates with Nan entries between the start date and today
@@ -113,7 +136,7 @@ def get_sparklines_sales():
     #SM Maintenence
         #AC Maint  row 5
     chartid5 = 61
-    row5 =5
+    row5 =6
     dfcsv5, nameCol5, dateCol5, title5, conf_limit5, formatCol5, noteCol5 = ols_data(chartid5)
     
     # create a dataframe for all_dates with Nan entries between the start date and today
@@ -139,7 +162,7 @@ def get_sparklines_sales():
      
         
     chartid6 = 52
-    row6 =6
+    row6 =7
     dfcsv6, nameCol6, dateCol6, title6, conf_limit6, formatCol6, noteCol6 = ols_data(chartid6)
     
     # create a dataframe for all_dates with Nan entries between the start date and today
@@ -166,7 +189,7 @@ def get_sparklines_sales():
      
         
     chartid7 = 53
-    row7 =7
+    row7 =8
     dfcsv7, nameCol7, dateCol7, title7, conf_limit7, formatCol7, noteCol7 = ols_data(chartid7)
     
     # create a dataframe for all_dates with Nan entries between the start date and today
@@ -193,7 +216,7 @@ def get_sparklines_sales():
      
         
     chartid8 = 97
-    row8 =8
+    row8 =9
     dfcsv8, nameCol8, dateCol8, title8, conf_limit8, formatCol8, noteCol8 = ols_data(chartid8)
     
     # create a dataframe for all_dates with Nan entries between the start date and today
@@ -220,7 +243,7 @@ def get_sparklines_sales():
      
         
     chartid9 = 98
-    row9 =9
+    row9 =10
     dfcsv9, nameCol9, dateCol9, title9, conf_limit9, formatCol9, noteCol9 = ols_data(chartid9)
     
     # create a dataframe for all_dates with Nan entries between the start date and today
@@ -243,7 +266,7 @@ def get_sparklines_sales():
     
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
 
-    fig = make_subplots(rows=9, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1,0.1, 0.1],   subplot_titles = ("Quotes(88)","New and Existing Sales(50)","Total Maintenance(96)", "AC Maintenenace(71)","SM Maintenance(61)", "AC New and Existing(52)", "SM New and Existing(53)", "AC Quotes (97)", "SM Quotes (98)"))
+    fig = make_subplots(rows=10, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1,0.1, 0.1 , 0.1],   subplot_titles = ("Quotes(88)","Orders New and Existing(99)","New and Existing Sales(50)","Total Maintenance(96)", "AC Maintenenace(71)","SM Maintenance(61)", "AC New and Existing(52)", "SM New and Existing(53)", "AC Quotes (97)", "SM Quotes (98)"))
     # row_heights=[0.16, 0.16, 0.16, 0.16, 0.16, 0.16],
     # vertical_spacing= 0.16, 
 #======================================================= quotes row 1
@@ -268,9 +291,30 @@ def get_sparklines_sales():
         ),
         visible=True),
         row=row1, col=1)
+ #======================================================= orders  row 2
+    fig.add_trace(go.Scatter(x=dfcsv1a[dateCol1a],
+                         y = dfcsv1a['Mov_avg8'],
+                          mode='lines',
+                          name='Orders New and Existing per month',
+                          line=dict(
+        color=('green'),
+        width=2,
+        ),
+        visible=True),
+        row=row1a, col=1)
+    fig.add_trace(go.Scatter(x=dfcsv1a[dateCol1a],
+                         y = dfcsv1a['Mean'] ,
+                          mode='lines',
+                         name='Orders New and Existing average',
+                          line=dict(
+        color=('green'),
+        width=1,
+         dash='dash'                   
+        ),
+        visible=True),
+        row=row1a, col=1)   
     
-    
-#===================================================== New and Existing Sales row 2    
+#===================================================== New and Existing Sales row 3    
     #New and Existing Sales row 2
     
     fig.add_trace(go.Scatter(x=dfcsv2[dateCol2],
