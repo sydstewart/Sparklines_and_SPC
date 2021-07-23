@@ -116,16 +116,16 @@ def manhatten(df, name_col, date_col, title, turn_length, boot_num, conf_limit, 
     csv_media = anvil.BlobMedia('text/plain', csv_bytes, name=filename)
     
         
-    file_row = app_tables.charts.get(id = chartid)
-    if file_row != None:
-      file_row['manhatten_csv'] = csv_media
-      #       file_row["last_uploaded"] = datetime.now()
-      alert('Manhatten File updated')
-    else:
-      alert('File does not exist - adding new file')
-      app_tables.charts.add_row(manhatten_csv=csv_media, media_obj=file) #last_uploaded = datetime.now())
+#     file_row = app_tables.charts.get(id = chartid)
+#     if file_row != None:
+#       file_row['manhatten_csv'] = csv_media
+#       #       file_row["last_uploaded"] = datetime.now()
+#       alert('Manhatten File updated')
+#     else:
+#       alert('File does not exist - adding new file')
+#       app_tables.charts.add_row(manhatten_csv=csv_media, media_obj=file) #last_uploaded = datetime.now())
       
-      file_row = app_tables.charts.get(id = chartid)
+#       file_row = app_tables.charts.get(id = chartid)
  
 
         

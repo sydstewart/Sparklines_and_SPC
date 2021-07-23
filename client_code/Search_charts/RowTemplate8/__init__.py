@@ -109,6 +109,17 @@ class RowTemplate8(RowTemplate8Template):
     self.refresh_data_bindings()
     pass
 
+  def button_3_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
+
+  def dup_chart_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    chart_copy = dict(list(self.item))
+    anvil.server.call('duplicate_chart',chart_copy)
+    self.refresh_data_bindings()
+    pass
+
 
 
 

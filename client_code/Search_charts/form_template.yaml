@@ -126,6 +126,7 @@ components:
       - {id: VFVWEK, title: End Date, data_key: column_6, width: '180'}
       - {id: TRWEJJ, title: '', data_key: column_8, width: '50'}
       - {id: LDVLUY, title: '', data_key: archive, width: '50'}
+      - {id: BQYDVR, title: '', data_key: duplicate}
       auto_header: true
       tooltip: ''
       border: ''
