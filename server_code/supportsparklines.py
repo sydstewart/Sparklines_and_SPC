@@ -37,9 +37,9 @@ def create_sparkline(chartid, rowno , color):
 def get_sparklines_support():
     
    
-    fig = make_subplots(rows=10, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1,0.1,0.1, 0.1, 0.1, 0.1,0.1],) # subplot_titles = ("Cases arriving per week","Improvement Change Notes","RCA actions completed"))
+    fig = make_subplots(rows=10, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1,0.1,0.1, 0.1, 0.1, 0.1,0.1],) # subplot_titles = ("All Cases arriving per day","Improvement Change Notes","RCA actions completed"))
     
-    chartid = 70
+    chartid = 95
     rowno = 1
     color = 'blue'
     
