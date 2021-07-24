@@ -44,4 +44,20 @@ components:
   properties: {}
   name: plot_5
   layout_properties: {slot: default}
+- type: Plot
+  properties: {}
+  name: plot_6
+  layout_properties: {slot: default}
+- type: Plot
+  properties: {}
+  name: plot_7
+  layout_properties: {slot: default}
+- type: Plot
+  properties: {}
+  name: plot_8
+  layout_properties: {slot: default}
+- type: Plot
+  properties: {}
+  name: plot_9
+  layout_properties: {slot: default}
 is_package: true

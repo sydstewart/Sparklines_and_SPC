@@ -343,8 +343,117 @@ def create_step_chart(self, chart_copy, chart_position):
                       
       
                   self.plot_5.data = manconf 
-                                                
+        
+            if chart_position == 6:
+                  self.plot_6.visible = True 
+      
+                  self.plot_6.layout.yaxis =  dict(title=chart_title,
+                                                      titlefont=dict(color="#1f77b5"),
+                                                      tickfont=dict(color="#1f77b4"), 
+                                                      )
+                  self.plot_6.layout.xaxis = dict(tickangle=45)    
+                  
+                  self.plot_6.layout.title =  chart_title + " " + "with Conf. Limit =" + " " + str(conf_limit_text) +"%" + " created at " + datetime.now().strftime('%d %B %Y %H:%M')    + " (Note: " + str(no_of_steps) + " steps shown of a  Max. of 15 steps examined)" 
+            #           (Change Conf. Limit = {str(conf_limit)}%) Creation Date: {datetime.now().strftime('%d %B %Y %H:%M')}")
+                
+                  self.plot_6.layout.yaxis2 = dict(title="Cusum",
+                                                  titlefont=dict(color='green'),
+                                                  tickfont=dict(color='green'),
+                                                  overlaying="y",
+                                                  side='right'
+                                                  )
+                      
+      
+                  self.plot_6.data = manconf 
+        
+            if chart_position == 7:
+                  self.plot_7.visible = True 
+      
+                  self.plot_7.layout.yaxis =  dict(title=chart_title,
+                                                      titlefont=dict(color="#1f77b5"),
+                                                      tickfont=dict(color="#1f77b4"), 
+                                                      )
+                  self.plot_7.layout.xaxis = dict(tickangle=45)    
+                  
+                  self.plot_7.layout.title =  chart_title + " " + "with Conf. Limit =" + " " + str(conf_limit_text) +"%" + " created at " + datetime.now().strftime('%d %B %Y %H:%M')    + " (Note: " + str(no_of_steps) + " steps shown of a  Max. of 15 steps examined)" 
+            #           (Change Conf. Limit = {str(conf_limit)}%) Creation Date: {datetime.now().strftime('%d %B %Y %H:%M')}")
+                
+                  self.plot_7.layout.yaxis2 = dict(title="Cusum",
+                                                  titlefont=dict(color='green'),
+                                                  tickfont=dict(color='green'),
+                                                  overlaying="y",
+                                                  side='right'
+                                                  )
+                      
+      
+                  self.plot_7.data = manconf                                    
+                   
+            if chart_position == 8:
+                  self.plot_8.visible = True 
+      
+                  self.plot_8.layout.yaxis =  dict(title=chart_title,
+                                                      titlefont=dict(color="#1f77b5"),
+                                                      tickfont=dict(color="#1f77b4"), 
+                                                      )
+                  self.plot_8.layout.xaxis = dict(tickangle=45)    
+                  
+                  self.plot_8.layout.title =  chart_title + " " + "with Conf. Limit =" + " " + str(conf_limit_text) +"%" + " created at " + datetime.now().strftime('%d %B %Y %H:%M')    + " (Note: " + str(no_of_steps) + " steps shown of a  Max. of 15 steps examined)" 
+            #           (Change Conf. Limit = {str(conf_limit)}%) Creation Date: {datetime.now().strftime('%d %B %Y %H:%M')}")
+                
+                  self.plot_8.layout.yaxis2 = dict(title="Cusum",
+                                                  titlefont=dict(color='green'),
+                                                  tickfont=dict(color='green'),
+                                                  overlaying="y",
+                                                  side='right'
+                                                  )
+                      
+      
+                  self.plot_8.data = manconf 
+        
+            if chart_position == 9:
+                  self.plot_9.visible = True 
+      
+                  self.plot_9.layout.yaxis =  dict(title=chart_title,
+                                                      titlefont=dict(color="#1f77b5"),
+                                                      tickfont=dict(color="#1f77b4"), 
+                                                      )
+                  self.plot_9.layout.xaxis = dict(tickangle=45)    
+                  
+                  self.plot_9.layout.title =  chart_title + " " + "with Conf. Limit =" + " " + str(conf_limit_text) +"%" + " created at " + datetime.now().strftime('%d %B %Y %H:%M')    + " (Note: " + str(no_of_steps) + " steps shown of a  Max. of 15 steps examined)" 
+            #           (Change Conf. Limit = {str(conf_limit)}%) Creation Date: {datetime.now().strftime('%d %B %Y %H:%M')}")
+                
+                  self.plot_9.layout.yaxis2 = dict(title="Cusum",
+                                                  titlefont=dict(color='green'),
+                                                  tickfont=dict(color='green'),
+                                                  overlaying="y",
+                                                  side='right'
+                                                  )
+                      
+      
+                  self.plot_9.data = manconf    
+            if chart_position == 10:
+                  self.plot_10.visible = True 
+      
+                  self.plot_10.layout.yaxis =  dict(title=chart_title,
+                                                      titlefont=dict(color="#1f77b5"),
+                                                      tickfont=dict(color="#1f77b4"), 
+                                                      )
+                  self.plot_10.layout.xaxis = dict(tickangle=45)    
+                  
+                  self.plot_10.layout.title =  chart_title + " " + "with Conf. Limit =" + " " + str(conf_limit_text) +"%" + " created at " + datetime.now().strftime('%d %B %Y %H:%M')    + " (Note: " + str(no_of_steps) + " steps shown of a  Max. of 15 steps examined)" 
+            #           (Change Conf. Limit = {str(conf_limit)}%) Creation Date: {datetime.now().strftime('%d %B %Y %H:%M')}")
+                
+                  self.plot_10.layout.yaxis2 = dict(title="Cusum",
+                                                  titlefont=dict(color='green'),
+                                                  tickfont=dict(color='green'),
+                                                  overlaying="y",
+                                                  side='right'
+                                                  )
+                      
+      
+                  self.plot_10.data = manconf   
                   pass 
+                  
 
 def trends(self, **event_args):
   """This method is called when the button is clicked"""
