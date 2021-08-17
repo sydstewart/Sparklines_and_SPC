@@ -43,4 +43,11 @@ class Main_Account_users(Main_Account_usersTemplate):
     self.refresh_users()
     pass
 
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+#     self.column_panel_1.clear()
+    open_form('Folders')
+    pass
+
+
 
