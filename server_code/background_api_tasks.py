@@ -32,6 +32,18 @@ def get_api_call():
     print("calling chart background generation")
     return task
 
+@anvil.server.background_task
+def get_change_notes_background():
+    """Launch a single crawler background task."""
+    client = tz.tzlocal()
+    
+    offset = datetime.now(client).utcoffset().seconds
+    task = anvil.server.launch_background_task('get_nps_data')
+    print("calling chart background generation")
+    return task  
+  
+  
+  
  
 @anvil.server.background_task
 def get_nps_background():
@@ -39,11 +51,79 @@ def get_nps_background():
     client = tz.tzlocal()
     
     offset = datetime.now(client).utcoffset().seconds
-    task = anvil.server.launch_background_task('get_nps_data')
+    task = anvil.server.launch_background_task('get_change_note_data')
     print("calling chart background generation")
     return task
   
+@anvil.server.background_task
+def get_change_note_data():
+    client = tz.tzlocal()
+    
+    offset = datetime.now(client).utcoffset().seconds 
+    Organisation = app_tables.organisation.get(id = 1)
+    data = app_files.copy_of_change_notes
+#     print(data) 
 
+    ws = data["Sheet1"]
+    
+    df = pd.DataFrame(columns=['Create_Date', 'Class','Count'])
+    
+    for r in data["Sheet1"].rows:
+        if r['Class'] == "Defect":
+#             print(f"{r['Create_Date']} is {r['Class']} ")
+           
+            df = df.append({'Create_Date': r['Create_Date'], 'Class': r['Class']}, ignore_index=True)
+
+    print('df')
+    
+  
+    
+    df['Create_Date']= pd.to_datetime(df['Create_Date'])
+    start_date = "2019-01-01"
+    df = df.loc[(df['Create_Date'] >= start_date)]
+     
+    print(df.head(50))
+    df['YM'] = df['Create_Date'].dt.strftime("%Y-%m-01")
+#     df['YM'] = pd.to_datetime(df['Create_Date']).dt.strftime('01-%m-%Y')
+    print(df['YM'])
+    df = df.groupby(df['YM']).size().reset_index(name='cx')
+    
+    print('groups')
+    print(df)
+
+    df['YM']= pd.to_datetime(df['YM'])
+    df_as_csv =  df.to_csv(index=False, date_format='%Y/%m/%d')
+    
+    csv_bytes = bytes(df_as_csv, 'utf-8') # fix  
+  
+    filename = 'changenote_defects.csv'
+  
+    m=anvil.BlobMedia('application/vnd.ms-excel', csv_bytes, name=filename)
+  
+    file_row = app_tables.my_files.get(name=filename)
+#     client = tz.tzoffset(seconds=offset)
+    now = datetime.now()
+  
+    if file_row != None:
+        file_row["media_obj"] = m 
+        file_row["last_uploaded"] = now
+    #       alert('File updated')
+    else:
+    #       alert('File does not exist - adding new file')
+        app_tables.my_files.add_row(
+        name= filename, 
+        media_obj=m, 
+        Organisation = Organisation,
+        last_uploaded = now )
+
+
+@anvil.server.background_task
+def get_nps_background_responses():
+    """Launch a single crawler background task."""
+    task = anvil.server.launch_background_task('get_nps_responses_background')
+    print("calling chart background generation")
+    return task  
+  
   
 @anvil.server.background_task
 def get_nps_data():
