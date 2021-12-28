@@ -43,13 +43,13 @@ scheduled_tasks:
   job_id: CUTBITDZ
 - task_name: update_chart_end_date
   time_spec:
-    n: 10
-    every: minute
-    at: {}
+    n: 1
+    every: day
+    at: {hour: 3, minute: 0}
   job_id: HJHEFTAG
-- task_name: get_change_notes_background()()
+- task_name: get_change_notes_background()
   time_spec:
-    n: 10
+    n: 1
     every: minute
     at: {}
   job_id: GGNHHRYJ
