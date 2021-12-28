@@ -47,7 +47,7 @@ scheduled_tasks:
     every: day
     at: {hour: 3, minute: 0}
   job_id: HJHEFTAG
-- task_name: get_change_notes_background()
+- task_name: get_change_notes_background
   time_spec:
     n: 1
     every: minute
