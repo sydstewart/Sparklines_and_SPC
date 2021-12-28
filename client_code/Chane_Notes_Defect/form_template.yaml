@@ -1,0 +1,20 @@
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Image
+    properties: {role: null, vertical_align: center, height: 649, tooltip: '', border: '',
+      foreground: '', visible: true, display_mode: fill_width, spacing_above: small,
+      source: '', spacing_below: small, background: '', horizontal_align: center}
+    name: image_1
+    layout_properties: {grid_position: 'PRRVLT,XOHILH'}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+is_package: true

@@ -41,15 +41,9 @@ scheduled_tasks:
     every: day
     at: {hour: 7, minute: 16}
   job_id: CUTBITDZ
-- task_name: update_chart_end_date
-  time_spec:
-    n: 1
-    every: day
-    at: {hour: 3, minute: 0}
-  job_id: HJHEFTAG
 - task_name: get_change_notes_background
   time_spec:
-    n: 1
+    n: 2
     every: minute
     at: {}
   job_id: GGNHHRYJ
@@ -69,8 +63,127 @@ services:
     confirm_email: true, use_google: true, require_secure_passwords: true}
   server_config: {user_table: users}
 - source: /runtime/services/google.yml
-  client_config: {}
-  server_config: {}
+  client_config:
+    app_files:
+    - capabilities: {canCopy: true, canEdit: true}
+      editable: true
+      copyable: true
+      embedLink: https://docs.google.com/spreadsheets/d/1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw/htmlembed?ouid=117208660525111670159
+      copyRequiresWriterPermission: false
+      python_name: copy_of_change_notes_1
+      explicitlyTrashed: false
+      lastModifyingUser:
+        kind: drive#user
+        displayName: Syd Stewart
+        picture: {url: 'https://lh3.googleusercontent.com/a-/AOh14Ghp2M_P60-qwP5DTNkJw_V9AWEwEYOCkCnHCqGPvA=s64'}
+        isAuthenticatedUser: true
+        permissionId: '10976438867099535844'
+        emailAddress: sydney.w.stewart@gmail.com
+      shared: false
+      createdDate: '2021-10-08T18:42:19.406Z'
+      id: 1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw
+      owners:
+      - kind: drive#user
+        displayName: Syd Stewart
+        picture: {url: 'https://lh3.googleusercontent.com/a-/AOh14Ghp2M_P60-qwP5DTNkJw_V9AWEwEYOCkCnHCqGPvA=s64'}
+        isAuthenticatedUser: true
+        permissionId: '10976438867099535844'
+        emailAddress: sydney.w.stewart@gmail.com
+      markedViewedByMeDate: '1970-01-01T00:00:00.000Z'
+      spaces: [drive]
+      parents:
+      - {kind: drive#parentReference, id: 0AC3uEse42l11Uk9PVA, selfLink: 'https://www.googleapis.com/drive/v2/files/1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw/parents/0AC3uEse42l11Uk9PVA',
+        parentLink: 'https://www.googleapis.com/drive/v2/files/0AC3uEse42l11Uk9PVA',
+        isRoot: true}
+      labels: {starred: false, hidden: false, trashed: false, restricted: false, viewed: true}
+      iconLink: https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.spreadsheet
+      selfLink: https://www.googleapis.com/drive/v2/files/1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw
+      lastViewedByMeDate: '2021-12-28T11:21:38.134Z'
+      userPermission: {kind: drive#permission, etag: '"77RZfU8TieN-v-R4JvyDAz8VCgM"',
+        id: me, selfLink: 'https://www.googleapis.com/drive/v2/files/1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw/permissions/me',
+        role: owner, type: user, pendingOwner: false}
+      lastModifyingUserName: Syd Stewart
+      etag: '"MTY0MDY5MDQ5ODEzNA"'
+      kind: drive#file
+      modifiedByMeDate: '2021-12-28T11:21:38.134Z'
+      title: Copy of Change_Notes_1
+      version: '16'
+      appDataContents: false
+      writersCanShare: true
+      fileSize: '267005'
+      alternateLink: https://docs.google.com/spreadsheets/d/1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw/edit?usp=drivesdk
+      mimeType: application/vnd.google-apps.spreadsheet
+      modifiedDate: '2021-12-28T11:21:38.134Z'
+      quotaBytesUsed: '267005'
+      exportLinks: {x-vnd.oasis.opendocument.spreadsheet: 'https://docs.google.com/spreadsheets/export?id=1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw&exportFormat=ods',
+        tab-separated-values: 'https://docs.google.com/spreadsheets/export?id=1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw&exportFormat=tsv',
+        pdf: 'https://docs.google.com/spreadsheets/export?id=1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw&exportFormat=pdf',
+        vnd.openxmlformats-officedocument.spreadsheetml.sheet: 'https://docs.google.com/spreadsheets/export?id=1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw&exportFormat=xlsx',
+        csv: 'https://docs.google.com/spreadsheets/export?id=1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw&exportFormat=csv',
+        zip: 'https://docs.google.com/spreadsheets/export?id=1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw&exportFormat=zip',
+        vnd.oasis.opendocument.spreadsheet: 'https://docs.google.com/spreadsheets/export?id=1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw&exportFormat=ods'}
+      thumbnailLink: https://docs.google.com/feeds/vt?gd=true&id=1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw&v=4&s=AMedNnoAAAAAYcsQeYOv8MaQa-qG0p3SEiGgEV2mE4av&sz=s220
+      ownerNames: [Syd Stewart]
+    - capabilities: {canCopy: true, canEdit: true}
+      editable: true
+      copyable: true
+      embedLink: https://docs.google.com/spreadsheets/d/1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM/htmlembed?ouid=117208660525111670159
+      copyRequiresWriterPermission: false
+      python_name: change_notes
+      explicitlyTrashed: false
+      lastModifyingUser:
+        kind: drive#user
+        displayName: Syd Stewart
+        picture: {url: 'https://lh3.googleusercontent.com/a-/AOh14Ghp2M_P60-qwP5DTNkJw_V9AWEwEYOCkCnHCqGPvA=s64'}
+        isAuthenticatedUser: true
+        permissionId: '10976438867099535844'
+        emailAddress: sydney.w.stewart@gmail.com
+      shared: false
+      createdDate: '2021-09-17T15:58:51.839Z'
+      id: 1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM
+      owners:
+      - kind: drive#user
+        displayName: Syd Stewart
+        picture: {url: 'https://lh3.googleusercontent.com/a-/AOh14Ghp2M_P60-qwP5DTNkJw_V9AWEwEYOCkCnHCqGPvA=s64'}
+        isAuthenticatedUser: true
+        permissionId: '10976438867099535844'
+        emailAddress: sydney.w.stewart@gmail.com
+      markedViewedByMeDate: '1970-01-01T00:00:00.000Z'
+      spaces: [drive]
+      parents:
+      - {kind: drive#parentReference, id: 0AC3uEse42l11Uk9PVA, selfLink: 'https://www.googleapis.com/drive/v2/files/1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM/parents/0AC3uEse42l11Uk9PVA',
+        parentLink: 'https://www.googleapis.com/drive/v2/files/0AC3uEse42l11Uk9PVA',
+        isRoot: true}
+      labels: {starred: false, hidden: false, trashed: false, restricted: false, viewed: true}
+      iconLink: https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.spreadsheet
+      selfLink: https://www.googleapis.com/drive/v2/files/1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM
+      lastViewedByMeDate: '2021-12-28T11:25:56.506Z'
+      userPermission: {kind: drive#permission, etag: '"QFunu8PR1zw6LDVMR96gatum0Ws"',
+        id: me, selfLink: 'https://www.googleapis.com/drive/v2/files/1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM/permissions/me',
+        role: owner, type: user, pendingOwner: false}
+      lastModifyingUserName: Syd Stewart
+      etag: '"MTY0MDI3NjE3OTI1OQ"'
+      kind: drive#file
+      modifiedByMeDate: '2021-12-23T16:16:19.259Z'
+      title: Change_Notes
+      version: '771'
+      appDataContents: false
+      writersCanShare: true
+      fileSize: '333061'
+      alternateLink: https://docs.google.com/spreadsheets/d/1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM/edit?usp=drivesdk
+      mimeType: application/vnd.google-apps.spreadsheet
+      modifiedDate: '2021-12-23T16:16:19.259Z'
+      quotaBytesUsed: '333061'
+      exportLinks: {x-vnd.oasis.opendocument.spreadsheet: 'https://docs.google.com/spreadsheets/export?id=1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM&exportFormat=ods',
+        tab-separated-values: 'https://docs.google.com/spreadsheets/export?id=1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM&exportFormat=tsv',
+        pdf: 'https://docs.google.com/spreadsheets/export?id=1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM&exportFormat=pdf',
+        vnd.openxmlformats-officedocument.spreadsheetml.sheet: 'https://docs.google.com/spreadsheets/export?id=1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM&exportFormat=xlsx',
+        csv: 'https://docs.google.com/spreadsheets/export?id=1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM&exportFormat=csv',
+        zip: 'https://docs.google.com/spreadsheets/export?id=1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM&exportFormat=zip',
+        vnd.oasis.opendocument.spreadsheet: 'https://docs.google.com/spreadsheets/export?id=1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM&exportFormat=ods'}
+      thumbnailLink: https://docs.google.com/feeds/vt?gd=true&id=1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM&v=578&s=AMedNnoAAAAAYcsQiLdvXxu67XuAVZWouvkPUqbQx7lZ&sz=s220
+      ownerNames: [Syd Stewart]
+  server_config: {enc_delegation_refresh_token: pPn//KsvZ0p7Wc4ll0D5cb10JZTCXy2b72jAYtKviQSogP7EYzyVngvfst3ioPjMvMExmnDvLKgJQD+t8C3sVv1B7YutzEOJxFseM8pEH4yXpbSs8FwhiDyDvQu1KU4rxWPIs0cZGP76Cbkq17oTyJQabm0JYXz3NsK1+IGE8Jnkrmu5+/07k/YNlpwHccJQnJ+EGiLJecYYlqfNiFjQZqd+RNQCxlwPGB9XFyGlB+0ByTF4FyHcabtWg8p45dYA8N1zrEUpFsUOdz9NFcLBcYtK/1eC4wjBWKL4LulqkPNl79wQclFPJ9hf032wfA==}
 startup: {type: form, module: Home}
 package_name: EmailQuickstart
 allow_embedding: false

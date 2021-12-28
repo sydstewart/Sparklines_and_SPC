@@ -38,7 +38,7 @@ def get_change_notes_background():
     client = tz.tzlocal()
     
     offset = datetime.now(client).utcoffset().seconds
-    task = anvil.server.launch_background_task('get_nps_data')
+    task = anvil.server.launch_background_task('get_change_note_data')
     print("calling chart background generation")
     return task  
   
