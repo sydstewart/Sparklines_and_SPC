@@ -155,6 +155,17 @@ class Home(HomeTemplate):
     self.reset_links()
     pass
 
+  def link_11_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.reset_links()
+    self.link_10.role = 'selected'
+    self.content_panel.clear()
+    self.content_panel.add_component(Form1())
+    
+    self.reset_links()
+    pass
+
+
 
 
 
