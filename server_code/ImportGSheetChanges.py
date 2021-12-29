@@ -35,12 +35,12 @@ from datetime import datetime, timedelta
 @anvil.server.callable  
 def getsheet():
   
-    dfx = pd.DataFrame({'Color': ['Red', 'Yellow', 'Blue', 'Red'], 'Value': [1 , 1 , 1 , 1]})
-    print('dfx')
-    print(dfx)
-    dfx = dfx.groupby(['Color']).size().reset_index(name='cx')
-#     dfx['Counts'] = dfx.groupby(['Color'])['Value'].transform('count')
-    print(dfx)
+#     dfx = pd.DataFrame({'Color': ['Red', 'Yellow', 'Blue', 'Red'], 'Value': [1 , 1 , 1 , 1]})
+#     print('dfx')
+#     print(dfx)
+#     dfx = dfx.groupby(['Color']).size().reset_index(name='cx')
+# #     dfx['Counts'] = dfx.groupby(['Color'])['Value'].transform('count')
+#     print(dfx)
     
     
     Organisation = app_tables.organisation.get(id = 1)

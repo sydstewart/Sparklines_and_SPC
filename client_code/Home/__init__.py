@@ -19,6 +19,7 @@ from datetime import datetime
 from ..Stacked_Sales_Charts import Stacked_Sales_Charts
 from ..Main_Account_users import Main_Account_users
 from ..sales_sparklines import sales_sparklines
+from ..support_sparklines import support_sparklines
 
 class Home(HomeTemplate):
   def __init__(self, **properties):
@@ -164,6 +165,16 @@ class Home(HomeTemplate):
     
     self.reset_links()
     pass
+
+  def link_12_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.reset_links()
+    self.link_12.role = 'selected'
+    self.content_panel.clear()
+    self.content_panel.add_component(get_Changes_sparklines(), full_width_row=True)
+    self.reset_links()
+    pass
+
 
 
 
