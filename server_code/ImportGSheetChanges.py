@@ -44,38 +44,40 @@ def getsheet():
     
     
     Organisation = app_tables.organisation.get(id = 1)
-    data = app_files.change_notes
-    print(data) 
-
-    ws = data["Sheet 1"]
-    
-    df = pd.DataFrame(columns=['Create_Date', 'Class','Count'])
-    
-    for r in data["Sheet 1"].rows:
-        if r['Class'] == "Defect":
+    datachange = app_files.change_notes
+    print('dftchange')
+    dft  = pd.DataFrame( columns = ['Create_Date', 'Class', 'Year-Month' ])
+   
+   
+    for r in datachange["Sheet 1"].rows:
+#        if (r['Create_Date'] == '12/04/2018 10:43'):
 #             print(f"{r['Create_Date']} is {r['Class']} ")
-           
-            df = df.append({'Create_Date': r['Create_Date'], 'Class': r['Class']}, ignore_index=True)
+            dft = dft.append({'Create_Date': r['Create_Date'], 'Class': r['Class'], 'Year-Month' :r['Year-Month']}, ignore_index=True) 
+    print('dft')
 
-    print('df')
+    dft = dft.loc[(dft['Class'] == 'Defect')  ]
+    dftg = dft.groupby('Year-Month').size().reset_index().rename(columns={0: 'count_changes'})
+    print('dftgroup')
+    print(dftg)
+ 
     
   
     
-    df['Create_Date']= pd.to_datetime(df['Create_Date'])
-    start_date = "2019-01-01"
-    df = df.loc[(df['Create_Date'] >= start_date)]
+#     df['Create_Date']= pd.to_datetime(df['Create_Date'])
+#     start_date = "2019-01-01"
+#     df = df.loc[(df['Create_Date'] >= start_date)]
      
-    print(df.head(50))
-    df['YM'] = df['Create_Date'].dt.strftime("%Y-%m-01")
-#     df['YM'] = pd.to_datetime(df['Create_Date']).dt.strftime('01-%m-%Y')
-    print(df['YM'])
-    df = df.groupby(df['YM']).size().reset_index(name='cx')
+#     print(df.head(50))
+#     df['YM'] = df['Create_Date'].dt.strftime("%Y-%m-01")
+# #     df['YM'] = pd.to_datetime(df['Create_Date']).dt.strftime('01-%m-%Y')
+#     print(df['YM'])
+#     df = df.groupby(df['YM']).size().reset_index(name='cx')
     
-    print('groups')
-    print(df)
+#     print('groups')
+#     print(df)
 
     df['YM']= pd.to_datetime(df['YM'])
-    df_as_csv =  df.to_csv(index=False, date_format='%Y/%m/%d')
+    dftg_as_csv =  dftg.to_csv(index=False, date_format='%Y/%m/%d')
     
     csv_bytes = bytes(df_as_csv, 'utf-8') # fix  
   

@@ -122,7 +122,7 @@ services:
         csv: 'https://docs.google.com/spreadsheets/export?id=1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw&exportFormat=csv',
         zip: 'https://docs.google.com/spreadsheets/export?id=1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw&exportFormat=zip',
         vnd.oasis.opendocument.spreadsheet: 'https://docs.google.com/spreadsheets/export?id=1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw&exportFormat=ods'}
-      thumbnailLink: https://docs.google.com/feeds/vt?gd=true&id=1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw&v=4&s=AMedNnoAAAAAYcsQeYOv8MaQa-qG0p3SEiGgEV2mE4av&sz=s220
+      thumbnailLink: https://docs.google.com/feeds/vt?gd=true&id=1dnjwwhFrnAom04e8VAZBmo2hfb7aEEh45LF5dHoOShw&v=4&s=AMedNnoAAAAAYcsRE2rsCb0v-xym0pWkCnr-wAyhUY29&sz=s220
       ownerNames: [Syd Stewart]
     - capabilities: {canCopy: true, canEdit: true}
       editable: true
@@ -181,7 +181,7 @@ services:
         csv: 'https://docs.google.com/spreadsheets/export?id=1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM&exportFormat=csv',
         zip: 'https://docs.google.com/spreadsheets/export?id=1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM&exportFormat=zip',
         vnd.oasis.opendocument.spreadsheet: 'https://docs.google.com/spreadsheets/export?id=1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM&exportFormat=ods'}
-      thumbnailLink: https://docs.google.com/feeds/vt?gd=true&id=1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM&v=578&s=AMedNnoAAAAAYcsQiLdvXxu67XuAVZWouvkPUqbQx7lZ&sz=s220
+      thumbnailLink: https://docs.google.com/feeds/vt?gd=true&id=1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM&v=578&s=AMedNnoAAAAAYcsRE9hZdzvdeq4KZvBLUI6W2DmtURoQ&sz=s220
       ownerNames: [Syd Stewart]
   server_config: {enc_delegation_refresh_token: pPn//KsvZ0p7Wc4ll0D5cb10JZTCXy2b72jAYtKviQSogP7EYzyVngvfst3ioPjMvMExmnDvLKgJQD+t8C3sVv1B7YutzEOJxFseM8pEH4yXpbSs8FwhiDyDvQu1KU4rxWPIs0cZGP76Cbkq17oTyJQabm0JYXz3NsK1+IGE8Jnkrmu5+/07k/YNlpwHccJQnJ+EGiLJecYYlqfNiFjQZqd+RNQCxlwPGB9XFyGlB+0ByTF4FyHcabtWg8p45dYA8N1zrEUpFsUOdz9NFcLBcYtK/1eC4wjBWKL4LulqkPNl79wQclFPJ9hf032wfA==}
 startup: {type: form, module: Home}
