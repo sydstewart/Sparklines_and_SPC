@@ -20,7 +20,7 @@ from ..Stacked_Sales_Charts import Stacked_Sales_Charts
 from ..Main_Account_users import Main_Account_users
 from ..sales_sparklines import sales_sparklines
 from ..support_sparklines import support_sparklines
-
+from ..changes_sparklines import changes_sparklines
 class Home(HomeTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -171,7 +171,7 @@ class Home(HomeTemplate):
     self.reset_links()
     self.link_12.role = 'selected'
     self.content_panel.clear()
-    self.content_panel.add_component(get_Changes_sparklines(), full_width_row=True)
+    self.content_panel.add_component(changes_sparklines(), full_width_row=True)
     self.reset_links()
     pass
 
