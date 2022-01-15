@@ -14,7 +14,7 @@ from datetime import date ,datetime, timedelta
 from plotly.subplots import make_subplots
 import plotly.io as pio
 from anvil import BlobMedia
-
+from .supportsparklines import create_sparkline
 @anvil.server.callable
 def get_sparklines_sales():
     end_date_of_last_month = datetime.today().replace(day=1) - timedelta(1)

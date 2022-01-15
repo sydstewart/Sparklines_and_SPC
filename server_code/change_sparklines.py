@@ -8,6 +8,8 @@ from anvil.tables import app_tables
 import anvil.email
 import anvil.server
 from plotly.subplots import make_subplots
+from .supportsparklines import create_sparkline
+import plotly.graph_objects as go
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
 #
