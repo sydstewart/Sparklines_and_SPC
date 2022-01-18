@@ -7,6 +7,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.email
 import anvil.server
+import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from .supportsparklines import create_sparkline
 # This is a server module. It runs on the Anvil server,
@@ -25,10 +26,10 @@ from .supportsparklines import create_sparkline
 @anvil.server.callable
 def get_Changes_sparklines():
     
-   
-    fig = make_subplots(rows=10, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1,0.1,0.1, 0.1, 0.1, 0.1,0.1], subplot_titles = ("Defects Detected (102)", \
-                                                 "Problem Cases (44)","Config Cases (45)", "Interfaces Cases (46)","Printing Cases (47)","How to Cases (78)", \
-                                                  "NPS Scores (51)","NPS responses (79)","Expert Helps (66)"))
+    # ,0.1,0.1, 0.1, 0.1, 0.1,0.1
+    # , "Interfaces Cases (46)","Printing Cases (47)","How to Cases (78)", "NPS Scores (51)","NPS responses (79)","Expert Helps (66)"
+    fig = make_subplots(rows=3, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1], subplot_titles = ("Defects Detected (102)", \
+                                                 "Improvement Changes (xxx)","All Changes (xxx)"))
    
   #================All Cases Arriving =========================================================================  
     chartid = 102

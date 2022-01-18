@@ -180,7 +180,7 @@ class Home(HomeTemplate):
     self.reset_links()
     self.link_12.role = 'selected'
     self.content_panel.clear()
-    self.content_panel.add_component(Change_Notes_Defect(), full_width_row=True)
+    self.content_panel.add_component(changes_sparklines(), full_width_row=True)
     self.reset_links()
     pass
 

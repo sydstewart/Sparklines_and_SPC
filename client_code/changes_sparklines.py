@@ -15,7 +15,7 @@ class changes_sparklines(changes_sparklinesTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 #     self.button_1.visible = True
-    fig = anvil.server.call('get_Changes_sparklines')
+    fig = anvil.server.call('get_sparklines_changes')
     self.plot_1.figure = fig
 #     media_object = anvil.server.call('create_zaphod_pdf')
 #     anvil.media.download(media_object)
