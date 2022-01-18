@@ -21,6 +21,10 @@ from ..Main_Account_users import Main_Account_users
 from ..sales_sparklines import sales_sparklines
 from ..support_sparklines import support_sparklines
 from ..changes_sparklines import changes_sparklines
+from ..get_changes_sparklines import get_changes_sparklines
+from ..get_changes_sparklines_improvements import get_changes_sparklines_improvements
+from ..get_changes_sparklines_defects import get_changes_sparklines_defects
+
 class Home(HomeTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -175,14 +179,36 @@ class Home(HomeTemplate):
     self.reset_links()
     pass
 
+  #get defect data from Gsheet
   def link_13_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.reset_links()
     self.link_12.role = 'selected'
     self.content_panel.clear()
-    self.content_panel.add_component(changes_sparklines(), full_width_row=True)
+    self.content_panel.add_component(get_changes_sparklines(), full_width_row=True)
     self.reset_links()
     pass
+
+  def link_14_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.reset_links()
+    self.link_12.role = 'selected'
+    self.content_panel.clear()
+    self.content_panel.add_component(get_changes_sparklines_improvements(), full_width_row=True)
+    self.reset_links()
+    pass
+
+  def link_15_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.reset_links()
+    self.link_12.role = 'selected'
+    self.content_panel.clear()
+    self.content_panel.add_component(get_changes_sparklines_defects(), full_width_row=True)
+    self.reset_links()
+    pass
+    pass
+
+
 
 
 

@@ -38,9 +38,9 @@ def get_sparklines_changes():
     
    
     fig = make_subplots(rows=3, cols=1 , row_heights=[0.33, 0.33, 0.33 ], subplot_titles = ("Defects Detected (102)", \
-                                                 "Improvement Changes (xxx)","All Changess (xxx)"))
+                                                 "Improvement Changes (103)","Defects Released (104)"))
    
-  #================All Cases Arriving =========================================================================  
+  #================Defect Changes =========================================================================  
     chartid = 102
     rowno = 1
     color = 'blue'
@@ -70,8 +70,66 @@ def get_sparklines_changes():
         visible=True),
         row=rowno, col=1) 
     
-   
-    fig.update_layout(height=100, width=200, title_text= "Product Change Sparklines (Chart Id)")
+ #================IMprovement Changes ==============================
+    chartid = 103
+    rowno = 2
+    color = 'green'
+    
+    
+    mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1  = create_sparkline(chartid, rowno , color)
+    name_of_chart = title1
+    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+                        y = dfcsv1['Mov_avg8'],
+                          mode='lines',
+                          name=name_of_chart,
+                          line=dict(
+        color=color,
+        width=2,
+        ),
+        visible=True),
+        row=rowno, col=1)
+    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+                        y = dfcsv1['Mean'] ,
+                          mode='lines',
+                          name= name_of_chart + ' ' + 'average  =' + str(round(mean1,0)),
+                          line=dict(
+        color=color,
+        width=1,
+        dash='dash'                   
+        ),
+        visible=True),
+        row=rowno, col=1) 
+    
+     #================Defetcs Fixed==============================
+    chartid = 104
+    rowno = 3
+    color = 'brown'
+    
+    
+    mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1  = create_sparkline(chartid, rowno , color)
+    name_of_chart = title1
+    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+                        y = dfcsv1['Mov_avg8'],
+                          mode='lines',
+                          name=name_of_chart,
+                          line=dict(
+        color=color,
+        width=2,
+        ),
+        visible=True),
+        row=rowno, col=1)
+    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+                        y = dfcsv1['Mean'] ,
+                          mode='lines',
+                          name= name_of_chart + ' ' + 'average  =' + str(round(mean1,0)),
+                          line=dict(
+        color=color,
+        width=1,
+        dash='dash'                   
+        ),
+        visible=True),
+        row=rowno, col=1)   
+    fig.update_layout(height=10, width=200, title_text= "Product Change Sparklines (Chart Id)")
     fig.update_xaxes(visible=True, fixedrange=True)
     fig.update_yaxes(visible=False, fixedrange=True)
     fig.update_annotations(font_size=12)
