@@ -76,10 +76,10 @@ def getsheet():
 #     print('groups')
 #     print(df)
 
-    df['YM']= pd.to_datetime(df['YM'])
+    dftg['YM']= pd.to_datetime(dftg['Year-Month'])
     dftg_as_csv =  dftg.to_csv(index=False, date_format='%Y/%m/%d')
     
-    csv_bytes = bytes(df_as_csv, 'utf-8') # fix  
+    csv_bytes = bytes(dftg_as_csv, 'utf-8') # fix  
   
     filename = 'changenote_defects.csv'
   
@@ -102,7 +102,7 @@ def getsheet():
         last_uploaded = now )
     
     
-    years = (df['YM'])
+    years = (dftg['YM'])
     x = np.arange(len(years))
   
     # Plot it in the normal Matplotlib way
@@ -120,7 +120,7 @@ def getsheet():
     ax.xaxis.set_major_locator(locator)
 
     plt.figure(1, figsize=(10,5))
-    plt.plot(x, df['cx'], 'crimson')  
+    plt.plot(x, dftg['count_changes'], 'crimson')  
     
     # Return this plot as a PNG image in a Media object
     return anvil.mpl_util.plot_image()
