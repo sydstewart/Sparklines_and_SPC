@@ -129,7 +129,8 @@ def get_sparklines_changes():
         ),
         visible=True),
         row=rowno, col=1)   
-    fig.update_layout(height=10, width=200, title_text= "Product Change Sparklines (Chart Id)")
+    
+    fig.update_layout(height=1000, width=200, title_text= "Product Change Sparklines (Chart Id)")
     fig.update_xaxes(visible=True, fixedrange=True)
     fig.update_yaxes(visible=False, fixedrange=True)
     fig.update_annotations(font_size=12)
