@@ -34,12 +34,13 @@ def create_sparkline(chartid, rowno , color):
     
 
 @anvil.server.callable
-def get_sparklines_support():
-    
+def get_sparklines_changes():
+#     fig = make_subplots(rows=10, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1,0.1,0.1, 0.1, 0.1, 0.1,0.1], subplot_titles = ("Defects Detected (102)", \
+#                                                  "Improvements Made (103)","Defects Fixed (45)", "Interfaces Cases (46)","Printing Cases (47)","How to Cases (78)", \
+#                                                   "NPS Scores (51)","NPS responses (79)","Expert Helps (66)"))    
    
-    fig = make_subplots(rows=10, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1,0.1,0.1, 0.1, 0.1, 0.1,0.1], subplot_titles = ("Defects Detected (102)", \
-                                                 "Improvements Made (103)","Defects Fixed (45)", "Interfaces Cases (46)","Printing Cases (47)","How to Cases (78)", \
-                                                  "NPS Scores (51)","NPS responses (79)","Expert Helps (66)"))
+    fig = make_subplots(rows=3, cols=1 , row_heights=[0.1, 0.1, 0.1], subplot_titles = ("Defects Detected (102)", \
+                                                 "Improvements Made (103)","Defects Fixed (104)"))
    
   #================All Cases Arriving =========================================================================  
     chartid = 102
@@ -135,199 +136,199 @@ def get_sparklines_support():
         visible=True),
         row=rowno, col=1)
     
-   #======================================= Interfaces ===========================================================
-    #Interfaces
+#    #======================================= Interfaces ===========================================================
+#     #Interfaces
     
-    chartid = 46
-    rowno = 4
-    color = 'red'
+#     chartid = 46
+#     rowno = 4
+#     color = 'red'
      
     
-    mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
-    name_of_chart = title1
-    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1['Mov_avg8'],
-                          mode='lines',
-                          name=name_of_chart,
-                          line=dict(
-        color=color,
-        width=2,
-        ),
-        visible=True),
-        row=rowno, col=1)
-    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1['Mean'] ,
-                          mode='lines',
-                          name= name_of_chart+ ' ' + 'average  = ' + str(round(mean1,0)),
-                          line=dict(
-        color=color,
-        width=1,
-        dash='dash'                   
-        ),
-        visible=True),
-        row=rowno, col=1) 
+#     mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
+#     name_of_chart = title1
+#     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+#                         y = dfcsv1['Mov_avg8'],
+#                           mode='lines',
+#                           name=name_of_chart,
+#                           line=dict(
+#         color=color,
+#         width=2,
+#         ),
+#         visible=True),
+#         row=rowno, col=1)
+#     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+#                         y = dfcsv1['Mean'] ,
+#                           mode='lines',
+#                           name= name_of_chart+ ' ' + 'average  = ' + str(round(mean1,0)),
+#                           line=dict(
+#         color=color,
+#         width=1,
+#         dash='dash'                   
+#         ),
+#         visible=True),
+#         row=rowno, col=1) 
     
-     #===================================== Printing =============================================================
+#      #===================================== Printing =============================================================
     
-            # printing
-    chartid = 47
-    rowno = 5
-    color = 'purple'
+#             # printing
+#     chartid = 47
+#     rowno = 5
+#     color = 'purple'
      
     
-    mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
-    name_of_chart = title1
-    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1['Mov_avg8'],
-                          mode='lines',
-                          name=name_of_chart,
-                          line=dict(
-        color=color,
-        width=2,
-        ),
-        visible=True),
-        row=rowno, col=1)
+#     mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
+#     name_of_chart = title1
+#     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+#                         y = dfcsv1['Mov_avg8'],
+#                           mode='lines',
+#                           name=name_of_chart,
+#                           line=dict(
+#         color=color,
+#         width=2,
+#         ),
+#         visible=True),
+#         row=rowno, col=1)
     
     
-    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1['Mean'] ,
-                          mode='lines',
-                          name= name_of_chart+ ' ' + 'average  = ' + str(round(mean1,0)),
-                          line=dict(
-        color=color,
-        width=1,
-        dash='dash'                   
-        ),
-        visible=True),
-        row=rowno, col=1)
+#     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+#                         y = dfcsv1['Mean'] ,
+#                           mode='lines',
+#                           name= name_of_chart+ ' ' + 'average  = ' + str(round(mean1,0)),
+#                           line=dict(
+#         color=color,
+#         width=1,
+#         dash='dash'                   
+#         ),
+#         visible=True),
+#         row=rowno, col=1)
     
-     #============================== How tos ====================================================================
-    # how to
-    chartid = 78
-    rowno = 6
-    color = 'black'
+#      #============================== How tos ====================================================================
+#     # how to
+#     chartid = 78
+#     rowno = 6
+#     color = 'black'
      
     
-    mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
-    name_of_chart = title1
-    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1['Mov_avg8'],
-                          mode='lines',
-                          name=name_of_chart,
-                          line=dict(
-        color=color,
-        width=2,
-        ),
-        visible=True),
-        row=rowno, col=1)
-    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1['Mean'] ,
-                          mode='lines',
-                          name= name_of_chart+ ' ' + 'average  = ' + str(round(mean1,0)),
-                          line=dict(
-        color=color,
-        width=1,
-        dash='dash'                   
-        ),
-        visible=True),
-        row=rowno, col=1) 
+#     mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
+#     name_of_chart = title1
+#     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+#                         y = dfcsv1['Mov_avg8'],
+#                           mode='lines',
+#                           name=name_of_chart,
+#                           line=dict(
+#         color=color,
+#         width=2,
+#         ),
+#         visible=True),
+#         row=rowno, col=1)
+#     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+#                         y = dfcsv1['Mean'] ,
+#                           mode='lines',
+#                           name= name_of_chart+ ' ' + 'average  = ' + str(round(mean1,0)),
+#                           line=dict(
+#         color=color,
+#         width=1,
+#         dash='dash'                   
+#         ),
+#         visible=True),
+#         row=rowno, col=1) 
     
-     #=========================== nps =======================================================================
- # nps
-    chartid = 51
-    rowno = 7
-    color = 'gold'
+#      #=========================== nps =======================================================================
+#  # nps
+#     chartid = 51
+#     rowno = 7
+#     color = 'gold'
      
     
-    mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
-    name_of_chart = title1
-    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1['Mov_avg8'],
-                          mode='lines',
-                          name=name_of_chart,
-                          line=dict(
-        color=color,
-        width=2,
-        ),
-        visible=True),
-        row=rowno, col=1)
-    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1['Mean'] ,
-                          mode='lines',
-                          name= name_of_chart+ ' ' + 'average  = ' + str(round(mean1,0)),
-                          line=dict(
-        color='black',
-        width=1,
-        dash='dash'                   
-        ),
-        visible=True),
-        row=rowno, col=1)
+#     mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
+#     name_of_chart = title1
+#     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+#                         y = dfcsv1['Mov_avg8'],
+#                           mode='lines',
+#                           name=name_of_chart,
+#                           line=dict(
+#         color=color,
+#         width=2,
+#         ),
+#         visible=True),
+#         row=rowno, col=1)
+#     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+#                         y = dfcsv1['Mean'] ,
+#                           mode='lines',
+#                           name= name_of_chart+ ' ' + 'average  = ' + str(round(mean1,0)),
+#                           line=dict(
+#         color='black',
+#         width=1,
+#         dash='dash'                   
+#         ),
+#         visible=True),
+#         row=rowno, col=1)
     
-     #======================== nps responses ==========================================================================
- # nps response
-    chartid = 79
-    rowno = 8
-    color = 'gold'
+#      #======================== nps responses ==========================================================================
+#  # nps response
+#     chartid = 79
+#     rowno = 8
+#     color = 'gold'
      
     
-    mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
-    name_of_chart = title1
-    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1['Mov_avg8'],
-                          mode='lines',
-                          name=name_of_chart,
-                          line=dict(
-        color=color,
-        width=2,
-        ),
-        visible=True),
-        row=rowno, col=1)
-    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1['Mean'] ,
-                          mode='lines',
-                          name= name_of_chart+ ' ' + 'average  = ' + str(round(mean1,0)),
-                          line=dict(
-        color='black',
-        width=1,
-        dash='dash'                   
-        ),
-        visible=True),
-        row=rowno, col=1)    
+#     mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
+#     name_of_chart = title1
+#     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+#                         y = dfcsv1['Mov_avg8'],
+#                           mode='lines',
+#                           name=name_of_chart,
+#                           line=dict(
+#         color=color,
+#         width=2,
+#         ),
+#         visible=True),
+#         row=rowno, col=1)
+#     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+#                         y = dfcsv1['Mean'] ,
+#                           mode='lines',
+#                           name= name_of_chart+ ' ' + 'average  = ' + str(round(mean1,0)),
+#                           line=dict(
+#         color='black',
+#         width=1,
+#         dash='dash'                   
+#         ),
+#         visible=True),
+#         row=rowno, col=1)    
 
     
-     #=============================== Expert Helps ===================================================================
-    # Expert Helps
-    chartid = 66
-    rowno = 9
-    color = 'maroon'
+#      #=============================== Expert Helps ===================================================================
+#     # Expert Helps
+#     chartid = 66
+#     rowno = 9
+#     color = 'maroon'
      
     
-    mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
-    name_of_chart = title1
-    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1['Mov_avg8'],
-                          mode='lines',
-                          name=name_of_chart,
-                          line=dict(
-        color=color,
-        width=2,
-        ),
-        visible=True),
-        row=rowno, col=1)
-    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
-                        y = dfcsv1['Mean'] ,
-                          mode='lines',
-                          name= name_of_chart+ ' ' + 'average  = ' + str(round(mean1,0)),
-                          line=dict(
-        color='black',
-        width=1,
-        dash='dash'                   
-        ),
-        visible=True),
-        row=rowno, col=1) 
+#     mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1 = create_sparkline(chartid, rowno , color)
+#     name_of_chart = title1
+#     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+#                         y = dfcsv1['Mov_avg8'],
+#                           mode='lines',
+#                           name=name_of_chart,
+#                           line=dict(
+#         color=color,
+#         width=2,
+#         ),
+#         visible=True),
+#         row=rowno, col=1)
+#     fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+#                         y = dfcsv1['Mean'] ,
+#                           mode='lines',
+#                           name= name_of_chart+ ' ' + 'average  = ' + str(round(mean1,0)),
+#                           line=dict(
+#         color='black',
+#         width=1,
+#         dash='dash'                   
+#         ),
+#         visible=True),
+#         row=rowno, col=1) 
     
     
-    fig.update_layout(height=1000, width=200, title_text= "Support Sparklines (Chart Id)")
+    fig.update_layout(height=30, width=200, title_text= "Changes Sparklines (Chart Id)")
     fig.update_xaxes(visible=True, fixedrange=True)
     fig.update_yaxes(visible=False, fixedrange=True)
     fig.update_annotations(font_size=12)

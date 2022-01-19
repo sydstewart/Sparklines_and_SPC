@@ -190,6 +190,7 @@ allow_embedding: false
 name: SPC Charts v2
 runtime_options: {version: 2, server_version: python3-full, client_version: '3'}
 metadata: {}
+startup_form: Form1
 native_deps: {head_html: ''}
 db_schema:
   charts:

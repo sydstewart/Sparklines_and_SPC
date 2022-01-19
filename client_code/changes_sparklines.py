@@ -10,6 +10,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.media
 
+
 class changes_sparklines(changes_sparklinesTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
