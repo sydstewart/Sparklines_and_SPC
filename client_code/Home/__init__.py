@@ -169,7 +169,8 @@ class Home(HomeTemplate):
     
     self.reset_links()
     pass
-
+  
+#Create changes sparklines
   def link_12_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.reset_links()
@@ -188,7 +189,8 @@ class Home(HomeTemplate):
     self.content_panel.add_component(get_changes_sparklines(), full_width_row=True)
     self.reset_links()
     pass
-
+  
+# get change improvements released
   def link_14_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.reset_links()
@@ -197,7 +199,8 @@ class Home(HomeTemplate):
     self.content_panel.add_component(get_changes_sparklines_improvements(), full_width_row=True)
     self.reset_links()
     pass
-
+  
+# get change defects released
   def link_15_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.reset_links()
