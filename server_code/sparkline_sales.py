@@ -453,6 +453,7 @@ def get_sparklines_sales():
                          y = dfcsv7['Mean'] ,
                           mode='lines',
                           name= 'SM New and Existing average',
+                          
                           line=dict(
         color=('blue'),
         width=1,
