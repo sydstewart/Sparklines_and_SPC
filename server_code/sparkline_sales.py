@@ -15,6 +15,63 @@ from plotly.subplots import make_subplots
 import plotly.io as pio
 from anvil import BlobMedia
 from .supportsparklines import create_sparkline
+
+def create_sparkline(chartid, rowno , color):
+    
+   
+    dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1,noteCol = ols_data(chartid)
+
+    # create a dataframe for all_dates with Nan entries between the start date and today
+    today = date.today()
+    d1 = today.strftime("%Y-%m-01")
+    dfcsv1['Date_Entered'] = dfcsv1[dateCol1]
+    dfcsv1["Date_Entered"] = pd.to_datetime(dfcsv1["Date_Entered"]) 
+    
+    # calculate mean
+    dfcsv1['Mean']= dfcsv1[nameCol1].mean()
+    mean1 = dfcsv1[nameCol1].mean()
+    return mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1
+    #add sparkline
+#     fig = make_subplots(rows=3, cols=1 , row_heights=[0.34, 0.33, 0.33],)# subplot_titles = ("Defect Change Notes","Improvement Change Notes","RCA actions completed"))
+    
+
+@anvil.server.callable
+def get_sparklines_support():
+    
+   
+    fig = make_subplots(rows=10, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1,0.1,0.1, 0.1, 0.1, 0.1,0.1], subplot_titles = ("All Cases arriving per day (95)", \
+                                                 "Problem Cases (44)","Config Cases (45)", "Interfaces Cases (46)","Printing Cases (47)","How to Cases (78)", \
+                                                  "NPS Scores (51)","NPS responses (79)","Expert Helps (66)"))
+   
+  #================All Cases Arriving =========================================================================  
+    chartid = 95
+    rowno = 1
+    color = 'blue'
+    
+    
+    mean1, dfcsv1, nameCol1, dateCol1, title1, conf_limit1, formatCol1  = create_sparkline(chartid, rowno , color)
+    name_of_chart = title1
+    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+                        y = dfcsv1['Mov_avg8'],
+                          mode='lines',
+                          name=name_of_chart,
+                          line=dict(
+        color=color,
+        width=2,
+        ),
+        visible=True),
+        row=rowno, col=1)
+    fig.add_trace(go.Scatter(x=dfcsv1[dateCol1],
+                        y = dfcsv1['Mean'] ,
+                          mode='lines',
+                          name= name_of_chart + ' ' + 'average  =' + str(round(mean1,0)),
+                          line=dict(
+        color=color,
+        width=1,
+        dash='dash'                   
+        ),
+        visible=True),
+        row=rowno, col=1) 
 @anvil.server.callable
 def get_sparklines_sales():
     end_date_of_last_month = datetime.today().replace(day=1) - timedelta(1)
