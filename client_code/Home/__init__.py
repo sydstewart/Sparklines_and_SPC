@@ -211,6 +211,18 @@ class Home(HomeTemplate):
     pass
     pass
 
+  def link_16_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.reset_links()
+    self.link_12.role = 'selected'
+    self.content_panel.clear()
+    self.content_panel.add_component(get_changes_sparklines_defects(), full_width_row=True)
+    self.reset_links()
+    pass
+    pass
+    pass
+
+
 
 
 

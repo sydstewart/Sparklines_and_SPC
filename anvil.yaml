@@ -508,6 +508,6 @@ secrets:
     value: {? '' : LISOk9shoTasRh1ucXAppNwNtUNstzlXutwRqvoscqwW85+4/j5goxfupeLA05B4o9qHmTETlZcIrCvEgBBvdluNGudkp4J1JwVr41CjO7MJ+3lZIIpvT5xj+noDYLCsS1iqTvHGFgjof17+mFSwAOtV3Zr2XaD6k8yRMjlSTw==}
     type: secret
   4s-mysql:
-    value: {? '' : r9g2O5cPD8srMGjN1pelHvSWKY56E33oltvomoG2+B91KNJtlM47diV7WYNxwaiZQXOwOeWmtMn+9tAtLupZQDRW9k99zsSc+32VBSMIctcsGjI9pwa4NsnvxGOkaYESLkEMtg/LhZwSRA==}
+    value: {? '' : 0GspCzQZORjUACwweLcUf2LE7LsAma3Xo1HVLHQ/YktjuT4sRMxZiW6wZppsOmvT8taWSdeCbAa6L+3reb3S1U55ZfDAvEp73rA65iblrTmmNVTJR15b8jsh1WmCEKoeGX/9ZS3Jo6/prA==}
     type: secret
 renamed: true

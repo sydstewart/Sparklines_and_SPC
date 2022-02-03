@@ -7,26 +7,21 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.email
 import anvil.server
-
 import pymysql
- 
+
 def connect():
-  
   connection = pymysql.connect(host='192.168.0.217',
                                port=3306,
                                user='CRMReadOnly',
-                               password=anvil.secrets.get_secret('4s-mysql'),
+                               password=anvil.secrets.get_secret('db_password'),
                                cursorclass=pymysql.cursors.DictCursor)
-  
-  if connection.is_connected():
-        db_Info = connection.get_server_info()
-        print("Connected to MySQL Server version ", db_Info)
   return connection
 
 @anvil.server.callable
-def get_cases():
+def get_people():
   conn = connect()
-
   with conn.cursor() as cur:
-    cur.execute("Select  cases.date_entered as Date_Entered from cases")
+    cur.execute("SELECT name,date_of_birth,score FROM users")
     return cur.fetchall()
+#
+
