@@ -71,6 +71,23 @@ class Stacked_Sales_Charts(Stacked_Sales_ChartsTemplate):
     chart_position = 9
     create_step_chart(self,chart_copy, chart_position)
     # Any code you write here will run when the form opens.
+    
+    chartid = 97
+    chart_copy = app_tables.charts.get(id = chartid) 
+    print(chart_copy['id'])
+    chart_position = 10
+    create_step_chart(self,chart_copy, chart_position)
+    # Any code you write here will run when the form opens.    
+
+    chartid = 98
+    chart_copy = app_tables.charts.get(id = chartid) 
+    print(chart_copy['id'])
+    chart_position = 11
+    create_step_chart(self,chart_copy, chart_position)
+    # Any code you write here will run when the form opens.
+    
+    
+    
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('send_pdf_email_sales_step_changes_background')

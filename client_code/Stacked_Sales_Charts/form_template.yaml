@@ -60,4 +60,12 @@ components:
   properties: {}
   name: plot_9
   layout_properties: {slot: default}
+- type: Plot
+  properties: {}
+  name: plot_10
+  layout_properties: {slot: default}
+- type: Plot
+  properties: {}
+  name: plot_11
+  layout_properties: {slot: default}
 is_package: true
