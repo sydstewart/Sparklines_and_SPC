@@ -472,6 +472,7 @@ def step_chart_individual(chartid):
 #      conf_limit_text = t['conf_limit_text']
 #      last_conf_limit = t['last_conf_limit']
 #      return conf_limit_text,last_conf_limit
+
 @anvil.server.callable
 def get_user_type(loggedinuser):
 

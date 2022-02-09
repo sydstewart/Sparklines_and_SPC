@@ -25,6 +25,8 @@ from ..get_changes_sparklines import get_changes_sparklines
 from ..get_changes_sparklines_improvements import get_changes_sparklines_improvements
 from ..get_changes_sparklines_defects import get_changes_sparklines_defects
 
+
+
 class Home(HomeTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -33,6 +35,7 @@ class Home(HomeTemplate):
     # login User
     anvil.users.login_with_form()
     loggedin_user = anvil.users.get_user()
+#     usertype = get_user_type(loggedin_user)
     organisation = loggedin_user['Organisation']
     Globals.loggedin_user = loggedin_user
     Globals.organisation = organisation
