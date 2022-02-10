@@ -327,7 +327,7 @@ def get_sparklines_support():
         row=rowno, col=1) 
     
     
-    fig.update_layout(height=1000, width=200, title_text= "Support Sparklines (Chart Id)")
+    fig.update_layout(height=200, width=200, title_text= "Support Sparklines (Chart Id)")
     fig.update_xaxes(visible=True, fixedrange=True)
     fig.update_yaxes(visible=False, fixedrange=True)
     fig.update_annotations(font_size=12)
@@ -348,7 +348,3 @@ def get_sparklines_support():
     fig.show(config=dict(displayModeBar=False))
 #     image = BlobMedia("image/png", pio.to_image(fig, format='png'), name="graph.png")
     return  fig
-
-
-         
-          
