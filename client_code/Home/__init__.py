@@ -56,10 +56,11 @@ class Home(HomeTemplate):
           self.link_15.visible = False
           self.link_16.visible = False
           self.link_4.visible = False
-#           self.link_1.visible = False
+          self.link_8.visible = False
           self.link_7.visible = False
-#           self.link_9.visible = False
+          self.link_1.visible = False
           self.link_2.visible = False
+          self.link_9.visible = False
     if get_url_hash() == 'Chart_form':
     
         self.content_panel.clear()
