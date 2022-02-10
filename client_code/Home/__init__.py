@@ -49,6 +49,19 @@ class Home(HomeTemplate):
     Globals.offset = datetime.now(client).utcoffset().seconds 
        
     # #hyperlinks
+    if usertype == 'admin': 
+          self.link_5.visible = False
+          self.link_11.visible = False
+          self.link_13.visible = False
+          self.link_14.visible = False
+          self.link_15.visible = False
+          self.link_16.visible = False
+          self.link_4.visible = False
+#           self.link_1.visible = False
+          self.link_7.visible = False
+#           self.link_9.visible = False
+          self.link_2.visible = False
+          
     if get_url_hash() == 'Chart_form':
     
         self.content_panel.clear()
@@ -229,13 +242,6 @@ class Home(HomeTemplate):
     pass
     pass
 
-  def button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    if usertype == 'admin':
-         self.button_1.visible = False
-    self.content_panel.add_component(get_changes_sparklines_defects(), full_width_row=True)
-    self.reset_links()
-    pass
 
 
 
