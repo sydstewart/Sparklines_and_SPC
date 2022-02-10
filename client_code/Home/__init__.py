@@ -218,9 +218,9 @@ class Home(HomeTemplate):
   def link_16_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.reset_links()
-    self.link_12.visible = True
+#     self.link_12.visible = True
     if usertype == 'admin':
-         self.link_12.visible = False
+         self.link_16.visible = False
     self.link_12.role = 'selected'
     self.content_panel.clear()
     self.content_panel.add_component(get_changes_sparklines_defects(), full_width_row=True)
@@ -228,6 +228,15 @@ class Home(HomeTemplate):
     pass
     pass
     pass
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    if usertype == 'admin':
+         self.button_1.visible = False
+    self.content_panel.add_component(get_changes_sparklines_defects(), full_width_row=True)
+    self.reset_links()
+    pass
+
 
 
 
