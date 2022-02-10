@@ -35,7 +35,7 @@ class Home(HomeTemplate):
     # login User
     anvil.users.login_with_form()
     loggedin_user = anvil.users.get_user()
-#     usertype = get_user_type(loggedin_user)
+    usertype = anvil.server.call('get_user_type',loggedin_user)
     organisation = loggedin_user['Organisation']
     Globals.loggedin_user = loggedin_user
     Globals.organisation = organisation
@@ -48,6 +48,18 @@ class Home(HomeTemplate):
     Globals.offset = datetime.now(client).utcoffset().seconds 
        
     # #hyperlinks
+    if usertype == 'admin': 
+          self.link_5.visible = False
+          self.link_11.visible = False
+          self.link_13.visible = False
+          self.link_14.visible = False
+          self.link_15.visible = False
+          self.link_16.visible = False
+          self.link_4.visible = False
+#           self.link_1.visible = False
+          self.link_7.visible = False
+#           self.link_9.visible = False
+          self.link_2.visible = False
     if get_url_hash() == 'Chart_form':
     
         self.content_panel.clear()
