@@ -48,7 +48,7 @@ class Home(HomeTemplate):
     Globals.offset = datetime.now(client).utcoffset().seconds 
        
     # #hyperlinks
-    if usertype == 'admin': 
+    if usertype != 'admin': 
           self.link_5.visible = False
           self.link_11.visible = False
           self.link_13.visible = False
@@ -56,7 +56,6 @@ class Home(HomeTemplate):
           self.link_15.visible = False
           self.link_16.visible = False
           self.link_4.visible = False
-          self.link_8.visible = True
           self.link_7.visible = False
           self.link_1.visible = False
           self.link_2.visible = False
