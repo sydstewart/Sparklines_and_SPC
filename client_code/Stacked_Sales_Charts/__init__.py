@@ -34,57 +34,57 @@ class Stacked_Sales_Charts(Stacked_Sales_ChartsTemplate):
     chart_position =3
     create_step_chart(self,chart_copy, chart_position)
     
-    chartid = 100
+#     chartid = 100
+#     chart_copy = app_tables.charts.get(id = chartid) 
+#     print(chart_copy['id'])
+#     chart_position = 4
+#     create_step_chart(self,chart_copy, chart_position)
+    
+    chartid = 50
     chart_copy = app_tables.charts.get(id = chartid) 
     print(chart_copy['id'])
     chart_position = 4
     create_step_chart(self,chart_copy, chart_position)
     
-    chartid = 50
-    chart_copy = app_tables.charts.get(id = chartid) 
-    print(chart_copy['id'])
-    chart_position = 5
-    create_step_chart(self,chart_copy, chart_position)
-    
     chartid = 96
     chart_copy = app_tables.charts.get(id = chartid) 
     print(chart_copy['id'])
-    chart_position = 6
+    chart_position = 5
     create_step_chart(self,chart_copy, chart_position)
     # Any code you write here will run when the form opens.
     
     chartid = 71
     chart_copy = app_tables.charts.get(id = chartid) 
     print(chart_copy['id'])
-    chart_position = 7
+    chart_position =6
     create_step_chart(self,chart_copy, chart_position)
     # Any code you write here will run when the form opens.
     
     chartid = 61
     chart_copy = app_tables.charts.get(id = chartid) 
     print(chart_copy['id'])
-    chart_position = 8
+    chart_position = 7
     create_step_chart(self,chart_copy, chart_position)
     # Any code you write here will run when the form opens.
     
     chartid = 52
     chart_copy = app_tables.charts.get(id = chartid) 
     print(chart_copy['id'])
-    chart_position = 9
+    chart_position = 8
     create_step_chart(self,chart_copy, chart_position)
     # Any code you write here will run when the form opens.
     
     chartid = 53
     chart_copy = app_tables.charts.get(id = chartid) 
     print(chart_copy['id'])
-    chart_position = 10
+    chart_position = 9
     create_step_chart(self,chart_copy, chart_position)
     # Any code you write here will run when the form opens.
     
     chartid = 97
     chart_copy = app_tables.charts.get(id = chartid) 
     print(chart_copy['id'])
-    chart_position = 11
+    chart_position = 10
     create_step_chart(self,chart_copy, chart_position)
     # Any code you write here will run when the form opens.    
 
