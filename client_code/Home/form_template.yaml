@@ -30,6 +30,13 @@ components:
   name: column_panel_1
   layout_properties: {slot: left-nav}
   components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Hover over links below to see explanation, font_size: 10,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: true,
+      background: '', bold: false, underline: false, icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'UFZIWH,AEQBUE'}
   - type: Link
     properties: {role: null, url: '', align: left, tooltip: 'Search for Charts by
         Folder, Partial Name or Chart Number or id', border: '', foreground: '', visible: true,
@@ -97,6 +104,15 @@ components:
     layout_properties: {grid_position: 'BUFYUF,NZYDJS'}
     event_bindings: {click: link_12_click}
     components: []
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Support Changes Stacked Charts, font_size: 12, wrap_on: mobile,
+      font: '', col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '',
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: link_18
+    layout_properties: {grid_position: 'KVDGTO,EUVBWS'}
+    event_bindings: {click: link_18_click}
   - type: Link
     properties: {role: null, url: '', align: left, tooltip: Moving average trends. This is the best option to get a quick overview. It takes about 1 minute.,
       border: '', foreground: '', visible: true, text: Support Sparklines, font_size: 12,
@@ -188,4 +204,8 @@ components:
     name: link_17
     layout_properties: {grid_position: 'WDIJXV,RCCTPI'}
     event_bindings: {click: link_17_click}
+- type: Image
+  properties: {height: 51}
+  name: image_1
+  layout_properties: {slot: title}
 is_package: true
