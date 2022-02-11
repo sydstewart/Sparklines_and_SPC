@@ -16,17 +16,26 @@ components:
   properties: {}
   name: navbar_links
   layout_properties: {slot: nav-right}
+  components:
+  - type: TextBox
+    properties: {}
+    name: text_box_1
+    layout_properties: {width: 245}
+  - type: TextBox
+    properties: {}
+    name: text_box_2
+    layout_properties: {width: 98}
 - type: ColumnPanel
   properties: {col_widths: '{}'}
   name: column_panel_1
   layout_properties: {slot: left-nav}
   components:
   - type: Link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Chart Search, font_size: 12, wrap_on: mobile, font: '',
-      col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '{}',
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
+    properties: {role: null, url: '', align: left, tooltip: 'Search for Charts by
+        Folder, Partial Name or Chart Number or id', border: '', foreground: '', visible: true,
+      text: Chart Search, font_size: 12, wrap_on: mobile, font: '', col_spacing: medium,
+      spacing_above: small, icon_align: left, col_widths: '{}', spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
     name: link_3
     layout_properties: {grid_position: 'XRUPGM,TBMQTT'}
     event_bindings: {click: link_3_click}
@@ -60,40 +69,40 @@ components:
     layout_properties: {grid_position: 'XXOXCA,URFQVW'}
     event_bindings: {click: link_1_click}
   - type: Link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Stacked Sales Charts, font_size: 12, wrap_on: mobile, font: '',
-      col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '',
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
+    properties: {role: null, url: '', align: left, tooltip: Highlights statistically significant change points.  This operation can take up to 10 minutes,
+      border: '', foreground: '', visible: true, text: Sales/Implementation Stacked Charts,
+      font_size: 12, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small,
+      icon_align: left, col_widths: '', spacing_below: small, italic: false, background: '',
+      bold: false, underline: false, icon: ''}
     name: link_6
     layout_properties: {grid_position: 'GMFKFJ,QMOUBX'}
     event_bindings: {click: link_6_click}
   - type: Link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Sales Sparklines, font_size: 12, wrap_on: mobile, font: '',
-      col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '{}',
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
+    properties: {role: null, url: '', align: left, tooltip: Moving average trends. This is the best option to get a quick overview. It takes about 1 minute.,
+      border: '', foreground: '', visible: true, text: Sales/Implementation Sparklines,
+      font_size: 12, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small,
+      icon_align: left, col_widths: '{}', spacing_below: small, italic: false, background: '',
+      bold: false, underline: false, icon: ''}
     name: link_10
     layout_properties: {grid_position: 'KZPJTV,CIQZPR'}
     event_bindings: {click: link_10_click}
     components: []
   - type: Link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Product Changes Sparklines, font_size: 12, wrap_on: mobile,
-      font: '', col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '{}',
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
+    properties: {role: null, url: '', align: left, tooltip: Moving average trends. . This is the best option to get a quick overview. It takes about 1 minute.,
+      border: '', foreground: '', visible: true, text: Product Development Changes Sparklines,
+      font_size: 12, wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small,
+      icon_align: left, col_widths: '{}', spacing_below: small, italic: false, background: '',
+      bold: false, underline: false, icon: ''}
     name: link_12
     layout_properties: {grid_position: 'BUFYUF,NZYDJS'}
     event_bindings: {click: link_12_click}
     components: []
   - type: Link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Support Sparklines, font_size: 12, wrap_on: mobile, font: '',
-      col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '{}',
-      spacing_below: small, italic: false, background: '', bold: false, underline: false,
-      icon: ''}
+    properties: {role: null, url: '', align: left, tooltip: Moving average trends. This is the best option to get a quick overview. It takes about 1 minute.,
+      border: '', foreground: '', visible: true, text: Support Sparklines, font_size: 12,
+      wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small, icon_align: left,
+      col_widths: '{}', spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
     name: link_8
     layout_properties: {grid_position: 'CDLCHQ,GVRZAH'}
     event_bindings: {click: link_8_click}
@@ -170,4 +179,13 @@ components:
     name: link_16
     layout_properties: {grid_position: 'OPAOJN,PLMQCP'}
     event_bindings: {click: link_16_click}
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: Click to Logout, border: '',
+      foreground: '', visible: true, text: Log Out, font_size: 12, wrap_on: mobile,
+      font: '', col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '',
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: link_17
+    layout_properties: {grid_position: 'WDIJXV,RCCTPI'}
+    event_bindings: {click: link_17_click}
 is_package: true

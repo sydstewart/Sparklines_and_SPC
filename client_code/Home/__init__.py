@@ -35,7 +35,11 @@ class Home(HomeTemplate):
     # login User
     anvil.users.login_with_form()
     loggedin_user = anvil.users.get_user()
+    username = loggedin_user['email']
+    
     usertype = anvil.server.call('get_user_type',loggedin_user)
+    self.text_box_2.text = loggedin_user['user_type']
+    self.text_box_1.text = username 
     organisation = loggedin_user['Organisation']
     Globals.loggedin_user = loggedin_user
     Globals.organisation = organisation
@@ -236,6 +240,21 @@ class Home(HomeTemplate):
     pass
     pass
     pass
+
+  def link_17_click(self, **event_args):
+    """This method is called when the link is clicked"""
+       
+    if anvil.users.get_user():
+        self.content_panel.clear()
+        anvil.users.logout()
+        anvil.users.login_with_form() 
+    
+  def lnk_logout_click (self, **event_args):
+    if confirm("Are you sure you want to log out?"):
+      self.logout()
+    
+    pass
+
 
 
 
