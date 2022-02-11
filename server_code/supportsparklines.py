@@ -36,7 +36,7 @@ def create_sparkline(chartid, rowno , color):
 @anvil.server.callable
 def get_sparklines_support():
     
-   
+    print('getting fig')
     fig = make_subplots(rows=10, cols=1 , row_heights=[0.1, 0.1, 0.1, 0.1,0.1,0.1, 0.1, 0.1, 0.1,0.1], subplot_titles = ("All Cases arriving per day (95)", \
                                                  "Problem Cases (44)","Config Cases (45)", "Interfaces Cases (46)","Printing Cases (47)","How to Cases (78)", \
                                                   "NPS Scores (51)","NPS responses (79)","Expert Helps (66)"))

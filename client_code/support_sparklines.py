@@ -15,6 +15,7 @@ class support_sparklines(support_sparklinesTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 #     self.button_1.visible = True
+    print('calling get_sparklines_support')
     fig = anvil.server.call('get_sparklines_support')
     self.plot_1.figure = fig
 #     media_object = anvil.server.call('create_zaphod_pdf')
@@ -41,6 +42,9 @@ class support_sparklines(support_sparklinesTemplate):
     """This method is called when the button is clicked"""
     anvil.server.call('send_pdf_email')
     pass
+
+
+
 
 
 
