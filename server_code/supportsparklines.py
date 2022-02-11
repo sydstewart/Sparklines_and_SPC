@@ -349,6 +349,5 @@ def get_sparklines_support():
 #     image = BlobMedia("image/png", pio.to_image(fig, format='png'), name="graph.png")
     return  fig
 
-
          
           
