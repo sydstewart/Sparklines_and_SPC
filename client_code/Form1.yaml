@@ -472,7 +472,7 @@ components:
       spacing_above: small, icon_align: left, spacing_below: small, italic: false,
       background: '', bold: false, underline: false, icon: ''}
     name: button_37
-    layout_properties: {grid_position: 'YVZOGL,MUOMCF'}
+    layout_properties: {grid_position: 'YAQJQN,YJYDZP'}
     event_bindings: {click: button_37_click}
   - type: Button
     properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
