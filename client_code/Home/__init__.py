@@ -183,7 +183,7 @@ class Home(HomeTemplate):
   def link_11_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.reset_links()
-    self.link_10.role = 'selected'
+    self.link_11.role = 'selected'
     self.content_panel.clear()
     self.content_panel.add_component(Form1())
     
@@ -204,7 +204,7 @@ class Home(HomeTemplate):
   def link_13_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.reset_links()
-    self.link_12.role = 'selected'
+    self.link_13.role = 'selected'
     self.content_panel.clear()
     self.content_panel.add_component(get_changes_sparklines(), full_width_row=True)
     self.reset_links()
@@ -214,7 +214,7 @@ class Home(HomeTemplate):
   def link_14_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.reset_links()
-    self.link_12.role = 'selected'
+    self.link_14.role = 'selected'
     self.content_panel.clear()
     self.content_panel.add_component(get_changes_sparklines_improvements(), full_width_row=True)
     self.reset_links()
@@ -224,7 +224,7 @@ class Home(HomeTemplate):
   def link_15_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.reset_links()
-    self.link_12.role = 'selected'
+    self.link_15.role = 'selected'
     self.content_panel.clear()
     self.content_panel.add_component(get_changes_sparklines_defects(), full_width_row=True)
     self.reset_links()
@@ -234,7 +234,7 @@ class Home(HomeTemplate):
   def link_16_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.reset_links()
-    self.link_12.role = 'selected'
+    self.link_16.role = 'selected'
     self.content_panel.clear()
     self.content_panel.add_component(get_changes_sparklines_defects(), full_width_row=True)
     self.reset_links()
@@ -259,7 +259,7 @@ class Home(HomeTemplate):
   def link_18_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.reset_links()
-    self.link_6.role = 'selected'
+    self.link_18.role = 'selected'
     self.content_panel.clear()
     self.content_panel.add_component(Stacked_Support_Charts(), full_width_row=True)
     self.reset_links()

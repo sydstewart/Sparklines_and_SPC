@@ -4,14 +4,6 @@ components:
   name: content_panel
   layout_properties: {slot: default}
   components:
-  - type: Button
-    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Email, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: button_1
-    layout_properties: {slot: default, grid_position: 'VGMLMU,CTCVON', full_width_row: true}
-    event_bindings: {click: button_1_click}
   - type: Plot
     properties: {spacing_above: small, spacing_below: small, height: 450, visible: true,
       tooltip: '', interactive: true}
