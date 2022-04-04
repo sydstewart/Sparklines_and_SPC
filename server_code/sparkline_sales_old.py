@@ -73,7 +73,7 @@ def create_sparkline(chartid, rowno , color):
 #         visible=True),
 #         row=rowno, col=1) 
 @anvil.server.callable
-def get_sparklines_sales():
+def get_sparklines_sales_old():
     end_date_of_last_month = datetime.today().replace(day=1) - timedelta(1)
     end_date_of_last_month = end_date_of_last_month.strftime("%Y-%m-%d")
     print(end_date_of_last_month)
