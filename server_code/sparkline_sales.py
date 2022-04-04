@@ -217,7 +217,7 @@ def get_sparklines_sales():
                           name=name_of_chart,
                           line=dict(
         color=color,
-        width=2,
+        width=1,
         ),
         visible=True),
         row=rowno, col=1)
