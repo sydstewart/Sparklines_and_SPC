@@ -184,13 +184,12 @@ services:
       thumbnailLink: https://docs.google.com/feeds/vt?gd=true&id=1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM&v=578&s=AMedNnoAAAAAYcsRE9hZdzvdeq4KZvBLUI6W2DmtURoQ&sz=s220
       ownerNames: [Syd Stewart]
   server_config: {enc_delegation_refresh_token: pPn//KsvZ0p7Wc4ll0D5cb10JZTCXy2b72jAYtKviQSogP7EYzyVngvfst3ioPjMvMExmnDvLKgJQD+t8C3sVv1B7YutzEOJxFseM8pEH4yXpbSs8FwhiDyDvQu1KU4rxWPIs0cZGP76Cbkq17oTyJQabm0JYXz3NsK1+IGE8Jnkrmu5+/07k/YNlpwHccJQnJ+EGiLJecYYlqfNiFjQZqd+RNQCxlwPGB9XFyGlB+0ByTF4FyHcabtWg8p45dYA8N1zrEUpFsUOdz9NFcLBcYtK/1eC4wjBWKL4LulqkPNl79wQclFPJ9hf032wfA==}
-startup: {type: form, module: Home}
+startup: {type: form, module: support_sparklines}
 package_name: EmailQuickstart
 allow_embedding: false
 name: SPC Charts v2
 runtime_options: {version: 2, server_version: python3-full, client_version: '3', server_spec: null}
 metadata: {logo_img: 'asset:4S logo.PNG', title: DAWN SPC and Sparkline Charts}
-startup_form: Form1
 native_deps: {head_html: ''}
 db_schema:
   charts:
