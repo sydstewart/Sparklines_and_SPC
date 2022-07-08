@@ -316,7 +316,7 @@ class Form1(Form1Template):
   def button_30_click(self, **event_args):
     """This method is called when the button is clicked"""
 #     self.plot_5.visible = True
-#     self.plot_5.figure = anvil.server.call('get_sparklines_facets')
+#     self.plot_5.figurejavascript:void(0) = anvil.server.call('get_sparklines_facets')
     pass
 
   def chart_plot_button_click(self, **event_args):
