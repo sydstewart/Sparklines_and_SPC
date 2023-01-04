@@ -183,7 +183,7 @@ services:
         vnd.oasis.opendocument.spreadsheet: 'https://docs.google.com/spreadsheets/export?id=1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM&exportFormat=ods'}
       thumbnailLink: https://docs.google.com/feeds/vt?gd=true&id=1sCe1Oyyat-PaC_aNF1PIjHYRzwf2YrxNSqb4yPHLiAM&v=578&s=AMedNnoAAAAAYcsRE9hZdzvdeq4KZvBLUI6W2DmtURoQ&sz=s220
       ownerNames: [Syd Stewart]
-  server_config: {enc_delegation_refresh_token: qx+dTOc5JI5josa2oO2Lf7drQhkfG+gt/TEmQ67OE0XMMuW93yOFJa6+HgzZRzjncXQx485jqQxXYgAs1gvc9vH4k/MYYzPPZdZ+P1xVY/vhzPNXSHfTwAJGPpIOQUMNgxNqZ7Fs/if9UYIDj+3wTIspN72agnm0Mm4ZfFP9MqPgzzjnSDymJB5XXZVokw0WlpVcfE9QFwOFQ/LTzftNwgvuCLitHi9LcxsS08wmO8J6e/TY/ggX0Fjrg/1M+lIP+vCyIUhHQTN2RRLeS71T16YyEvHrUv1PJsgP2mipGH/O9owtWo52P64bzJAEIw==}
+  server_config: {enc_delegation_refresh_token: wFDCYh0qlSmdPpTSTeYT9o5/kTBdsWDuaNANT2NUZ4RBaeg7jZBaofwbXICVFcLIB/cY3YKbltAORYJ9BDLskXjBJHklDypyA0isUZOxKfG7AVt8AfccXKdCDY0yYYWUMSrYH9iSWwwv931q+0+6irvo5DzcWphKfwkwhH91IeUtofQ0ozW1UWDJlpTKfppt6gu4Wz6mden51Tth+vpoR6DbXOtll3dGcWBeTywcgAvqSVC+V7oeNRf2bZzp8LIJ72qZsxCUypIskdw3kvypCUTVhJDgDbjlsw2/10/YiLCoVpskiD4cooqbGFEDyw==}
 startup: {type: form, module: Home}
 package_name: EmailQuickstart
 allow_embedding: false
