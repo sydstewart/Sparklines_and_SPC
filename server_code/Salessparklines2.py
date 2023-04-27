@@ -22,12 +22,17 @@ def create_sparkline(chartid, rowno , color):
     # create a dataframe for all_dates with Nan entries between the start date and today
     today = date.today()
     d1 = today.strftime("%Y-%m-01")
-    start_day = pd.to_datetime(start_day)
-    end_day = '31.01.2023'
-    end_day = pd.to_datetime(end_day)
-    dfcsv1['Date_Entered'] = dfcsv1[dateCol1]
-    dfcsv1[dfcsv1['Date_Entered'].between(start_day, end_day)]
-    print(dfcsv1)
+#     dfcsv1['Date_Entered'] = dfcsv1[dateCol1]
+#     dfcsv1["Date_Entered"] = pd.to_datetime(dfcsv1["Date_Entered"]) 
+    dfcsv1["Date_Entered"] = pd.to_datetime(dfcsv1["Date_Entered"]) 
+    # today = date.today()
+    # d1 = today.strftime("%Y-%m-01")
+    # start_day = pd.to_datetime(start_day)
+    # end_day = '31.01.2023'
+    # end_day = pd.to_datetime(end_day)
+    # dfcsv1['Date_Entered'] = dfcsv1[dateCol1]
+    # dfcsv1[dfcsv1['Date_Entered'].between(start_day, end_day)]
+    # print(dfcsv1)
 #     dfcsv1['Date_Entered'] = dfcsv1[dateCol1]
 #     dfcsv1["Date_Entered"] = pd.to_datetime(dfcsv1["Date_Entered"]) 
     
