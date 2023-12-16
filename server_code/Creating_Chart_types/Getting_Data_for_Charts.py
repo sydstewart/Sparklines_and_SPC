@@ -112,7 +112,7 @@ def ols_data(chartid):
         dfcsv['mean'] = dfcsv[nameCol].mean()
         dfcsv['meandiff'] = dfcsv[nameCol] - dfcsv['mean']
         dfcsv['cusum']=dfcsv['meandiff'].cumsum()
-        dfcsv['UCL']= dfcsv['mean'] * 2.660
+        dfcsv['UCL']= dfcsv['mean'] + 2.660
         dfcsv=dfcsv.round(3)
 #         print("Date Time =",datetime.now().strftime('%d %B %Y %H:%M') )
 #         dfcsv[dateCol]= pd.to_datetime(dfcsv[dateCol])
@@ -120,33 +120,39 @@ def ols_data(chartid):
         dfcsv['Mov_avg8'] = dfcsv[nameCol].rolling(window=moving_avg).mean()
 #         print('Cusum=',dfcsv['cusum'])
 #         print("Returning dfcsv")
-
-#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        # Count rows in dataframe
-        count_row = dfcsv.shape[0]
-        # Get and append moving ranges
-        # create the ranges
-        dsd = pd.DataFrame({'Range': []})
-        firstentry = dfcsv[nameCol].first_valid_index()
-    #     print('First entry=', firstentry)
-        for k in range(1, count_row):
-    
-            dr = (dfcsv[nameCol].iloc[k] - dfcsv[nameCol].iloc[k-1])
-            dr = abs(dr)
-            dsd = dsd.append({'Range': dr}, ignore_index=True)
-        dsd['Range'] = dsd['Range']
-        print('dsd range=',dsd['Range'])
-        dfcsv['Range'] = dsd['Range']
-        dfcsv = pd.concat([dfcsv,dsd])
-        print('Range +++++++++', dfcsv['Range'])
-        dfcsv['Range'] = dfcsv['Range'].shift(1)
-      
-        rangemean  = dsd['Range'].mean()  
+        dfcsv['Range']=dfcsv[nameCol] -dfcsv[nameCol].shift(1)
+        dfcsv['Range'].dropna()
+        rangemean  = dfcsv['Range'].mean()  
         dfcsv['rangemean'] = rangemean 
-        print('rangemean=',dfcsv['rangemean'])
-        print('Ranges==========================================')
-        print(dfcsv[dateCol], dfcsv[nameCol], dfcsv['Range'])
-        print('==========================================')
+        dfcsv['UCL']= dfcsv['mean'] + 2.660*dfcsv['mean']
+        dfcsv['LCL']= dfcsv['mean'] - 2.660*dfcsv['mean']
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    #     # Count rows in dataframe
+    #     count_row = dfcsv.shape[0]
+    #     # Get and append moving ranges
+    #     # create the ranges
+    #     dsd = pd.DataFrame({'Range': []})
+    #     firstentry = dfcsv[nameCol].first_valid_index()
+    # #     print('First entry=', firstentry)
+    #     dfcsv['Range'] = []
+    #     for k in range(1, count_row):
+    
+    #         dr = (dfcsv[nameCol].iloc[k] - dfcsv[nameCol].iloc[k-1])
+    #         dr = abs(dr)
+    #         dsd = dsd.append({'Range': dr}, ignore_index=True)
+    #         dfcsv['Range'].iloc[k-1]= dr
+    #     # dsd['Range'] = dsd['Range']
+    #     # print('dsd range=',dsd['Range'])
+    #     # dfcsv['Range'] = dsd['Range']
+    #     # dfcsv.insert(7, "Range", dsd['Range'])
+    #     print('Range +++++++++', dfcsv['Range'])
+    #     dfcsv['Range'] = dfcsv['Range'].shift(1)
+      
+
+    #     print('rangemean=',dfcsv['rangemean'])
+    #     print('Ranges==========================================')
+    #     print(dfcsv[dateCol], dfcsv[nameCol], dfcsv['Range'])
+    #     print('==========================================')
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         print("Data Load Time: " + str(datetime.now() - then) + '\n')
         print(dfcsv)

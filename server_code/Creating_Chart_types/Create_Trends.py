@@ -69,44 +69,49 @@ def ols_plot(chartid):
   X=dfcsv[dateCol]
   print ('UCL', dfcsv['UCL'])
   data = [
-  # go.Scatter(
-  #   x = dfcsv[dateCol],
-  #   y = dfcsv[nameCol],
-  #   mode='markers+ lines',
-  #   name='Data points'
-  # ),
+  go.Scatter(
+    x = dfcsv[dateCol],
+    y = dfcsv[nameCol],
+    mode='markers+ lines',
+    name='Data points'
+  ),
   # go.Scatter(
   #   x = dfcsv[dateCol],
   #   y = y_pred,
   #   mode='lines',
   #   name='Linear Trend'),
-  # go.Scatter(
-  #   x = dfcsv[dateCol],
-  #   y = dfcsv['mean'],
-  #   mode='lines',
-  #   name='Mean'),
-  # go.Scatter(
-  #   x = dfcsv[dateCol],
-  #   y = dfcsv['UCL'],
-  #   mode='lines',
-  #   name='UCL'),
   go.Scatter(
     x = dfcsv[dateCol],
-    y = dfcsv['rangemean'],
+    y = dfcsv['mean'],
     mode='lines',
-    name='Range Mean'),
+    name='Mean'),
   go.Scatter(
     x = dfcsv[dateCol],
-    y = dfcsv['Range'],
+    y = dfcsv['UCL'],
     mode='lines',
-    name='Range')
+    name='UCL'),
+  # go.Scatter(
+  #   x = dfcsv[dateCol],
+  #   y = dfcsv['rangemean'],
+  #   mode='lines',
+  #   name='Range Mean'),
+  # go.Scatter(
+  #   x = dfcsv[dateCol],
+  #   y = dfcsv['rangemean'],
+  #   mode='lines',
+  #   name='Range UCL'),
+  # go.Scatter(
+  #   x = dfcsv[dateCol],
+  #   y = dfcsv['Range'],
+  #   mode='lines',
+  #   name='Range')
   
-  # go.Scatter(
-  #   x = dfcsv[dateCol],
-  #   y = dfcsv['Mov_avg8'],
-  #   mode='lines',
-  #   name='Moving average'
-  # )
+  go.Scatter(
+    x = dfcsv[dateCol],
+    y = dfcsv['Mov_avg8'],
+    mode='lines',
+    name='Moving average'
+  )
 ]
 
   return data
