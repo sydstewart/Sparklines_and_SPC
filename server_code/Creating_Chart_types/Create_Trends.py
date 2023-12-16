@@ -24,6 +24,8 @@ from sklearn.linear_model import LinearRegression
 @anvil.server.callable
 def ols_plot(chartid):
   dfcsv, nameCol, dateCol, title, conf_limit, format_col, noteCol = ols_data(chartid)
+  column_names = list(dfcsv.columns.values)
+  print('dfcsv Columns', column_names)
   print('dfcsv', dfcsv)
   print('++++++++++++++++++++++++++++++++++++++++++++')
   print(dfcsv[dateCol],dfcsv['UCL'])
@@ -67,33 +69,44 @@ def ols_plot(chartid):
   X=dfcsv[dateCol]
   print ('UCL', dfcsv['UCL'])
   data = [
+  # go.Scatter(
+  #   x = dfcsv[dateCol],
+  #   y = dfcsv[nameCol],
+  #   mode='markers+ lines',
+  #   name='Data points'
+  # ),
+  # go.Scatter(
+  #   x = dfcsv[dateCol],
+  #   y = y_pred,
+  #   mode='lines',
+  #   name='Linear Trend'),
+  # go.Scatter(
+  #   x = dfcsv[dateCol],
+  #   y = dfcsv['mean'],
+  #   mode='lines',
+  #   name='Mean'),
+  # go.Scatter(
+  #   x = dfcsv[dateCol],
+  #   y = dfcsv['UCL'],
+  #   mode='lines',
+  #   name='UCL'),
   go.Scatter(
     x = dfcsv[dateCol],
-    y = dfcsv[nameCol],
-    mode='markers+ lines',
-    name='Data points'
-  ),
-  go.Scatter(
-    x = dfcsv[dateCol],
-    y = y_pred,
+    y = dfcsv['rangemean'],
     mode='lines',
-    name='Linear Trend'),
+    name='Range Mean'),
   go.Scatter(
     x = dfcsv[dateCol],
-    y = dfcsv['mean'],
+    y = dfcsv['Range'],
     mode='lines',
-    name='Mean'),
-  go.Scatter(
-    x = dfcsv[dateCol],
-    y = dfcsv['UCL'],
-    mode='lines',
-    name='UCL'),
-  go.Scatter(
-    x = dfcsv[dateCol],
-    y = dfcsv['Mov_avg8'],
-    mode='lines',
-    name='Moving average'
-  )
+    name='Range')
+  
+  # go.Scatter(
+  #   x = dfcsv[dateCol],
+  #   y = dfcsv['Mov_avg8'],
+  #   mode='lines',
+  #   name='Moving average'
+  # )
 ]
 
   return data
