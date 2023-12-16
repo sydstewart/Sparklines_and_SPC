@@ -33,7 +33,7 @@ components:
     border: ''
     enabled: true
     foreground: ''
-    items: [Hide, Trend, Chart, Step change, Show Data]
+    items: [Hide, Trend, X-R, Chart, Step change, Show Data]
     visible: true
     font_size: 12
     font: ''

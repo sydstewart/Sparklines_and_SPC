@@ -24,7 +24,9 @@ from sklearn.linear_model import LinearRegression
 @anvil.server.callable
 def ols_plot(chartid):
   dfcsv, nameCol, dateCol, title, conf_limit, format_col, noteCol = ols_data(chartid)
-  print(dfcsv[dateCol])
+  print('dfcsv', dfcsv)
+  print('++++++++++++++++++++++++++++++++++++++++++++')
+  print(dfcsv[dateCol],dfcsv['UCL'])
   #Convert to a string to y - m -d
   dfcsv[dateCol] = pd.to_datetime(dfcsv[dateCol]).dt.strftime('%Y-%m-%d')
   #Change string to date column to allow calculation of days between base date and column date
@@ -63,7 +65,7 @@ def ols_plot(chartid):
 #   dfcsv[dateCol] = dfcsv[dateCol].dt.strftime('%d/%m/%Y')
 #   dfcsv[dateCol] = pd.to_datetime(dfcsv[dateCol]).dt.strftime('%d-%m-%Y')
   X=dfcsv[dateCol]
-#   print (dfcsv[dateCol])
+  print ('UCL', dfcsv['UCL'])
   data = [
   go.Scatter(
     x = dfcsv[dateCol],
@@ -76,6 +78,16 @@ def ols_plot(chartid):
     y = y_pred,
     mode='lines',
     name='Linear Trend'),
+  go.Scatter(
+    x = dfcsv[dateCol],
+    y = dfcsv['mean'],
+    mode='lines',
+    name='Mean'),
+  go.Scatter(
+    x = dfcsv[dateCol],
+    y = dfcsv['UCL'],
+    mode='lines',
+    name='UCL'),
   go.Scatter(
     x = dfcsv[dateCol],
     y = dfcsv['Mov_avg8'],

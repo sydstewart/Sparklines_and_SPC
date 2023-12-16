@@ -112,6 +112,7 @@ def ols_data(chartid):
         dfcsv['mean'] = dfcsv[nameCol].mean()
         dfcsv['meandiff'] = dfcsv[nameCol] - dfcsv['mean']
         dfcsv['cusum']=dfcsv['meandiff'].cumsum()
+        dfcsv['UCL']= dfcsv['mean'] * 2.660
         dfcsv=dfcsv.round(3)
 #         print("Date Time =",datetime.now().strftime('%d %B %Y %H:%M') )
 #         dfcsv[dateCol]= pd.to_datetime(dfcsv[dateCol])
@@ -120,6 +121,6 @@ def ols_data(chartid):
 #         print('Cusum=',dfcsv['cusum'])
 #         print("Returning dfcsv")
         print("Data Load Time: " + str(datetime.now() - then) + '\n')
-
+        print(dfcsv)
         return dfcsv, nameCol, dateCol, title, conf_limit, format_col, noteCol
       

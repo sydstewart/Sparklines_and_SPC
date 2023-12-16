@@ -65,7 +65,9 @@ class RowTemplate8(RowTemplate8Template):
     """This method is called when an item is selected"""
     from ...Chart_Types import charts , trends , step_changes, tables
     if self.drop_down_1.selected_value == "Chart":
-          charts(self)       
+          charts(self)
+    if self.drop_down_1.selected_value == "X-R":
+          x-r(self)
     if self.drop_down_1.selected_value == "Trend":
           trends(self)
     if self.drop_down_1.selected_value == "Step change":
