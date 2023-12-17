@@ -122,7 +122,9 @@ def ols_data(chartid):
 #         print("Returning dfcsv")
         dfcsv['Range']=dfcsv[nameCol] -dfcsv[nameCol].shift(1)
         dfcsv['Range'].dropna()
-        rangemean  = dfcsv['Range'].mean()  
+        print(dfcsv['Range'])
+        rangemean  = dfcsv['Range'].mean()
+        print('Range Mean =', rangemean)
         dfcsv['rangemean'] = rangemean 
         dfcsv['UCL']= dfcsv['mean'] + 2.660*dfcsv['mean']
         dfcsv['LCL']= dfcsv['mean'] - 2.660*dfcsv['mean']
