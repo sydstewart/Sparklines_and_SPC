@@ -151,6 +151,11 @@ def ols_plot(chartid, chart_type):
             name='Range Mean'),
           go.Scatter(
             x = dfcsv[dateCol],
+            y = dfcsv['rangecusum'],
+            mode='lines',
+            name='Range Cusum'),
+          go.Scatter(
+            x = dfcsv[dateCol],
             y = dfcsv['rangemean'] * 3.267,
             mode='lines',
             name='Range UCL')

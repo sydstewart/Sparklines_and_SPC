@@ -111,23 +111,26 @@ def ols_data(chartid):
         dfcsv[nameCol] = dfcsv[nameCol].astype(float)
         dfcsv['mean'] = dfcsv[nameCol].mean()
         dfcsv['meandiff'] = dfcsv[nameCol] - dfcsv['mean']
-        dfcsv['cusum']=dfcsv['meandiff'].cumsum()
-        dfcsv['UCL']= dfcsv['mean'] + 2.660
-        dfcsv=dfcsv.round(3)
-#         print("Date Time =",datetime.now().strftime('%d %B %Y %H:%M') )
-#         dfcsv[dateCol]= pd.to_datetime(dfcsv[dateCol])
-#         print(dfcsv[dateCol])
-        dfcsv['Mov_avg8'] = dfcsv[nameCol].rolling(window=moving_avg).mean()
-#         print('Cusum=',dfcsv['cusum'])
-#         print("Returning dfcsv")
+        dfcsv['UCL']= dfcsv['mean'] + 2.660*dfcsv['mean']
+        dfcsv['LCL']= dfcsv['mean'] - 2.660*dfcsv['mean']
+ # ranges
         dfcsv['Range']=abs(dfcsv[nameCol] -dfcsv[nameCol].shift(1))
         dfcsv['Range'].dropna()
         print(dfcsv['Range'])
         rangemean  = dfcsv['Range'].mean()
         print('Range Mean =', rangemean)
         dfcsv['rangemean'] = rangemean 
-        dfcsv['UCL']= dfcsv['mean'] + 2.660*dfcsv['mean']
-        dfcsv['LCL']= dfcsv['mean'] - 2.660*dfcsv['mean']
+        dfcsv['rangemeandiff'] = dfcsv['Range'] - dfcsv['rangemean']
+# cusums
+        dfcsv['cusum']=dfcsv['rangemeandiff'].cumsum()
+        dfcsv['rangecusum']=dfcsv['meandiff'].cumsum()
+        # dfcsv['UCL']= dfcsv['mean'] + 2.660
+        dfcsv=dfcsv.round(3)
+# moving averages
+        dfcsv['Mov_avg8'] = dfcsv[nameCol].rolling(window=moving_avg).mean()
+#         print('Cusum=',dfcsv['cusum'])
+#         print("Returning dfcsv")
+
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     #     # Count rows in dataframe
     #     count_row = dfcsv.shape[0]
