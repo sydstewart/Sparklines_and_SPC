@@ -120,7 +120,7 @@ def ols_data(chartid):
         dfcsv['Mov_avg8'] = dfcsv[nameCol].rolling(window=moving_avg).mean()
 #         print('Cusum=',dfcsv['cusum'])
 #         print("Returning dfcsv")
-        dfcsv['Range']=dfcsv[nameCol] -dfcsv[nameCol].shift(1)
+        dfcsv['Range']=abs(dfcsv[nameCol] -dfcsv[nameCol].shift(1))
         dfcsv['Range'].dropna()
         print(dfcsv['Range'])
         rangemean  = dfcsv['Range'].mean()

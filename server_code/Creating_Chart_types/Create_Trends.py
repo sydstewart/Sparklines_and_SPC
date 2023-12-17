@@ -116,6 +116,7 @@ def ols_plot(chartid, chart_type):
           )
         ]
   if chart_type == 'x_r':
+   
         data = [
          # go.Scatter(
          #    x = dfcsv[dateCol],

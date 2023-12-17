@@ -272,7 +272,7 @@ def get_pdcalls_range(chartid):
     dfcsv['Range'] = dsd['Range']
     print('Range', dfcsv['Range'])
     dfcsv['Range'] = dfcsv['Range'].shift(1)
-   
+    dfcsv['Range'] = ABS(dfcsv['Range'])
     rangemean  = dsd['Range'].mean()  
     dfcsv['rangemean'] = rangemean 
 #     print('rangemean=',dfcsv['rangemean'])
