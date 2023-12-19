@@ -83,7 +83,7 @@ class Home(HomeTemplate):
     self.link_3.role = ''
     self.link_2.role = ''      
 
-  # Search Menu  
+  # Search Menu  0
   def link_3_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.reset_links()
