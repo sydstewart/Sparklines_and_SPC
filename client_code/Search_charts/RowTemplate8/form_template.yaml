@@ -17,7 +17,7 @@ components:
   data_bindings:
   - {property: text, code: 'self.item[''title'']'}
 - type: Button
-  properties: {role: null, align: left, tooltip: Edit this Chart's settings, border: '',
+  properties: {role: null, align: center, tooltip: Edit this Chart's settings, border: '',
     enabled: true, foreground: '', visible: true, text: '', font_size: null, font: '',
     spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
     bold: false, underline: false, icon: 'fa:pencil-square-o'}
@@ -33,7 +33,7 @@ components:
     border: ''
     enabled: true
     foreground: ''
-    items: [Hide, Trend, Range, Chart, Step change, Show Data]
+    items: [Hide, Trend, Range, Range Cusum, Chart, Chart Cusum, Step change, Show Data]
     visible: true
     font_size: 12
     font: ''
@@ -47,20 +47,11 @@ components:
   name: drop_down_1
   layout_properties: {column: WKSFSK}
   event_bindings: {change: drop_down_1_change}
-- type: DatePicker
-  properties: {role: null, align: left, max_date: '', pick_time: true, tooltip: '',
-    placeholder: '', border: '', enabled: true, foreground: '', visible: true, font_size: 12,
-    font: '', spacing_above: small, spacing_below: small, italic: false, date: '',
-    min_date: '', background: '', bold: true, underline: false, format: ''}
-  name: date_picker_2
-  layout_properties: {column: null}
-  data_bindings:
-  - {property: date, code: 'self.item[''aend_date'']', writeback: true}
-  event_bindings: {change: date_picker_2_change}
 - type: Plot
   properties: {height: 593}
   name: plot_1
   layout_properties: {column: null}
+  event_bindings: {click: plot_1_click}
 - type: DropDown
   properties:
     role: null
@@ -106,14 +97,6 @@ components:
   data_bindings:
   - {property: date, code: 'self.item[''astart_date'']', writeback: true}
   event_bindings: {change: date_picker_1_change}
-- type: Button
-  properties: {role: null, align: left, tooltip: Update the step chart in background,
-    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
-    font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
-    background: '', bold: false, underline: false, icon: 'fa:ambulance'}
-  name: button_2
-  layout_properties: {column: TRWEJJ}
-  event_bindings: {click: button_2_click}
 - type: CheckBox
   properties: {role: null, align: left, tooltip: Archive Chart, border: '', enabled: true,
     foreground: '', visible: true, text: Archive, font_size: 12, font: '', spacing_above: small,
@@ -125,15 +108,7 @@ components:
   - {property: checked, code: 'self.item[''archive'']', writeback: true}
   event_bindings: {change: check_box_1_change}
 - type: Button
-  properties: {role: null, align: left, tooltip: Duplicate Chart, border: '', enabled: true,
-    foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
-    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-    underline: false, icon: 'fa:slideshare'}
-  name: dup_chart_button
-  layout_properties: {column: YULMNQ}
-  event_bindings: {click: dup_chart_button_click}
-- type: Button
-  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+  properties: {role: null, align: center, tooltip: Refresh Chart, border: '', enabled: true,
     foreground: '', visible: true, text: button_3, font_size: null, font: '', spacing_above: small,
     icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
     underline: false, icon: 'fa:refresh'}
@@ -141,7 +116,10 @@ components:
   layout_properties: {column: OTRJDY}
   event_bindings: {click: button_3_click}
 - type: DatePicker
-  properties: {}
+  properties: {role: null, align: left, max_date: '', pick_time: true, tooltip: '',
+    placeholder: '', border: '', enabled: true, foreground: '', visible: true, font_size: 12,
+    font: '', spacing_above: small, spacing_below: small, italic: false, date: '',
+    min_date: '', background: '', bold: true, underline: false, format: ''}
   name: date_picker_3
   layout_properties: {column: VFVWEK}
   event_bindings: {change: date_picker_3_change}

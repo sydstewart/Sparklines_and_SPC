@@ -514,9 +514,86 @@ def trends(self, **event_args):
     self.plot_1.layout.title = chart_title + " created at " + datetime.now().strftime('%d %B %Y %H:%M')     
     self.plot_1.data=data
     pass
-    
-def x_r(self, **event_args):
-  chart_type = 'x_r'
+def range_cusum(self, **event_args):
+  chart_type = 'range_cusum'
+  """This method is called when the button is clicked"""
+  chart_copy = dict(list(self.item))
+  chartid = chart_copy['id']
+  chart_title = chart_copy['title']
+#   check if chart title exists  
+#for info find the saved moving average
+  moving_average = chart_copy['mov_avg']
+  print('Moving average=', moving_average)
+  if chartid == None:
+        alert(" Please select a chart from the dropdown")
+  else:
+    data = anvil.server.call('ols_plot', chartid, chart_type)  # get regression line data
+#       data=anvil.server.call('ols_plot')
+    conf_limit =""
+#       alert(content=Form5(data,chart_title, conf_limit),
+#               title =chart_title + " " +"Trends",
+#               large=True,
+#               buttons=[
+#                      ("Cancel", False)
+                    
+#                    ])
+    self.plot_1.visible = True
+#     self.card_1.visible = False
+#       self.label_10.visible = False
+#       self.trends.foreground = '#ee67a1'
+#       self.button_2.foreground = '#5ba1ec'
+#       self.all_points.foreground = '#5ba1ec' 
+#       self.change_points.foreground = '#5ba1ec' 
+    # self.plot_1.layout.yaxis = dict(title=chart_title,
+    #                                     titlefont=dict(color="#1f77b4"),
+    #                                     tickfont=dict(color="#1f77b4"), 
+    #                                     )
+    self.plot_1.layout.xaxis = dict(tickangle=45)    
+    self.plot_1.layout.title = chart_title + " created at " + datetime.now().strftime('%d %B %Y %H:%M')     
+    self.plot_1.data=data
+    pass      
+
+
+def chart_cusum(self, **event_args):
+  chart_type = 'chart_cusum'
+  """This method is called when the button is clicked"""
+  chart_copy = dict(list(self.item))
+  chartid = chart_copy['id']
+  chart_title = chart_copy['title']
+#   check if chart title exists  
+#for info find the saved moving average
+  moving_average = chart_copy['mov_avg']
+  print('Moving average=', moving_average)
+  if chartid == None:
+        alert(" Please select a chart from the dropdown")
+  else:
+    data = anvil.server.call('ols_plot', chartid, chart_type)  # get regression line data
+#       data=anvil.server.call('ols_plot')
+    conf_limit =""
+#       alert(content=Form5(data,chart_title, conf_limit),
+#               title =chart_title + " " +"Trends",
+#               large=True,
+#               buttons=[
+#                      ("Cancel", False)
+                    
+#                    ])
+    self.plot_1.visible = True
+#     self.card_1.visible = False
+#       self.label_10.visible = False
+#       self.trends.foreground = '#ee67a1'
+#       self.button_2.foreground = '#5ba1ec'
+#       self.all_points.foreground = '#5ba1ec' 
+#       self.change_points.foreground = '#5ba1ec' 
+    # self.plot_1.layout.yaxis = dict(title=chart_title,
+    #                                     titlefont=dict(color="#1f77b4"),
+    #                                     tickfont=dict(color="#1f77b4"), 
+    #                                     )
+    self.plot_1.layout.xaxis = dict(tickangle=45)    
+    self.plot_1.layout.title = chart_title + " created at " + datetime.now().strftime('%d %B %Y %H:%M')     
+    self.plot_1.data=data
+    pass      
+def range(self, **event_args):
+  chart_type = 'range'
   """This method is called when the button is clicked"""
   chart_copy = dict(list(self.item))
   chartid = chart_copy['id']

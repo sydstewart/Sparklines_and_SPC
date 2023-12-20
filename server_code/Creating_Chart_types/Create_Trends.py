@@ -115,7 +115,7 @@ def ols_plot(chartid, chart_type):
             name='Moving average'
           )
         ]
-  if chart_type == 'x_r':
+  if chart_type == 'range':
    
         data = [
          # go.Scatter(
@@ -149,16 +149,122 @@ def ols_plot(chartid, chart_type):
             y = dfcsv['rangemean'],
             mode='lines',
             name='Range Mean'),
-          go.Scatter(
-            x = dfcsv[dateCol],
-            y = dfcsv['rangecusum'],
-            mode='lines',
-            name='Range Cusum'),
+          # go.Scatter(
+          #   x = dfcsv[dateCol],
+          #   y = dfcsv['rangecusum'],
+          #   mode='lines',
+          #   name='Range Cusum'),
           go.Scatter(
             x = dfcsv[dateCol],
             y = dfcsv['rangemean'] * 3.267,
             mode='lines',
             name='Range UCL')
+
+          
+          # go.Scatter(
+          #   x = dfcsv[dateCol],
+          #   y = dfcsv['Mov_avg8'],
+          #   mode='lines',
+          #   name='Moving average'
+          # )
+        ]
+  if chart_type == 'range_cusum':
+   
+        data = [
+         # go.Scatter(
+         #    x = dfcsv[dateCol],
+         #    y = dfcsv[nameCol],
+         #    mode='markers+ lines',
+         #    name='Data points'
+          # ),
+          # go.Scatter(
+          #   x = dfcsv[dateCol],
+          #   y = y_pred,
+          #   mode='lines',
+          #   name='Linear Trend'),
+          # go.Scatter(
+          #   x = dfcsv[dateCol],
+          #   y = dfcsv['mean'],
+          #   mode='lines',
+          #   name='Mean'),
+          # go.Scatter(
+          #   x = dfcsv[dateCol],
+          #   y = dfcsv['UCL'],
+          #   mode='lines',
+          #   name='UCL'),
+          # go.Scatter(
+          #   x = dfcsv[dateCol],
+          #   y = dfcsv['Range'],
+          #   mode='lines',
+          #   name='Range'),
+          # go.Scatter(
+          #   x = dfcsv[dateCol],
+          #   y = dfcsv['rangemean'],
+          #   mode='lines',
+          #   name='Range Mean'),
+          go.Scatter(
+            x = dfcsv[dateCol],
+            y = dfcsv['rangecusum'],
+            mode='lines',
+            name='Range Cusum')
+          # go.Scatter(
+          #   x = dfcsv[dateCol],
+          #   y = dfcsv['rangemean'] * 3.267,
+          #   mode='lines',
+          #   name='Range UCL')
+
+          
+          # go.Scatter(
+          #   x = dfcsv[dateCol],
+          #   y = dfcsv['Mov_avg8'],
+          #   mode='lines',
+          #   name='Moving average'
+          # )
+        ]
+  if chart_type == 'chart_cusum':
+   
+        data = [
+         # go.Scatter(
+         #    x = dfcsv[dateCol],
+         #    y = dfcsv[nameCol],
+         #    mode='markers+ lines',
+         #    name='Data points'
+          # ),
+          # go.Scatter(
+          #   x = dfcsv[dateCol],
+          #   y = y_pred,
+          #   mode='lines',
+          #   name='Linear Trend'),
+          # go.Scatter(
+          #   x = dfcsv[dateCol],
+          #   y = dfcsv['mean'],
+          #   mode='lines',
+          #   name='Mean'),
+          # go.Scatter(
+          #   x = dfcsv[dateCol],
+          #   y = dfcsv['UCL'],
+          #   mode='lines',
+          #   name='UCL'),
+          # go.Scatter(
+          #   x = dfcsv[dateCol],
+          #   y = dfcsv['Range'],
+          #   mode='lines',
+          #   name='Range'),
+          # go.Scatter(
+          #   x = dfcsv[dateCol],
+          #   y = dfcsv['rangemean'],
+          #   mode='lines',
+          #   name='Range Mean'),
+          go.Scatter(
+            x = dfcsv[dateCol],
+            y = dfcsv['cusum'],
+            mode='lines',
+            name='Chart Cusum')
+          # go.Scatter(
+          #   x = dfcsv[dateCol],
+          #   y = dfcsv['rangemean'] * 3.267,
+          #   mode='lines',
+          #   name='Range UCL')
 
           
           # go.Scatter(

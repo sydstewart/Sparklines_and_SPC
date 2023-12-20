@@ -63,13 +63,18 @@ class RowTemplate8(RowTemplate8Template):
 # Select Charts
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
-    from ...Chart_Types import charts , trends , step_changes, tables, x_r
+    from ...Chart_Types import charts , trends , step_changes, tables, range, range_cusum, chart_cusum
     if self.drop_down_1.selected_value == "Chart":
           charts(self)
+    if self.drop_down_1.selected_value == "Chart Cusum":
+          chart_cusum(self)
     if self.drop_down_1.selected_value == "Range":
-          x_r(self)
+          range(self)
+    if self.drop_down_1.selected_value == "Range Cusum":
+          range_cusum(self)
     if self.drop_down_1.selected_value == "Trend":
           trends(self)
+
     if self.drop_down_1.selected_value == "Step change":
           startstep = datetime.now()
           chart_position = 1
@@ -113,11 +118,15 @@ class RowTemplate8(RowTemplate8Template):
 
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
-    from ...Chart_Types import charts , trends , step_changes, tables, x_r
+    from ...Chart_Types import charts , trends , step_changes, tables, range,range_cusum, chart_cusum
     if self.drop_down_1.selected_value == "Chart":
           charts(self)
     if self.drop_down_1.selected_value == "Range":
-          x_r(self)
+          range(self)
+    if self.drop_down_1.selected_value == "Range Cusum":
+          range_cusum(self)
+    if self.drop_down_1.selected_value == "Chart Cusum":
+          chart_cusum(self)
     if self.drop_down_1.selected_value == "Trend":
           trends(self)
     if self.drop_down_1.selected_value == "Step change":
@@ -147,13 +156,13 @@ class RowTemplate8(RowTemplate8Template):
   # start date changed
   def date_picker_1_change(self, **event_args):
     """This method is called when the selected date changes"""
-    from ...Chart_Types import charts , trends , step_changes, tables, x_r
+    from ...Chart_Types import charts , trends , step_changes, tables, range, range_cusum
     if self.drop_down_1.selected_value == "Hide":
         alert('Please first select Chart Type')
     if self.drop_down_1.selected_value == "Chart":
           charts(self)
     if self.drop_down_1.selected_value == "Range":
-          x_r(self)
+          range(self)
     if self.drop_down_1.selected_value == "Trend":
           trends(self)
     if self.drop_down_1.selected_value == "Step change":
@@ -182,6 +191,10 @@ class RowTemplate8(RowTemplate8Template):
 
   def date_picker_3_change(self, **event_args):
     """This method is called when the selected date changes"""
+    pass
+
+  def plot_1_click(self, points, **event_args):
+    """This method is called when a data point is clicked."""
     pass
     
 
