@@ -187,7 +187,7 @@ services:
 startup: {type: form, module: Home}
 package_name: EmailQuickstart
 allow_embedding: false
-name: SPC Charts v2
+name: SPC Charts v2.01
 runtime_options: {version: 2, server_version: python3-full, client_version: '3', server_spec: null}
 metadata: {logo_img: 'asset:4S logo.PNG', title: DAWN SPC and Sparkline Charts}
 startup_form: Form1
