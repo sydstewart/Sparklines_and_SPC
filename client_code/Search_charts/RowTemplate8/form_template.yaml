@@ -27,7 +27,7 @@ components:
 - type: DropDown
   properties:
     role: null
-    align: right
+    align: left
     tooltip: Select the chart to display
     placeholder: ''
     border: ''
@@ -47,6 +47,16 @@ components:
   name: drop_down_1
   layout_properties: {column: WKSFSK}
   event_bindings: {change: drop_down_1_change}
+- type: DatePicker
+  properties: {role: null, align: left, max_date: '', pick_time: true, tooltip: '',
+    placeholder: '', border: '', enabled: true, foreground: '', visible: true, font_size: 12,
+    font: '', spacing_above: small, spacing_below: small, italic: false, date: '',
+    min_date: '', background: '', bold: true, underline: false, format: ''}
+  name: date_picker_2
+  layout_properties: {column: null}
+  data_bindings:
+  - {property: date, code: 'self.item[''aend_date'']', writeback: true}
+  event_bindings: {change: date_picker_2_change}
 - type: Plot
   properties: {height: 593}
   name: plot_1
@@ -73,7 +83,7 @@ components:
     include_placeholder: false
   name: drop_down_2
   layout_properties: {column: LPUTSP}
-  event_bindings: {change: drop_down_2_change}
+  event_bindings: {}
   data_bindings:
   - {property: selected_value, code: 'self.item[''conf_limit_text'']', writeback: true}
 - type: TextBox
@@ -85,6 +95,7 @@ components:
   layout_properties: {column: OABOIH}
   data_bindings:
   - {property: text, code: 'self.item[''mov_avg'']', writeback: true}
+  event_bindings: {pressed_enter: text_box_1_pressed_enter}
 - type: DatePicker
   properties: {role: null, align: left, max_date: '', pick_time: true, tooltip: '',
     placeholder: '', border: '', enabled: true, foreground: '', visible: true, font_size: 12,
@@ -95,15 +106,6 @@ components:
   data_bindings:
   - {property: date, code: 'self.item[''astart_date'']', writeback: true}
   event_bindings: {change: date_picker_1_change}
-- type: DatePicker
-  properties: {role: null, align: left, max_date: '', pick_time: true, tooltip: '',
-    placeholder: '', border: '', enabled: true, foreground: '', visible: true, font_size: 12,
-    font: '', spacing_above: small, spacing_below: small, italic: false, date: '',
-    min_date: '', background: '', bold: true, underline: false, format: ''}
-  name: date_picker_2
-  layout_properties: {column: VFVWEK}
-  data_bindings:
-  - {property: date, code: 'self.item[''aend_date'']', writeback: true}
 - type: Button
   properties: {role: null, align: left, tooltip: Update the step chart in background,
     border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
@@ -128,6 +130,18 @@ components:
     icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
     underline: false, icon: 'fa:slideshare'}
   name: dup_chart_button
-  layout_properties: {column: BQYDVR}
+  layout_properties: {column: YULMNQ}
   event_bindings: {click: dup_chart_button_click}
+- type: Button
+  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: button_3, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: 'fa:refresh'}
+  name: button_3
+  layout_properties: {column: OTRJDY}
+  event_bindings: {click: button_3_click}
+- type: DatePicker
+  properties: {}
+  name: date_picker_3
+  layout_properties: {column: VFVWEK}
 is_package: true

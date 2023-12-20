@@ -113,6 +113,28 @@ class RowTemplate8(RowTemplate8Template):
 
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
+    from ...Chart_Types import charts , trends , step_changes, tables, x_r
+    if self.drop_down_1.selected_value == "Chart":
+          charts(self)
+    if self.drop_down_1.selected_value == "Range":
+          x_r(self)
+    if self.drop_down_1.selected_value == "Trend":
+          trends(self)
+    if self.drop_down_1.selected_value == "Step change":
+          startstep = datetime.now()
+          chart_position = 1
+          step_changes(self,chart_position)
+#           print("Step Change total Time: " + str(datetime.now() - startstep) + '\n')
+    if self.drop_down_1.selected_value == "Show Data":
+          self.plot_1.visible = True 
+          chart_copy = dict(list(self.item))
+          chartid = chart_copy['id']
+          filename = chart_copy['file_name']['name']
+          print('filename=',filename)
+          data = anvil.server.call('showdata',chartid, filename) 
+          self.plot_1.data = data
+    if self.drop_down_1.selected_value == "Hide":           
+             self.plot_1.visible = False 
     pass
 
   def dup_chart_button_click(self, **event_args):
@@ -150,6 +172,14 @@ class RowTemplate8(RowTemplate8Template):
     if self.drop_down_1.selected_value == "Hide":           
              self.plot_1.visible = False    
     pass
+
+  # def date_picker_2_change(self, **event_args):
+  #   """This method is called when the selected date changes"""
+
+  def text_box_1_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    pass
+    
 
 
 

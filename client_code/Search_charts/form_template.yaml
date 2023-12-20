@@ -116,23 +116,29 @@ components:
     properties:
       role: null
       columns:
-      - {id: OAFHNY, title: '', data_key: id, width: '30'}
-      - {id: ZYSCIZ, title: Chart Title, data_key: column_2, width: 217, expand: false}
-      - {id: WKSFSK, title: Select Chart Type, data_key: column_3, width: '160', expand: false}
-      - {id: ROQKYD, title: '', data_key: '', width: '30'}
-      - {id: LPUTSP, title: Conf Level, data_key: column_1, width: '80'}
-      - {id: OABOIH, title: Mov Avg., data_key: column_4, width: '90'}
-      - {id: NKYJWU, title: Start Date, data_key: column_5, width: '180'}
-      - {id: VFVWEK, title: End Date, data_key: column_6, width: '180'}
-      - {id: TRWEJJ, title: '', data_key: column_8, width: '50'}
-      - {id: LDVLUY, title: '', data_key: archive, width: '50'}
-      - {id: BQYDVR, title: '', data_key: duplicate}
+      - {id: OAFHNY, title: '', data_key: id, width: '30', $$hashKey: 'object:13304'}
+      - {id: ZYSCIZ, title: Chart Title, data_key: column_2, width: 217, expand: false,
+        $$hashKey: 'object:13305'}
+      - {id: OTRJDY, title: '', data_key: column_9, $$hashKey: 'object:20222', width: '50'}
+      - {id: WKSFSK, title: Select Chart Type, data_key: column_3, width: '160', expand: false,
+        $$hashKey: 'object:13306'}
+      - {id: ROQKYD, title: '', data_key: '', width: '30', $$hashKey: 'object:13307'}
+      - {id: LPUTSP, title: Conf Level, data_key: column_1, width: '80', $$hashKey: 'object:13308'}
+      - {id: OABOIH, title: Mov Avg., data_key: column_4, width: '90', $$hashKey: 'object:13309'}
+      - {id: NKYJWU, title: Start Date, data_key: column_5, width: '180', $$hashKey: 'object:13310'}
+      - {id: VFVWEK, title: End Date, data_key: column_6, width: '180', $$hashKey: 'object:13311'}
+      - {id: TRWEJJ, title: '', data_key: column_8, width: '50', $$hashKey: 'object:13312'}
+      - {id: LDVLUY, title: '', data_key: archive, width: '50', $$hashKey: 'object:13313'}
+      - {id: BQYDVR, title: '', data_key: duplicate, $$hashKey: 'object:13314'}
+      - {id: YULMNQ, title: Column 7, data_key: column_7, $$hashKey: 'object:13372',
+        width: 50, expand: false}
       auto_header: true
       tooltip: ''
       border: ''
       foreground: ''
       rows_per_page: 8
       visible: true
+      wrap_on: never
       show_page_controls: true
       spacing_above: none
       spacing_below: none
