@@ -144,4 +144,7 @@ components:
   properties: {}
   name: date_picker_3
   layout_properties: {column: VFVWEK}
+  event_bindings: {change: date_picker_3_change}
+  data_bindings:
+  - {property: date, code: 'self.item[''aend_date'']', writeback: true}
 is_package: true
