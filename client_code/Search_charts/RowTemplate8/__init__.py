@@ -122,6 +122,35 @@ class RowTemplate8(RowTemplate8Template):
     self.refresh_data_bindings()
     pass
 
+  # start date changed
+  def date_picker_1_change(self, **event_args):
+    """This method is called when the selected date changes"""
+    from ...Chart_Types import charts , trends , step_changes, tables, x_r
+    if self.drop_down_1.selected_value == "Hide":
+        alert('Please first select Chart Type')
+    if self.drop_down_1.selected_value == "Chart":
+          charts(self)
+    if self.drop_down_1.selected_value == "Range":
+          x_r(self)
+    if self.drop_down_1.selected_value == "Trend":
+          trends(self)
+    if self.drop_down_1.selected_value == "Step change":
+          startstep = datetime.now()
+          chart_position = 1
+          step_changes(self,chart_position)
+#           print("Step Change total Time: " + str(datetime.now() - startstep) + '\n')
+    if self.drop_down_1.selected_value == "Show Data":
+          self.plot_1.visible = True 
+          chart_copy = dict(list(self.item))
+          chartid = chart_copy['id']
+          filename = chart_copy['file_name']['name']
+          print('filename=',filename)
+          data = anvil.server.call('showdata',chartid, filename) 
+          self.plot_1.data = data
+    if self.drop_down_1.selected_value == "Hide":           
+             self.plot_1.visible = False    
+    pass
+
 
 
 

@@ -94,6 +94,7 @@ components:
   layout_properties: {column: NKYJWU}
   data_bindings:
   - {property: date, code: 'self.item[''astart_date'']', writeback: true}
+  event_bindings: {change: date_picker_1_change}
 - type: DatePicker
   properties: {role: null, align: left, max_date: '', pick_time: true, tooltip: '',
     placeholder: '', border: '', enabled: true, foreground: '', visible: true, font_size: 12,

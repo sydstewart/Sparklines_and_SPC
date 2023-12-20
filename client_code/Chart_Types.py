@@ -204,33 +204,33 @@ def create_step_chart(self, chart_copy, chart_position):
             print('last_conf_limit=',last_conf_limit)
            #  (conf_limit_text == last_conf_limit)  catches changes in conf limit set by form dropdown -  no change -  load json
             # (Chart_last_saved > csvdatetime_loaded) catches when the csv file is updated - no update load json otherwise recalculate chart
-            if  Chart_last_saved  == None:
-                print('Start of get_pdcalls_manhatten '+str(datetime.now()))
-                manconf, no_of_steps = anvil.server.call('get_pdcalls_manhatten', chartid)
-                print('No of Steps=', no_of_steps)
-                print('End of get_pdcalls_manhatten '+str(datetime.now()))
-                anvil.server.call('save_as_json', chartid, manconf, no_of_steps)
-            else:
-                if ((Chart_last_saved > csvdatetime_loaded) and (conf_limit_text == last_conf_limit))  :
+    #         if  Chart_last_saved  == None:
+    #             print('Start of get_pdcalls_manhatten '+str(datetime.now()))
+    #             manconf, no_of_steps = anvil.server.call('get_pdcalls_manhatten', chartid)
+    #             print('No of Steps=', no_of_steps)
+    #             print('End of get_pdcalls_manhatten '+str(datetime.now()))
+    #             anvil.server.call('save_as_json', chartid, manconf, no_of_steps)
+    #         else:
+    #             if ((Chart_last_saved > csvdatetime_loaded) and (conf_limit_text == last_conf_limit))  :
                      
-                      manconf  = anvil.server.call('load_from_json', chartid)
+    #                   manconf  = anvil.server.call('load_from_json', chartid)
                       
-                      no_of_steps = anvil.server.call('get_no_of_steps', chartid)
-                      print('manconf=',manconf)
-                      conf_limit = chart_copy['conf_limit_text']    
-    #                       print('Returned from table=',fig)
-                      print('Chart_last_saved > csvdatetime_loaded - loaded from Json')
-    #                       self.plot_1.visible = True
-    #                       self.plot_1.data = fig
+    #                   no_of_steps = anvil.server.call('get_no_of_steps', chartid)
+    #                   print('manconf=',manconf)
+    #                   conf_limit = chart_copy['conf_limit_text']    
+    # #                       print('Returned from table=',fig)
+    #                   print('Chart_last_saved > csvdatetime_loaded - loaded from Json')
+    # #                       self.plot_1.visible = True
+    # #                       self.plot_1.data = fig
                           
-                else:
-                        start_load_data = datetime.now() 
-                        manconf, no_of_steps = anvil.server.call('get_pdcalls_manhatten', chartid)
-#                         print("get_pdcalls_manhatten Time: " + str(datetime.now() - start_load_data) + '\n')   
-                        
-                        print('No of Steps=', no_of_steps)
+    #             else:
+            start_load_data = datetime.now() 
+            manconf, no_of_steps = anvil.server.call('get_pdcalls_manhatten', chartid)
+  #                         print("get_pdcalls_manhatten Time: " + str(datetime.now() - start_load_data) + '\n')   
+              
+            print('No of Steps=', no_of_steps)
 
-                        anvil.server.call('save_as_json', chartid, manconf, no_of_steps)
+                        # anvil.server.call('save_as_json', chartid, manconf, no_of_steps)
             if chart_position == 1:
                   self.plot_1.visible = True 
       
