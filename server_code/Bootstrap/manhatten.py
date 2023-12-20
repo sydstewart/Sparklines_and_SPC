@@ -20,7 +20,7 @@ def manhatten(df, name_col, date_col, title, turn_length, boot_num, conf_limit, 
     import plotly.graph_objects as go
   
     df = pd.DataFrame(df) 
-    
+    print('df from manhatten', df)
 #     print(f"Preparing Cusums for {title}")
 #     print('-'*100)
 #     print('-'*100)
