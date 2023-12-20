@@ -240,7 +240,7 @@ def create_step_chart(self, chart_copy, chart_position):
                                                       )
                   self.plot_1.layout.xaxis = dict(tickangle=45)    
                   
-                  self.plot_1.layout.title =  chart_title + " (" + str(chartid) + ")" + " " + "with Conf. Limit =" + " " + str(conf_limit_text) +"%" + " created at " + datetime.now().strftime('%d %B %Y %H:%M')    + " (Note: " + str(no_of_steps) + " steps shown of a  Max. of 15 steps examined)" 
+                  self.plot_1.layout.title =  chart_title + "Step Change Plot" + "(" + str(chartid) + ")" + " " + "with Conf. Limit =" + " " + str(conf_limit_text) +"%" + " created at " + datetime.now().strftime('%d %B %Y %H:%M')    + " (Note: " + str(no_of_steps) + " steps shown of a  Max. of 15 steps examined)" 
             #           (Change Conf. Limit = {str(conf_limit)}%) Creation Date: {datetime.now().strftime('%d %B %Y %H:%M')}")
                 
                   self.plot_1.layout.yaxis2 = dict(title="Cusum",
@@ -511,7 +511,7 @@ def trends(self, **event_args):
                                         tickfont=dict(color="#1f77b4"), 
                                         )
     self.plot_1.layout.xaxis = dict(tickangle=45)    
-    self.plot_1.layout.title = chart_title + " created at " + datetime.now().strftime('%d %B %Y %H:%M')     
+    self.plot_1.layout.title = chart_title + " Trends Chart created at " + datetime.now().strftime('%d %B %Y %H:%M')     
     self.plot_1.data=data
     pass
 def range_cusum(self, **event_args):
@@ -549,7 +549,7 @@ def range_cusum(self, **event_args):
     #                                     tickfont=dict(color="#1f77b4"), 
     #                                     )
     self.plot_1.layout.xaxis = dict(tickangle=45)    
-    self.plot_1.layout.title = chart_title + " created at " + datetime.now().strftime('%d %B %Y %H:%M')     
+    self.plot_1.layout.title = chart_title + " Range Cusum created at " + datetime.now().strftime('%d %B %Y %H:%M')     
     self.plot_1.data=data
     pass      
 
@@ -589,7 +589,7 @@ def chart_cusum(self, **event_args):
     #                                     tickfont=dict(color="#1f77b4"), 
     #                                     )
     self.plot_1.layout.xaxis = dict(tickangle=45)    
-    self.plot_1.layout.title = chart_title + " created at " + datetime.now().strftime('%d %B %Y %H:%M')     
+    self.plot_1.layout.title = chart_title + " Cusum Chart created at " + datetime.now().strftime('%d %B %Y %H:%M')     
     self.plot_1.data=data
     pass      
 def range(self, **event_args):
@@ -627,7 +627,7 @@ def range(self, **event_args):
     #                                     tickfont=dict(color="#1f77b4"), 
     #                                     )
     self.plot_1.layout.xaxis = dict(tickangle=45)    
-    self.plot_1.layout.title = chart_title + " created at " + datetime.now().strftime('%d %B %Y %H:%M')     
+    self.plot_1.layout.title = chart_title + " Range Chart created at " + datetime.now().strftime('%d %B %Y %H:%M')     
     self.plot_1.data=data
     pass  
 def tables(self, **event_args):

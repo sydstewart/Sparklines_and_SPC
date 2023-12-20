@@ -96,7 +96,7 @@ components:
   layout_properties: {column: NKYJWU}
   data_bindings:
   - {property: date, code: 'self.item[''astart_date'']', writeback: true}
-  event_bindings: {change: date_picker_1_change}
+  event_bindings: {}
 - type: CheckBox
   properties: {role: null, align: left, tooltip: Archive Chart, border: '', enabled: true,
     foreground: '', visible: true, text: Archive, font_size: 12, font: '', spacing_above: small,
