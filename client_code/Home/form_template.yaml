@@ -207,7 +207,7 @@ components:
     event_bindings: {click: link_17_click}
 - type: Label
   properties: {role: null, align: left, tooltip: '', border: '', foreground: '', visible: true,
-    text: DAWN Sparklines and SPC Charts v2, font_size: null, font: '', spacing_above: small,
+    text: DAWN Sparklines and SPC Charts v2.01, font_size: null, font: '', spacing_above: small,
     icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
     underline: false, icon: ''}
   name: label_2
