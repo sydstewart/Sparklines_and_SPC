@@ -66,7 +66,7 @@ class RowTemplate8(RowTemplate8Template):
     from ...Chart_Types import charts , trends , step_changes, tables, x_r
     if self.drop_down_1.selected_value == "Chart":
           charts(self)
-    if self.drop_down_1.selected_value == "X-R":
+    if self.drop_down_1.selected_value == "Range":
           x_r(self)
     if self.drop_down_1.selected_value == "Trend":
           trends(self)
